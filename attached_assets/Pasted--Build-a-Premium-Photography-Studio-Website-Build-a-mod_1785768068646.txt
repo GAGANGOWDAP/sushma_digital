@@ -1,0 +1,410 @@
+# Build a Premium Photography Studio Website
+
+Build a **modern, premium, fully responsive Photography Studio website** with a clean, elegant, and visually stunning UI/UX. The website should look luxurious, creative, and professional while maintaining excellent performance and smooth user interactions. Build a complete production-ready website with beautiful layouts, reusable components, modern animations, and industry-standard architecture.
+
+## Technology Stack (Latest Stable Versions)
+
+### Frontend
+
+* Next.js (Latest App Router) **(Preferred)** or React.js
+* TypeScript
+* Tailwind CSS
+* shadcn/ui
+* Framer Motion
+* React Hook Form
+* Zod
+* Axios
+* TanStack Query
+* Lucide React
+* Swiper.js
+* Embla Carousel
+* React CountUp
+* React Intersection Observer
+* React Hot Toast
+* React Icons
+* next/image for image optimization
+* next/font for optimized typography
+
+## UI Theme
+
+Create a premium luxury photography website.
+
+### Primary Color
+
+* White (#FFFFFF)
+
+### Secondary Color
+
+* Deep Elegant Red (#B91C1C)
+
+Use the red color only for:
+
+* Buttons
+* Active navigation
+* Hover effects
+* Icons
+* Badges
+* Call-to-action sections
+* Highlights
+
+Avoid using excessive red. Maintain a clean and elegant appearance.
+
+### Neutral Colors
+
+* Light Gray (#F8FAFC)
+* Border Gray (#E5E7EB)
+* Dark Text (#111827)
+
+### Design Style
+
+The website should feel:
+
+* Luxury
+* Premium
+* Minimal
+* Modern
+* Elegant
+* Creative
+* Cinematic
+
+Use:
+
+* Large hero images
+* Premium typography
+* Plenty of white space
+* Rounded cards
+* Soft shadows
+* Smooth scrolling
+* Beautiful Framer Motion animations
+* Elegant hover effects
+* High-quality photography throughout the website
+
+The website must be fully responsive across:
+
+* Mobile
+* Tablet
+* Laptop
+* Desktop
+* Large Displays
+
+---
+
+# Website Pages
+
+Create the following pages:
+
+* Home
+* About
+* Services
+* Portfolio
+* Gallery
+* Pricing
+* Testimonials
+* Blog
+* Contact
+* Book a Shoot
+* FAQ
+* Privacy Policy
+* Terms & Conditions
+
+---
+
+# Home Page
+
+Design a premium homepage including:
+
+* Full-screen Hero Banner
+* Modern Sticky Navigation
+* Featured Photography Categories
+* Why Choose Us
+* Services Preview
+* Featured Portfolio
+* Studio Statistics
+* Client Testimonials
+* Instagram Gallery
+* Book Now Call-to-Action
+* Contact Preview
+* Professional Footer
+
+Use premium photography images wherever appropriate.
+
+---
+
+# About Page
+
+The About page should focus **only on the Founder**.
+
+Do NOT include:
+
+* Company History
+* Mission
+* Vision
+* Team Members
+* Studio Information
+
+Include only:
+
+### Founder Introduction
+
+* Professional founder portrait
+* Founder name
+* Founder designation
+* Short biography
+* Photography journey
+
+### Success Story
+
+Create a beautiful timeline showing:
+
+* Started photography as a passion
+* First professional photoshoot
+* First wedding shoot
+* Opened photography studio
+* Covered 100+ events
+* Covered 500+ weddings
+* Expanded into destination photography
+* Worked with premium clients
+* Built a successful photography brand
+
+Include relevant supporting images.
+
+### Awards & Recognition
+
+Display:
+
+* Photography Awards
+* Wedding Photography Awards
+* Best Photographer Awards
+* Competition Awards
+* Certificates
+* Media Features
+* Magazine Publications
+
+Show:
+
+* Trophy images
+* Certificates
+* Award ceremony photos
+* Event images
+
+### Work Experience
+
+Display a professional timeline including:
+
+* Freelance Photographer
+* Wedding Photographer
+* Senior Photographer
+* Founder of Photography Studio
+* Destination Photographer
+
+Also display:
+
+* Years of Experience
+* Weddings Covered
+* Events Completed
+* Commercial Projects
+* Happy Clients
+* Client Satisfaction
+
+---
+
+# Services
+
+Include:
+
+* Wedding Photography
+* Pre-Wedding Photography
+* Engagement Photography
+* Maternity Photography
+* Baby Photography
+* Birthday Photography
+* Event Photography
+* Corporate Photography
+* Fashion Photography
+* Product Photography
+* Food Photography
+* Real Estate Photography
+* Travel Photography
+* Drone Photography
+* Portrait Photography
+* Family Photography
+* Cinematic Videography
+* Album Designing
+* Photo Editing
+
+Each service should have:
+
+* Cover Image
+* Description
+* Features
+* Sample Images
+* Pricing
+* Book Now Button
+
+---
+
+# Portfolio
+
+Create a beautiful portfolio with categories:
+
+* Weddings
+* Portraits
+* Fashion
+* Corporate
+* Events
+* Maternity
+* Baby
+* Products
+* Nature
+* Travel
+
+Include:
+
+* Masonry Layout
+* Grid View
+* Category Filters
+* Fullscreen Image Preview
+* Smooth Animations
+
+---
+
+# Gallery
+
+Include:
+
+* Masonry Layout
+* Grid Gallery
+* Lightbox
+* Image Zoom
+* Category Filters
+* Lazy Loading
+* Hover Effects
+
+---
+
+# Pricing
+
+Create packages:
+
+* Basic
+* Standard
+* Premium
+* Luxury
+* Custom
+
+Display:
+
+* Price
+* Features
+* Deliverables
+* Book Now Button
+
+---
+
+# Testimonials
+
+Include:
+
+* Client Reviews
+* Ratings
+* Client Photos
+* Video Testimonials
+
+---
+
+# Blog
+
+Include:
+
+* Photography Tips
+* Wedding Planning
+* Editing Tutorials
+* Camera Guides
+* Studio Updates
+
+---
+
+# Contact
+
+Include:
+
+* Contact Form
+* Google Maps
+* Studio Address
+* Email
+* Phone Number
+* Working Hours
+* WhatsApp Button
+* Social Media Links
+
+---
+
+# Booking Page
+
+Create a professional booking form.
+
+Include:
+
+* Photography Service
+* Event Type
+* Event Date
+* Event Location
+* Number of Guests
+* Preferred Photographer
+* Budget
+* Additional Notes
+* Contact Information
+
+(No backend or database functionality is required. Create a polished UI-ready booking page.)
+
+---
+
+# Footer
+
+Include:
+
+* About
+* Services
+* Portfolio
+* Contact Information
+* Social Media
+* Newsletter
+* Copyright
+
+---
+
+# UI & UX Requirements
+
+The website should include:
+
+* Premium UI Design
+* Smooth Framer Motion Animations
+* Page Transitions
+* Sticky Navbar
+* Scroll Progress Indicator
+* Scroll-to-Top Button
+* Hover Effects
+* Skeleton Loading Animations
+* Modern Cards
+* Elegant Buttons
+* Beautiful Forms
+* Excellent Typography
+* Image Optimization
+* SEO-Friendly Structure
+* Fully Responsive Layout
+
+---
+
+# Development Requirements
+
+* Clean Folder Structure
+* Reusable Components
+* Modular Architecture
+* TypeScript throughout
+* Optimized Performance
+* Responsive Design
+* Fast Loading Pages
+* Smooth User Experience
+* Professional Code Quality
+
+Build the website to the quality of top international photography studio websites. Focus on creating an elegant, luxury, and visually captivating user experience with high-quality imagery, premium animations, and a clean white aesthetic complemented by subtle deep red accents.

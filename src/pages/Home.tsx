@@ -37,10 +37,11 @@ import {
   X,
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { assetUrl } from '@/lib/utils';
 
 const DEMO_VIDEOS = [
-  { id: 'video1', src: '/videos/video_1.mp4' },
-  { id: 'video2', src: '/videos/video_2.mp4' },
+  { id: 'video1', src: assetUrl('/videos/video_1.mp4') },
+  { id: 'video2', src: assetUrl('/videos/video_2.mp4') },
 ];
 
 const SERVICE_CARDS = [

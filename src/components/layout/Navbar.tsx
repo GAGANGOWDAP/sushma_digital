@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'wouter';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import { assetUrl } from '@/lib/utils';
 
 export const Navbar = () => {
   const [location] = useLocation();
@@ -59,7 +60,7 @@ export const Navbar = () => {
           {/* Logo */}
           <Link href="/" onClick={handleLogoClick} className="group flex items-center gap-3 cursor-pointer">
             <img
-              src="/logo.png"
+              src={assetUrl('/logo.png')}
               alt="Sushma Digital Studio"
               className="h-10 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
@@ -128,7 +129,7 @@ export const Navbar = () => {
       >
         <div className="flex items-center justify-between px-6 pt-5 pb-4 border-b border-[#E2E6EC]">
           <Link href="/" onClick={handleLogoClick} className="flex items-center gap-2.5">
-            <img src="/logo.png" alt="Sushma Digital Studio" className="h-9 w-auto object-contain" />
+            <img src={assetUrl('/logo.png')} alt="Sushma Digital Studio" className="h-9 w-auto object-contain" />
             <div className="flex flex-col leading-tight">
               <span className="font-serif text-lg font-bold text-[#142C45]">Sushma</span>
               <span className="text-[#D92F26] text-[9px] font-bold tracking-[0.2em] uppercase">Digital Studio</span>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { PageTransition, FadeIn } from '../components/ui/motion';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ZoomIn } from 'lucide-react';
+import { assetUrl } from '@/lib/utils';
 
 export default function Gallery() {
   const [lightboxImg, setLightboxImg] = useState<string | null>(null);
@@ -44,10 +45,10 @@ export default function Gallery() {
               <FadeIn key={img.id} delay={(i % 4) * 0.05}>
                 <div 
                   className="relative group overflow-hidden cursor-zoom-in break-inside-avoid rounded-xl bg-white border border-[#E2E6EC] hover:border-[#258FEA]/60 shadow-[0_2px_10px_rgba(20,44,69,0.04)] hover:shadow-[0_8px_24px_rgba(20,44,69,0.1)] transition-shadow duration-300"
-                  onClick={() => setLightboxImg(img.src)}
+                  onClick={() => setLightboxImg(assetUrl(img.src))}
                 >
                   <img 
-                    src={img.src} 
+                    src={assetUrl(img.src)} 
                     alt={img.title}
                     className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
                     loading={i < 4 ? 'eager' : 'lazy'}

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'wouter';
 import { Instagram, Facebook, Mail, MapPin, ExternalLink, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { FadeIn } from '../ui/motion';
+import { assetUrl } from '@/lib/utils';
 
 export const Footer = () => {
   const [location] = useLocation();
@@ -36,7 +37,7 @@ export const Footer = () => {
             <div className="flex flex-col h-full">
               <Link href="/" onClick={handleLogoClick} className="flex items-center gap-3 mb-5 cursor-pointer group w-fit">
                 <img
-                  src="/logo.png"
+                  src={assetUrl('/logo.png')}
                   alt="Sushma Digital Studio"
                   className="h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                 />

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { PageTransition, FadeIn } from '../components/ui/motion';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ZoomIn, ChevronLeft, ChevronRight } from 'lucide-react';
+import { assetUrl } from '@/lib/utils';
 
 const categories = ['All', 'Weddings', 'Portraits', 'Events', 'Candid', 'Pre-Wedding'];
 
@@ -124,7 +125,7 @@ export default function Portfolio() {
                   onClick={() => setLightboxIndex(index)}
                 >
                   <img
-                    src={img.src}
+                    src={assetUrl(img.src)}
                     alt={img.title}
                     className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                     loading={index < 6 ? 'eager' : 'lazy'}
@@ -196,7 +197,7 @@ export default function Portfolio() {
               onClick={(e) => e.stopPropagation()}
             >
               <img
-                src={filteredImages[lightboxIndex].src}
+                src={assetUrl(filteredImages[lightboxIndex].src)}
                 alt={filteredImages[lightboxIndex].title}
                 className="max-h-[75vh] w-auto max-w-full object-contain rounded-lg shadow-2xl border border-white/10 transition-opacity duration-200"
                 decoding="async"

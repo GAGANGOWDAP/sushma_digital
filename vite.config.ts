@@ -1,8 +1,13 @@
 
+import fs from 'fs';
 import path from 'path';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vite';
+
+const attachedAssetsDir = fs.existsSync(path.resolve(import.meta.dirname, 'attached_assets'))
+  ? path.resolve(import.meta.dirname, 'attached_assets')
+  : path.resolve(import.meta.dirname, '..', '..', 'attached_assets');
 
 export default defineConfig({
   base: '/sushma_digital/',
@@ -15,7 +20,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(import.meta.dirname, 'src'),
-      '@assets': path.resolve(import.meta.dirname, '..', '..', 'attached_assets'),
+      '@assets': attachedAssetsDir,
     },
     dedupe: ['react', 'react-dom'],
   },

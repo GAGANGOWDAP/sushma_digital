@@ -1,3 +1,4 @@
+import { SEO } from '@/components/common/SEO';
 import React, { useState, useEffect, useRef } from 'react';
 import { PageTransition, FadeIn } from '../components/ui/motion';
 import { Link } from 'wouter';
@@ -37,6 +38,7 @@ import {
   X,
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FAQSection } from '@/components/common/FAQSection';
 import { assetUrl } from '@/lib/utils';
 
 const DEMO_VIDEOS = [
@@ -136,29 +138,7 @@ function CinematicHero() {
         }}
       />
 
-      {/* Subtle Camera Viewfinder Crop Guides */}
-      <div className="absolute inset-6 sm:inset-12 z-20 pointer-events-none border border-white/10 hidden md:block">
-        {/* Corner Brackets */}
-        <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#D92F26]" />
-        <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-[#D92F26]" />
-        <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-[#D92F26]" />
-        <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#D92F26]" />
 
-        {/* Center Crosshair Marker */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 opacity-50">
-          <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-white" />
-          <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-white" />
-        </div>
-
-        {/* Camera Metadata Indicators */}
-        <div className="absolute bottom-3 left-4 text-[10px] font-mono tracking-widest text-[#E2E6EC]/80 uppercase">
-          RAW 4K &bull; 24FPS &bull; ISO 100
-        </div>
-        <div className="absolute bottom-3 right-4 text-[10px] font-mono tracking-widest text-[#258FEA] uppercase flex items-center gap-1.5 font-semibold">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#D92F26] animate-pulse" />
-          REC ACTIVE
-        </div>
-      </div>
     </div>
   );
 }
@@ -188,7 +168,7 @@ function ServiceCard({ svc, delay }: { svc: typeof SERVICE_CARDS[0]; delay: numb
         </div>
         <div className="p-6 flex-1 flex flex-col justify-between">
           <div>
-            <span className="text-[#258FEA] text-[10px] font-bold uppercase tracking-[0.18em] mb-2 block">
+            <span className="text-[#258FEA] text-[10px] font-bold uppercase tracking-[0.18em] block mb-2">
               {svc.category}
             </span>
             <h3 className="text-[#142C45] font-serif font-bold text-lg mb-2.5 group-hover:text-[#D92F26] transition-colors leading-snug">
@@ -433,21 +413,10 @@ function CurvedLeadersRibbonSection() {
             <ChevronLeft size={16} />
           </button>
 
-          {/* Dots */}
-          <div className="flex items-center gap-1.5">
-            {LEADER_ARCHIVE_PHOTOS.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setActiveIndex(idx)}
-                aria-label={`Go to slide ${idx + 1}`}
-                className={`transition-all duration-300 rounded-full cursor-pointer ${
-                  activeIndex === idx
-                    ? 'w-6 h-2 bg-[#D92F26]'
-                    : 'w-2 h-2 bg-[#E2E6EC] hover:bg-[#64748B]/40'
-                }`}
-              />
-            ))}
-          </div>
+          {/* Numeric Page Indicator (No Dots) */}
+          <span className="font-mono text-xs text-[#64748B] font-semibold tracking-wider">
+            {activeIndex + 1} / {LEADER_ARCHIVE_PHOTOS.length}
+          </span>
 
           <button
             onClick={handleNext}
@@ -548,19 +517,18 @@ export default function Home() {
 
   return (
     <PageTransition>
+      <SEO
+        title="Premier Photography & Cinematography Studio Bangalore"
+        description="Sushma Digital Studio — 21+ years of premier wedding photography, candid storytelling, 4K aerial drones, multi-camera live broadcast streaming, and LED wall productions in Bangalore led by State Honor Karnataka Chayarathna awardee Prabhu."
+        canonical="https://sushmadigitalstudio.com/"
+      />
       {/* ── Hero ── */}
       <section className="relative min-h-[92vh] sm:min-h-screen w-full overflow-hidden flex items-center justify-center pt-24 pb-16">
         <CinematicHero />
         <div className="relative z-20 text-center text-white px-4 sm:px-6 max-w-4xl mx-auto w-full">
-          <FadeIn delay={0.15}>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 text-[#142C45] border border-white/60 text-xs uppercase tracking-[0.22em] font-semibold mb-6 shadow-sm backdrop-blur-md">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#D92F26]" />
-              <span>Sushma Digital Studio &bull; Bangalore</span>
-            </div>
-          </FadeIn>
-          <FadeIn delay={0.3}>
+          <FadeIn delay={0.2}>
             <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif mb-6 leading-[1.08] tracking-tight text-white drop-shadow-md">
-              Life, framed in <span className="italic text-[#D92F26]">perfection</span>.
+              Professional Wedding Photography &amp; <span className="italic text-[#D92F26]">Event Production in Bangalore</span>
             </h1>
           </FadeIn>
           <FadeIn delay={0.45}>
@@ -637,10 +605,6 @@ export default function Home() {
                   key={client.id}
                   className="group relative rounded-xl border border-[#E2E6EC] bg-[#FFFFFF] p-5 sm:p-5.5 h-full flex flex-col justify-between shadow-[0_2px_8px_rgba(20,44,69,0.04)] hover:shadow-[0_8px_20px_rgba(20,44,69,0.08)] hover:-translate-y-1 transition-all duration-300 overflow-hidden text-left"
                 >
-                  <div
-                    className="absolute top-0 left-0 right-0 h-[2px] transition-colors duration-300"
-                    style={{ backgroundColor: client.accent }}
-                  />
                   <div>
                     <div className="flex items-center justify-between mb-4">
                       <div
@@ -683,7 +647,7 @@ export default function Home() {
                   Studio Capabilities
                 </span>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#142C45]">
-                  Tailored Photography Services
+                  Tailored Photography &amp; Broadcast Services
                 </h2>
               </div>
               <Link
@@ -706,12 +670,9 @@ export default function Home() {
       <section className="py-12 sm:py-16 lg:py-10 xl:py-12 bg-[#FFFFFF] border-b border-[#E2E6EC] text-center relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 max-w-4xl text-center relative z-10">
           <FadeIn>
-            <div className="inline-flex items-center justify-center gap-2.5 px-4 py-1.5 rounded-full bg-[#F5F6F8] border border-[#E2E6EC] mb-5">
-              <Trophy size={16} className="text-[#D92F26]" />
-              <span className="text-[#142C45] text-xs uppercase tracking-widest font-semibold">
-                Karnataka Cultural Heritage
-              </span>
-            </div>
+            <span className="text-xs uppercase tracking-[0.22em] font-semibold text-[#D92F26] mb-3 block">
+              Karnataka Cultural Heritage
+            </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif mb-4 text-[#142C45]">
               Dr. Rajkumar Memorial Documentation
             </h2>
@@ -737,7 +698,7 @@ export default function Home() {
                 Visual Portfolio
               </span>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#142C45] mb-3">
-                Selected Works
+                Selected Works &mdash; Wedding &amp; Portrait Showcase
               </h2>
               <p className="text-[#64748B] text-sm sm:text-base max-w-2xl mx-auto">
                 A curated survey of our visual language &mdash; 21 years of capturing candid grace, emotion, and architectural drama.
@@ -831,6 +792,13 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── Frequently Asked Questions ── */}
+      <FAQSection
+        subtitle="Common Inquiries"
+        title="Frequently Asked Questions"
+        description="Answers to common questions regarding wedding reservations, broadcast capabilities, turnaround times, and destination travel."
+      />
 
       {/* ── Final Call to Action ── */}
       <section className="py-12 sm:py-16 lg:py-10 xl:py-12 hero-diamond-pattern border-t border-[#E2E6EC] text-center relative overflow-hidden">

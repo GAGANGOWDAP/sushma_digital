@@ -1,3 +1,4 @@
+import { SEO } from '@/components/common/SEO';
 import React from 'react';
 import { PageTransition, FadeIn } from '../components/ui/motion';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -57,14 +58,21 @@ export default function FAQ() {
 
   return (
     <PageTransition>
+      <SEO
+        title="Frequently Asked Questions"
+        description="Frequently asked questions about Sushma Digital Studio: booking lead times, destination wedding travel across India, multi-camera live webcasting, 4K drones, deliverables, and heirloom album design in Bangalore."
+        canonical="https://sushmadigitalstudio.com/faq"
+      />
       {/* Header */}
-      <section className="pt-36 sm:pt-40 pb-12 hero-diamond-pattern text-center border-b border-[#E2E6EC] relative overflow-hidden">
+      <section className="pt-36 sm:pt-40 pb-12 hero-triangular-pattern text-center border-b border-[#E2E6EC] relative overflow-hidden">
         <div className="container mx-auto px-6 max-w-3xl relative z-10">
           <FadeIn>
             <span className="text-[#D92F26] text-xs uppercase tracking-[0.22em] font-semibold mb-3 block">
               Frequently Asked Questions
             </span>
-            <h1 className="text-4xl sm:text-6xl font-serif text-[#142C45] mb-4">Everything You Need to Know</h1>
+            <h1 className="text-4xl sm:text-6xl font-serif text-[#142C45] mb-4">
+              Frequently Asked Questions &mdash; Sushma Digital Studio
+            </h1>
             <p className="text-[#475569] text-sm sm:text-base leading-relaxed">
               Clear answers regarding our booking process, photography style, live streaming, and album delivery.
             </p>
@@ -78,7 +86,6 @@ export default function FAQ() {
           {faqs.map((group, idx) => (
             <FadeIn key={idx} delay={idx * 0.1} className="mb-12">
               <div className="flex items-center gap-2.5 mb-5 pb-2 border-b border-[#E2E6EC]">
-                <span className="w-2 h-2 rounded-full bg-[#D92F26]" />
                 <h2 className="text-lg sm:text-xl font-serif text-[#142C45] font-bold tracking-wide">
                   {group.category}
                 </h2>

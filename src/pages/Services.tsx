@@ -1,7 +1,9 @@
+import { SEO } from '@/components/common/SEO';
 import React from 'react';
 import { PageTransition, FadeIn } from '../components/ui/motion';
 import { Link } from 'wouter';
 import { ArrowRight, Camera, Video, Baby, Users, Tv, Radio, Box, Monitor, Send } from 'lucide-react';
+import { FAQSection } from '@/components/common/FAQSection';
 
 const services = [
   {
@@ -90,15 +92,21 @@ const services = [
 export default function Services() {
   return (
     <PageTransition>
+      <SEO
+        title="Professional Photography & Live Production Services"
+        description="Explore comprehensive photography and broadcast production services in Bangalore by Sushma Digital Studio: candid weddings, pre-wedding films, maternity shoots, global HD webcasting, multi-camera live video mixing, LED walls, and 4K aerial drones."
+        canonical="https://sushmadigitalstudio.com/services"
+      />
       {/* Hero header */}
-      <section className="pt-36 sm:pt-40 pb-16 hero-diamond-pattern text-center relative overflow-hidden border-b border-[#E2E6EC]">
+      <section className="pt-36 sm:pt-40 pb-16 hero-triangular-pattern text-center relative overflow-hidden border-b border-[#E2E6EC]">
         <div className="container mx-auto px-6 relative z-10 max-w-4xl">
           <FadeIn>
-            <div className="inline-flex items-center gap-2 bg-white border border-[#E2E6EC] px-4 py-1.5 rounded-full mb-4 shadow-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#D92F26]" />
-              <span className="text-[#142C45] text-xs font-semibold uppercase tracking-widest">Sushma Digital Studio</span>
-            </div>
-            <h1 className="text-4xl sm:text-6xl font-serif text-[#142C45] mb-4">Our Services</h1>
+            <span className="text-xs uppercase tracking-[0.22em] font-semibold text-[#D92F26] mb-3 block">
+              Sushma Digital Studio
+            </span>
+            <h1 className="text-4xl sm:text-6xl font-serif text-[#142C45] mb-4">
+              Professional Photography &amp; Live Production Services in Bangalore
+            </h1>
             <p className="text-[#64748B] max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
               21+ years of photography &amp; live production excellence in Bangalore &mdash; covering weddings, live broadcasts, LED displays &amp; aerial drone visuals.
             </p>
@@ -107,60 +115,61 @@ export default function Services() {
       </section>
 
       {/* Services Modern Cards Grid */}
-      <section className="py-16 sm:py-20 bg-[#FFFFFF]">
-        <div className="container mx-auto px-4 sm:px-6 md:px-12 max-w-7xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      <section className="py-16 sm:py-24 bg-[#FFFFFF] border-b border-[#E2E6EC] relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 md:px-12 max-w-7xl relative z-10">
+          <h2 className="sr-only">Our 9 Specialized Photography &amp; Live Broadcast Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 lg:gap-8 items-stretch">
             {services.map((svc, i) => (
-              <FadeIn key={svc.id} delay={(i % 3) * 0.08}>
+              <FadeIn key={svc.id} delay={(i % 3) * 0.08} className="h-full">
                 <Link
                   href="/contact"
-                  className="group relative block overflow-hidden rounded-xl bg-white border border-[#E2E6EC] hover:border-[#258FEA]/60 shadow-[0_2px_10px_rgba(20,44,69,0.04)] hover:shadow-[0_8px_24px_rgba(20,44,69,0.08)] hover:-translate-y-1 transition-all duration-300 flex flex-col h-full"
+                  className="group relative flex flex-col h-full rounded-[18px] bg-[#FFFFFF] border border-[#E2E6EC] hover:border-[#258FEA] shadow-[0_2px_8px_rgba(20,44,69,0.03)] hover:shadow-[0_12px_28px_rgba(20,44,69,0.08)] hover:-translate-y-1.5 transition-all duration-300 overflow-hidden cursor-pointer"
                 >
-                  {/* Top Image Section */}
-                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#F5F6F8]">
+                  {/* Top 16:9 Image Section */}
+                  <div className="relative aspect-video w-full overflow-hidden bg-[#F5F6F8]">
                     <img
                       src={svc.img}
                       alt={svc.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-500 ease-out"
                       loading="lazy"
                       onError={(e) => {
                         e.currentTarget.src = 'https://images.unsplash.com/photo-1542044896530-05d3c054e2d6?q=80&w=800&auto=format&fit=crop';
                       }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
 
-                    {/* Number Badge Top Left */}
-                    <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md border border-[#E2E6EC] text-[#142C45] font-mono text-xs font-bold px-3 py-1 rounded-md shadow-sm">
+                    {/* Service Number Badge Top Left — Elegant Serif Typography */}
+                    <div className="absolute top-3.5 left-3.5 bg-[#FFFFFF] text-[#142C45] font-serif text-xs font-bold px-2.5 py-1 rounded-md border border-[#E2E6EC] shadow-sm select-none tracking-wider">
                       {svc.number}
-                    </div>
-
-                    {/* Category Tag & Icon Top Right */}
-                    <div className="absolute top-4 right-4 flex items-center gap-2">
-                      <div className="w-9 h-9 rounded-md bg-white text-[#142C45] border border-[#E2E6EC] flex items-center justify-center shadow-md group-hover:bg-[#D92F26] group-hover:border-[#D92F26] group-hover:text-white transition-colors">
-                        <svc.icon size={17} />
-                      </div>
                     </div>
                   </div>
 
                   {/* Body Content */}
-                  <div className="p-6 flex-1 flex flex-col justify-between">
+                  <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between">
                     <div>
-                      <span className="text-[#258FEA] text-[10px] font-bold uppercase tracking-[0.18em] block mb-2">
+                      {/* Uppercase Category Label in Muted Slate */}
+                      <span className="text-[#64748B] text-[11px] font-semibold uppercase tracking-[0.18em] block mb-2">
                         {svc.category}
                       </span>
-                      <h3 className="text-[#142C45] font-serif font-bold text-lg mb-2.5 group-hover:text-[#D92F26] transition-colors leading-snug">
+
+                      {/* Service Title in Deep Navy serif */}
+                      <h3 className="font-serif font-bold text-[#142C45] text-lg sm:text-xl leading-snug mb-3 group-hover:text-[#D92F26] transition-colors duration-300">
                         {svc.title}
                       </h3>
-                      <p className="text-[#475569] text-xs leading-relaxed mb-6">
+
+                      {/* Description in Slate sans-serif */}
+                      <p className="text-[#475569] text-xs sm:text-[13px] leading-relaxed mb-6 font-normal">
                         {svc.desc}
                       </p>
                     </div>
 
-                    {/* Bottom Action Link */}
-                    <div className="pt-4 border-t border-[#E2E6EC] flex items-center justify-between text-xs font-semibold text-[#D92F26] uppercase tracking-widest group-hover:text-[#258FEA] transition-colors">
-                      <span>Book Service</span>
-                      <div className="w-7 h-7 rounded-full bg-[#F5F6F8] border border-[#E2E6EC] group-hover:bg-[#D92F26] group-hover:border-[#D92F26] group-hover:text-white flex items-center justify-center transition-all duration-300">
-                        <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform" />
+                    {/* Book Service Action Area */}
+                    <div className="pt-4 border-t border-[#E2E6EC] flex items-center justify-between mt-auto">
+                      <span className="text-xs uppercase tracking-widest font-bold text-[#142C45] group-hover:text-[#D92F26] transition-colors duration-300">
+                        Book Service
+                      </span>
+                      <div className="w-8 h-8 rounded-full bg-[#F5F6F8] border border-[#E2E6EC] text-[#142C45] group-hover:bg-[#D92F26] group-hover:border-[#D92F26] group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm">
+                        <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform duration-300" />
                       </div>
                     </div>
                   </div>
@@ -170,6 +179,31 @@ export default function Services() {
           </div>
         </div>
       </section>
+
+      {/* Services FAQ */}
+      <FAQSection
+        subtitle="Services & Production FAQ"
+        title="Photography & Broadcast Production Inquiries"
+        description="Detailed answers regarding our multi-camera setups, 4K drones, LED walls, 360° VR, and custom coverage options."
+        items={[
+          {
+            q: 'Can we book standalone services like drone coverage, LED walls, or live streaming?',
+            a: 'Yes. While we provide comprehensive end-to-end wedding packages, our specialized production services—including 4K aerial drones, high-resolution indoor/outdoor LED walls, multi-camera live video mixing, and HD webcasting—can also be deployed as standalone units.',
+          },
+          {
+            q: 'What broadcast equipment and camera systems do you deploy?',
+            a: 'We operate professional cinema cameras, prime lenses, wireless video transmitters, dedicated multi-channel hardware video switchers, calibrated SDI/HDMI feeds, and redundant bonded cellular internet uplinks for glitch-free live broadcasts.',
+          },
+          {
+            q: 'Do you cover both traditional rituals and modern candid moments?',
+            a: 'Yes. Our dedicated dual-crew methodology ensures complete documentation of sacred traditional muhurtham rituals alongside natural, unscripted candid emotions and cinematic couple portraits.',
+          },
+          {
+            q: 'How does the 360-degree VR video experience work for events?',
+            a: 'Our 360° VR cameras capture immersive, spherical spatial footage of your celebration, allowing you and distant relatives to relive the ceremony with full spatial presence using VR headsets or mobile viewers.',
+          },
+        ]}
+      />
 
       {/* CTA */}
       <section className="py-20 hero-diamond-pattern border-t border-[#E2E6EC] text-center relative overflow-hidden">

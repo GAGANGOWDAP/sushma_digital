@@ -1,16 +1,24 @@
+import { SEO } from '@/components/common/SEO';
 import React from 'react';
 import { PageTransition, FadeIn } from '../components/ui/motion';
 
 export default function Terms() {
   return (
     <PageTransition>
+      <SEO
+        title="Terms of Service"
+        description="Terms of service, booking retainer conditions, rescheduling guidelines, and service agreements for photography and media production with Sushma Digital Studio Bangalore."
+        canonical="https://sushmadigitalstudio.com/terms"
+      />
       <section className="pt-36 sm:pt-40 pb-24 bg-[#FFFFFF] text-[#142C45]">
         <div className="container mx-auto px-6 max-w-3xl">
           <FadeIn>
             <span className="text-[#D92F26] text-xs uppercase tracking-[0.22em] font-semibold mb-2 block">
               Legal Agreement
             </span>
-            <h1 className="text-4xl sm:text-5xl font-serif text-[#142C45] mb-8">Terms of Service</h1>
+            <h1 className="text-4xl sm:text-5xl font-serif text-[#142C45] mb-8">
+              Terms of Service &mdash; Sushma Digital Studio
+            </h1>
             <div className="max-w-none text-[#475569] space-y-6 text-sm sm:text-base leading-relaxed">
               <p className="text-xs text-[#64748B]">Last Updated: November 2024</p>
               

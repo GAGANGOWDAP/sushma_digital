@@ -28,7 +28,7 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="footer-diamond-pattern text-white pt-16 sm:pt-20 pb-10 border-t border-[#1F3A59] relative overflow-hidden">
+    <footer className="footer-diamond-pattern text-[#D5DFEA] pt-16 sm:pt-20 pb-10 border-t border-[#1F3A59] relative overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-8 lg:gap-8 mb-14">
           
@@ -42,11 +42,11 @@ export const Footer = () => {
                   className="h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="flex flex-col leading-tight">
-                  <h3 className="font-serif text-xl font-bold text-white tracking-tight">Sushma</h3>
+                  <span className="font-serif text-xl font-bold text-[#FFFFFF] tracking-tight">Sushma</span>
                   <span className="text-[#D92F26] text-[10px] font-bold tracking-[0.22em] uppercase">Digital Studio</span>
                 </div>
               </Link>
-              <p className="text-[#94A3B8] text-xs leading-relaxed mb-6 max-w-sm">
+              <p className="text-[#D5DFEA] text-xs leading-relaxed mb-6 max-w-sm">
                 21+ years of photography excellence in Bangalore. Specialising in pre-wedding, candid wedding photography, live streaming, LED wall &amp; 360° VR videos. Conferred with Karnataka Chayarathna &amp; Chhaya Ratna.
               </p>
               <div className="flex items-center gap-3 mt-auto">
@@ -56,7 +56,7 @@ export const Footer = () => {
                   rel="noopener noreferrer"
                   title="Prabhus_phtography on Instagram"
                   aria-label="Instagram"
-                  className="w-10 h-10 rounded-xl bg-[#0E2034] border border-[#2B4B70] flex items-center justify-center text-[#94A3B8] hover:text-white hover:border-[#258FEA] hover:bg-[#258FEA]/20 hover:scale-105 active:scale-95 transition-all duration-300 shadow-sm"
+                  className="w-10 h-10 rounded-xl bg-[#0E2034] border border-[#2B4B70] flex items-center justify-center text-[#258FEA] hover:text-white hover:border-[#258FEA] hover:bg-[#258FEA]/20 hover:scale-105 active:scale-95 transition-all duration-300 shadow-sm"
                 >
                   <Instagram size={17} />
                 </a>
@@ -66,7 +66,7 @@ export const Footer = () => {
                   rel="noopener noreferrer"
                   title="Prabhu's photography on Facebook"
                   aria-label="Facebook"
-                  className="w-10 h-10 rounded-xl bg-[#0E2034] border border-[#2B4B70] flex items-center justify-center text-[#94A3B8] hover:text-white hover:border-[#258FEA] hover:bg-[#258FEA]/20 hover:scale-105 active:scale-95 transition-all duration-300 shadow-sm"
+                  className="w-10 h-10 rounded-xl bg-[#0E2034] border border-[#2B4B70] flex items-center justify-center text-[#258FEA] hover:text-white hover:border-[#258FEA] hover:bg-[#258FEA]/20 hover:scale-105 active:scale-95 transition-all duration-300 shadow-sm"
                 >
                   <Facebook size={17} />
                 </a>
@@ -77,11 +77,10 @@ export const Footer = () => {
           {/* Column 2: Quick Navigation */}
           <FadeIn delay={0.2}>
             <div>
-              <div className="flex items-center gap-2 mb-5">
-                <span className="w-1 h-4 bg-[#D92F26] rounded-full" />
-                <h4 className="font-serif text-base tracking-wide text-white uppercase font-medium">
+              <div className="mb-5">
+                <p className="font-serif text-base tracking-wide text-[#FFFFFF] uppercase font-medium">
                   Quick Navigation
-                </h4>
+                </p>
               </div>
               <ul className="space-y-3">
                 {[
@@ -94,7 +93,7 @@ export const Footer = () => {
                   <li key={item.name}>
                     <Link 
                       href={item.path}
-                      className="text-[#94A3B8] hover:text-white hover:translate-x-1.5 inline-flex items-center gap-2 transition-all duration-200 text-xs uppercase tracking-wider font-medium group"
+                      className="text-[#E5ECF4] hover:text-[#258FEA] hover:translate-x-1.5 inline-flex items-center gap-2 transition-all duration-200 text-xs uppercase tracking-wider font-medium group"
                     >
                       <ArrowRight size={12} className="text-[#258FEA] transition-transform duration-200 group-hover:translate-x-0.5" />
                       <span>{item.name}</span>
@@ -108,16 +107,15 @@ export const Footer = () => {
           {/* Column 3: Studio Location */}
           <FadeIn delay={0.3}>
             <div>
-              <div className="flex items-center gap-2 mb-5">
-                <span className="w-1 h-4 bg-[#258FEA] rounded-full" />
-                <h4 className="font-serif text-base tracking-wide text-white uppercase font-medium">
+              <div className="mb-5">
+                <p className="font-serif text-base tracking-wide text-[#FFFFFF] uppercase font-medium">
                   Studio Location
-                </h4>
+                </p>
               </div>
-              <ul className="space-y-4 text-xs text-[#94A3B8]">
+              <ul className="space-y-4 text-xs text-[#D5DFEA]">
                 <li className="flex items-start gap-3">
-                  <MapPin size={17} className="text-[#D92F26] shrink-0 mt-0.5" />
-                  <span className="leading-relaxed text-[#CBD5E1]">
+                  <MapPin size={17} className="text-[#258FEA] shrink-0 mt-0.5" />
+                  <span className="leading-relaxed text-[#D5DFEA]">
                     No 540. 8th main, 4th cross,<br />
                     R.P.C layout, Vijaynagar 2nd stage,<br />
                     Bangalore - 560040, Karnataka
@@ -127,7 +125,7 @@ export const Footer = () => {
                   <Mail size={17} className="text-[#258FEA] shrink-0" />
                   <a 
                     href="mailto:sushmadigistudio1989@gmail.com" 
-                    className="text-[#CBD5E1] hover:text-white hover:underline transition-colors break-all"
+                    className="text-[#E5ECF4] hover:text-[#258FEA] hover:underline transition-colors break-all"
                   >
                     sushmadigistudio1989@gmail.com
                   </a>
@@ -139,13 +137,12 @@ export const Footer = () => {
           {/* Column 4: Stay Connected / Newsletter */}
           <FadeIn delay={0.4}>
             <div>
-              <div className="flex items-center gap-2 mb-5">
-                <span className="w-1 h-4 bg-[#D92F26] rounded-full" />
-                <h4 className="font-serif text-base tracking-wide text-white uppercase font-medium">
+              <div className="mb-5">
+                <p className="font-serif text-base tracking-wide text-[#FFFFFF] uppercase font-medium">
                   Stay Connected
-                </h4>
+                </p>
               </div>
-              <p className="text-[#94A3B8] text-xs mb-4 leading-relaxed">
+              <p className="text-[#D5DFEA] text-xs mb-4 leading-relaxed">
                 Subscribe for upcoming studio sessions, seasonal packages &amp; wedding previews.
               </p>
               <form className="space-y-2.5" onSubmit={handleSubscribe}>
@@ -155,7 +152,7 @@ export const Footer = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email address" 
-                    className="w-full bg-[#0E2034] border border-[#2B4B70] focus:border-[#258FEA] focus:ring-2 focus:ring-[#258FEA]/20 px-3.5 py-2.5 rounded-lg text-xs text-white placeholder-[#64748B] transition-all outline-none"
+                    className="w-full bg-[#0E2034] border border-[#2B4B70] focus:border-[#258FEA] focus:ring-2 focus:ring-[#258FEA]/20 px-3.5 py-2.5 rounded-lg text-xs text-white placeholder-[#AAB9CB]/70 transition-all outline-none"
                     required
                   />
                 </div>
@@ -176,8 +173,8 @@ export const Footer = () => {
           </FadeIn>
         </div>
 
-        {/* Compact Formatted Google Studio Map Container */}
-        <div className="bg-[#0E2034]/80 p-2.5 sm:p-3.5 rounded-2xl border border-[#2B4B70]/80 shadow-2xl mb-12">
+        {/* Clean Frame Google Studio Map Container */}
+        <div className="bg-[#0E2034]/90 p-2.5 sm:p-3.5 rounded-2xl border border-[#2B4B70] shadow-2xl mb-12">
           <div className="relative w-full h-[200px] sm:h-[240px] rounded-xl overflow-hidden border border-[#1F3A59] shadow-inner">
             <a
               href="https://maps.google.com/?q=Sushma+digital+studio+prabhu's+photography+Vijayanagar+Bangalore"
@@ -203,12 +200,12 @@ export const Footer = () => {
 
         {/* Divider & Copyright Section */}
         <div className="h-px w-full bg-gradient-to-r from-transparent via-[#2B4B70] to-transparent mb-6" />
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-[#94A3B8] uppercase tracking-wider">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-[#AAB9CB] uppercase tracking-wider">
           <p>&copy; {new Date().getFullYear()} Sushma Digital Studio. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/privacy" className="text-[#AAB9CB] hover:text-[#258FEA] transition-colors">Privacy Policy</Link>
             <span className="text-[#2B4B70]">&bull;</span>
-            <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+            <Link href="/terms" className="text-[#AAB9CB] hover:text-[#258FEA] transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

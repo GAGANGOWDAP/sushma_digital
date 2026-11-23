@@ -2,25 +2,25 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { Route, Switch, Router as WouterRouter } from 'wouter';
-import { Navbar } from './components/layout/Navbar';
-import { Footer } from './components/layout/Footer';
-import { ScrollToTop } from './components/ui/scroll-to-top';
+import { RootLayout } from '@/layouts/RootLayout';
 
 // Pages
-import Home from './pages/Home';
-import About from './pages/About';
-import Services from './pages/Services';
-import Portfolio from './pages/Portfolio';
-import Gallery from './pages/Gallery';
-import Pricing from './pages/Pricing';
-import Testimonials from './pages/Testimonials';
-import Blog from './pages/Blog';
-import Contact from './pages/Contact';
-import Book from './pages/Book';
-import FAQ from './pages/FAQ';
-import Privacy from './pages/Privacy';
-import Terms from './pages/Terms';
-import NotFound from '@/pages/not-found';
+import {
+  Home,
+  About,
+  Services,
+  Portfolio,
+  Gallery,
+  Pricing,
+  Testimonials,
+  Blog,
+  Contact,
+  Book,
+  FAQ,
+  Privacy,
+  Terms,
+  NotFound,
+} from '@/pages';
 
 const queryClient = new QueryClient();
 
@@ -50,14 +50,9 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
-          <div className="min-h-[100dvh] flex flex-col bg-background text-foreground font-sans selection:bg-primary/20 selection:text-primary">
-            <ScrollToTop />
-            <Navbar />
-            <main className="flex-grow">
-              <Router />
-            </main>
-            <Footer />
-          </div>
+          <RootLayout>
+            <Router />
+          </RootLayout>
         </WouterRouter>
         <Toaster />
       </TooltipProvider>

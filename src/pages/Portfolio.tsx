@@ -1,8 +1,10 @@
+import { SEO } from '@/components/common/SEO';
 import React, { useState, useEffect } from 'react';
 import { PageTransition, FadeIn } from '../components/ui/motion';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ZoomIn, ChevronLeft, ChevronRight } from 'lucide-react';
 import { assetUrl } from '@/lib/utils';
+import { FAQSection } from '@/components/common/FAQSection';
 
 const categories = ['All', 'Weddings', 'Portraits', 'Events', 'Candid', 'Pre-Wedding'];
 
@@ -73,15 +75,20 @@ export default function Portfolio() {
 
   return (
     <PageTransition>
+      <SEO
+        title="Curated Photography Portfolio & Works"
+        description="Explore the curated visual portfolio of Sushma Digital Studio: royal south Indian weddings, candid nuptials, emotional rituals, cinematic couple portraits, and commercial milestones captured across Bangalore and Karnataka."
+        canonical="https://sushmadigitalstudio.com/portfolio"
+      />
       {/* Portfolio Header */}
-      <section className="pt-36 sm:pt-40 pb-12 hero-diamond-pattern text-center relative overflow-hidden border-b border-[#E2E6EC]">
+      <section className="pt-36 sm:pt-40 pb-12 hero-triangular-pattern text-center relative overflow-hidden border-b border-[#E2E6EC]">
         <div className="container mx-auto px-6 relative z-10">
           <FadeIn>
             <span className="text-[#D92F26] text-xs uppercase tracking-[0.25em] font-semibold mb-3 block">
               Sushma Digital Studio &bull; Visual Gallery
             </span>
             <h1 className="text-4xl sm:text-6xl font-serif text-[#142C45] mb-4">
-              Mastery in Every Frame
+              Our Photography &amp; Event Production Portfolio
             </h1>
             <p className="text-[#64748B] max-w-xl mx-auto text-sm sm:text-base leading-relaxed mb-8">
               Explore 21+ years of authentic photography &mdash; capturing grand weddings, candid emotion, artistic portraiture &amp; milestone celebrations.
@@ -112,6 +119,7 @@ export default function Portfolio() {
       {/* Gallery Grid */}
       <section className="py-12 pb-32 bg-[#FFFFFF]">
         <div className="container mx-auto px-4 md:px-8 max-w-7xl">
+          <h2 className="sr-only">Curated Wedding, Portrait &amp; Celebration Showcase</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <AnimatePresence mode="popLayout">
               {filteredImages.map((img, index) => (
@@ -150,6 +158,31 @@ export default function Portfolio() {
           </div>
         </div>
       </section>
+
+      {/* Portfolio Deliverables FAQ */}
+      <FAQSection
+        subtitle="Deliverables & Formats"
+        title="Portfolio & Gallery FAQ"
+        description="Everything you need to know regarding deliverable resolution, archival quality, download access, and private galleries."
+        items={[
+          {
+            q: 'In what resolution and file formats are portfolio deliverables provided?',
+            a: 'All delivered photographs are provided in ultra-high-resolution JPEG and TIFF formats, individually color-graded and retouched for online sharing and large-format archival printing.',
+          },
+          {
+            q: 'Can we request specific color grading or custom retouching styles?',
+            a: 'Yes. During our pre-event creative consultation, we align on your aesthetic preferences—whether you prefer timeless natural warm tones, regal editorial mood, or vibrant cinematic grading.',
+          },
+          {
+            q: 'How many edited images are typically delivered from an event?',
+            a: 'Depending on event scale and duration, couples typically receive 600 to 1,200+ meticulously edited high-resolution photographs, along with an online highlight reel for instant sharing.',
+          },
+          {
+            q: 'Do you provide private password-protected online client galleries?',
+            a: 'Yes. Every client receives access to a secure, private cloud gallery where family and friends worldwide can view, favorite, and download full-resolution images directly.',
+          },
+        ]}
+      />
 
       {/* Lightbox Modal */}
       <AnimatePresence>

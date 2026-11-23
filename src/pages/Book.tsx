@@ -1,3 +1,4 @@
+import { SEO } from '@/components/common/SEO';
 import React, { useState } from 'react';
 import { PageTransition, FadeIn } from '../components/ui/motion';
 import { useForm } from 'react-hook-form';
@@ -7,6 +8,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { useToast } from '@/hooks/use-toast';
 import { CheckCircle2, Calendar, MapPin, Mail, ArrowRight } from 'lucide-react';
 import { Link } from 'wouter';
+import { FAQSection } from '@/components/common/FAQSection';
 
 const SERVICES_LIST = [
   'Pre-Wedding Photography & Videography',
@@ -55,6 +57,11 @@ export default function Book() {
   if (isSubmitted) {
     return (
       <PageTransition>
+        <SEO
+          title="Booking Request Received"
+          description="Your booking reservation request has been received by Sushma Digital Studio Bangalore. We will contact you within 24 hours to confirm your date."
+          canonical="https://sushmadigitalstudio.com/book"
+        />
         <section className="min-h-screen flex items-center justify-center bg-[#F5F6F8] pt-28 pb-16 px-6">
           <div className="text-center px-8 py-12 bg-white border border-[#E2E6EC] rounded-xl max-w-lg shadow-xl">
             <div className="w-16 h-16 bg-[#F5F6F8] border border-[#D92F26] rounded-full flex items-center justify-center mx-auto mb-6 text-[#D92F26]">
@@ -75,12 +82,19 @@ export default function Book() {
 
   return (
     <PageTransition>
+      <SEO
+        title="Book a Photography Session"
+        description="Reserve your wedding or event date with Sushma Digital Studio Bangalore. Submit our streamlined booking reservation form for weddings, pre-weddings, live streaming, LED walls, and commercial cinematography."
+        canonical="https://sushmadigitalstudio.com/book"
+      />
       {/* Header */}
-      <section className="pt-36 sm:pt-40 pb-16 bg-[#F5F6F8] border-b border-[#E2E6EC] text-center relative overflow-hidden">
+      <section className="pt-36 sm:pt-40 pb-16 hero-triangular-pattern border-b border-[#E2E6EC] text-center relative overflow-hidden">
         <div className="container mx-auto px-6 max-w-3xl relative z-10">
           <FadeIn>
             <span className="text-[#D92F26] text-xs uppercase tracking-[0.25em] font-semibold mb-3 block">Sushma Digital Studio &bull; Bangalore</span>
-            <h1 className="text-4xl sm:text-6xl font-serif text-[#142C45] mb-4">Book a Session</h1>
+            <h1 className="text-4xl sm:text-6xl font-serif text-[#142C45] mb-4">
+              Book a Photography Session in Bangalore
+            </h1>
             <p className="text-[#475569] text-sm sm:text-base leading-relaxed">
               21+ years of photography &amp; live video mixing expertise. Reserve your event date by completing the form below.
             </p>
@@ -91,6 +105,7 @@ export default function Book() {
       {/* Main Booking Section */}
       <section className="py-20 bg-[#FFFFFF]">
         <div className="container mx-auto px-4 sm:px-6 md:px-12 max-w-5xl">
+          <h2 className="sr-only">Session Reservation &amp; Event Details</h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             
             {/* Left Info Panel */}
@@ -273,6 +288,31 @@ export default function Book() {
           </div>
         </div>
       </section>
+
+      {/* Booking Process FAQ */}
+      <FAQSection
+        subtitle="Reservation Process"
+        title="Event Booking & Confirmation FAQ"
+        description="Important details about dates, confirmation retainers, customization, and date adjustments."
+        items={[
+          {
+            q: 'What happens immediately after I submit this booking form?',
+            a: 'Our studio coordinator reviews your requested dates and services against our calendar. We follow up within 24 hours to confirm date availability and schedule your introductory consultation.',
+          },
+          {
+            q: 'Is my event date locked immediately upon submitting this request?',
+            a: 'Dates are officially locked once the booking confirmation agreement is finalized and the advance retainer is received. Form submissions hold priority reservation status in our queue.',
+          },
+          {
+            q: 'Can we customize our service requirements after booking?',
+            a: 'Yes. You can add services (such as LED wall screens, drone coverage, or extra hours) at any point as your event schedule develops closer to the date.',
+          },
+          {
+            q: 'What is your rescheduling policy if our wedding date changes?',
+            a: 'We understand that auspicious dates or circumstances may shift. If you need to reschedule, your booking retainer transfers to your new date subject to calendar availability.',
+          },
+        ]}
+      />
     </PageTransition>
   );
 }

@@ -145,6 +145,24 @@
     @apply font-sans antialiased bg-background text-foreground selection:bg-primary/20 selection:text-[#142C45];
   }
 
+  /* Accessibility Focus Rings (WCAG 2.1 AA) */
+  :focus-visible {
+    outline: 2px solid #258FEA;
+    outline-offset: 2px;
+  }
+
+  /* Respect User Motion Preference */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
   h1,
   h2,
   h3,
@@ -248,24 +266,42 @@
     box-shadow: 0 6px 20px rgba(20, 44, 69, 0.08);
   }
 
-  /* Luxury Editorial Hero Diamond Pattern (#F8F6F1 warm ivory, #B9AA98 subtle beige diamond lattice) */
-  .hero-diamond-pattern {
-    background-color: #F8F6F1;
-    background-image: url("data:image/svg+xml,%3Csvg width='44' height='44' viewBox='0 0 44 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22 0 L44 22 L22 44 L0 22 Z' fill='none' stroke='%23B9AA98' stroke-width='1.2' stroke-opacity='0.28'/%3E%3C/svg%3E");
-    background-size: 44px 44px;
-    background-repeat: repeat;
+  /* Official Sushma Digital Studio Geometric SVG Pattern (Applied to Hero & Inner Accent Sections) */
+  .hero-diamond-pattern,
+  .hero-triangular-pattern {
+    position: relative;
+    background-color: #FFFFFF;
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27100%25%27%20height%3D%27100%25%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27a%27%20x1%3D%270%25%27%20y1%3D%270%25%27%20x2%3D%27100%25%27%20y2%3D%2725%25%27%3E%3Cstop%20offset%3D%270%25%27%20stop-color%3D%27%23FFFFFF%27/%3E%3Cstop%20offset%3D%2725%25%27%20stop-color%3D%27%23F8F6F1%27/%3E%3Cstop%20offset%3D%2750%25%27%20stop-color%3D%27%23EFF6FD%27/%3E%3Cstop%20offset%3D%2775%25%27%20stop-color%3D%27%23E0F0FC%27/%3E%3Cstop%20offset%3D%27100%25%27%20stop-color%3D%27%23CFE6F9%27/%3E%3C/linearGradient%3E%3Cpattern%20patternUnits%3D%27userSpaceOnUse%27%20id%3D%27b%27%20width%3D%27540%27%20height%3D%27450%27%20x%3D%270%27%20y%3D%270%27%20viewBox%3D%270%200%201080%20900%27%3E%3Cg%20stroke%3D%27%23FFFFFF%27%20stroke-width%3D%270.6%27%20stroke-opacity%3D%270.38%27%20stroke-linejoin%3D%27round%27%3E%3Cpolygon%20fill%3D%27%23F5F6F8%27%20fill-opacity%3D%270.38%27%20points%3D%2790%20150%200%20300%20180%20300%27/%3E%3Cpolygon%20fill%3D%27%23FFFFFF%27%20fill-opacity%3D%270.62%27%20points%3D%2790%20150%20180%200%200%200%27/%3E%3Cpolygon%20fill%3D%27%23B9AA98%27%20fill-opacity%3D%270.14%27%20points%3D%27270%20150%20360%200%20180%200%27/%3E%3Cpolygon%20fill%3D%27%23F8F6F1%27%20fill-opacity%3D%270.52%27%20points%3D%27450%20150%20360%20300%20540%20300%27/%3E%3Cpolygon%20fill%3D%27%23F8F6F1%27%20fill-opacity%3D%270.52%27%20points%3D%27450%20150%20540%200%20360%200%27/%3E%3Cpolygon%20fill%3D%27%23FFFFFF%27%20fill-opacity%3D%270.62%27%20points%3D%27630%20150%20540%20300%20720%20300%27/%3E%3Cpolygon%20fill%3D%27%23F8F6F1%27%20fill-opacity%3D%270.52%27%20points%3D%27630%20150%20720%200%20540%200%27/%3E%3Cpolygon%20fill%3D%27%23F5F6F8%27%20fill-opacity%3D%270.38%27%20points%3D%27810%20150%20720%20300%20900%20300%27/%3E%3Cpolygon%20fill%3D%27%23FFFFFF%27%20fill-opacity%3D%270.62%27%20points%3D%27810%20150%20900%200%20720%200%27/%3E%3Cpolygon%20fill%3D%27%23F8F6F1%27%20fill-opacity%3D%270.52%27%20points%3D%27990%20150%20900%20300%201080%20300%27/%3E%3Cpolygon%20fill%3D%27%23258FEA%27%20fill-opacity%3D%270.08%27%20points%3D%27990%20150%201080%200%20900%200%27/%3E%3Cpolygon%20fill%3D%27%23F8F6F1%27%20fill-opacity%3D%270.52%27%20points%3D%2790%20450%200%20600%20180%20600%27/%3E%3Cpolygon%20fill%3D%27%23FFFFFF%27%20fill-opacity%3D%270.62%27%20points%3D%2790%20450%20180%20300%200%20300%27/%3E%3Cpolygon%20fill%3D%27%23B9AA98%27%20fill-opacity%3D%270.14%27%20points%3D%27270%20450%20180%20600%20360%20600%27/%3E%3Cpolygon%20fill%3D%27%23D92F26%27%20fill-opacity%3D%270.05%27%20points%3D%27270%20450%20360%20300%20180%20300%27/%3E%3Cpolygon%20fill%3D%27%23F8F6F1%27%20fill-opacity%3D%270.52%27%20points%3D%27450%20450%20360%20600%20540%20600%27/%3E%3Cpolygon%20fill%3D%27%23F8F6F1%27%20fill-opacity%3D%270.52%27%20points%3D%27450%20450%20540%20300%20360%20300%27/%3E%3Cpolygon%20fill%3D%27%23F8F6F1%27%20fill-opacity%3D%270.52%27%20points%3D%27630%20450%20540%20600%20720%20600%27/%3E%3Cpolygon%20fill%3D%27%23FFFFFF%27%20fill-opacity%3D%270.62%27%20points%3D%27630%20450%20720%20300%20540%20300%27/%3E%3Cpolygon%20fill%3D%27%23FFFFFF%27%20fill-opacity%3D%270.62%27%20points%3D%27810%20450%20720%20600%20900%20600%27/%3E%3Cpolygon%20fill%3D%27%23258FEA%27%20fill-opacity%3D%270.08%27%20points%3D%27810%20450%20900%20300%20720%20300%27/%3E%3Cpolygon%20fill%3D%27%23F8F6F1%27%20fill-opacity%3D%270.52%27%20points%3D%27990%20450%20900%20600%201080%20600%27/%3E%3Cpolygon%20fill%3D%27%23258FEA%27%20fill-opacity%3D%270.08%27%20points%3D%27990%20450%201080%20300%20900%20300%27/%3E%3Cpolygon%20fill%3D%27%23F5F6F8%27%20fill-opacity%3D%270.38%27%20points%3D%2790%20750%200%20900%20180%20900%27/%3E%3Cpolygon%20fill%3D%27%23FFFFFF%27%20fill-opacity%3D%270.62%27%20points%3D%27270%20750%20180%20900%20360%20900%27/%3E%3Cpolygon%20fill%3D%27%23F8F6F1%27%20fill-opacity%3D%270.52%27%20points%3D%27270%20750%20360%20600%20180%20600%27/%3E%3Cpolygon%20fill%3D%27%23FFFFFF%27%20fill-opacity%3D%270.62%27%20points%3D%27450%20750%20540%20600%20360%20600%27/%3E%3Cpolygon%20fill%3D%27%23FFFFFF%27%20fill-opacity%3D%270.62%27%20points%3D%27630%20750%20540%20900%20720%20900%27/%3E%3Cpolygon%20fill%3D%27%23142C45%27%20fill-opacity%3D%270.06%27%20points%3D%27630%20750%20720%20600%20540%20600%27/%3E%3Cpolygon%20fill%3D%27%23F8F6F1%27%20fill-opacity%3D%270.52%27%20points%3D%27810%20750%20720%20900%20900%20900%27/%3E%3Cpolygon%20fill%3D%27%23F5F6F8%27%20fill-opacity%3D%270.38%27%20points%3D%27810%20750%20900%20600%20720%20600%27/%3E%3Cpolygon%20fill%3D%27%23F8F6F1%27%20fill-opacity%3D%270.52%27%20points%3D%27990%20750%20900%20900%201080%20900%27/%3E%3Cpolygon%20fill%3D%27%23F8F6F1%27%20fill-opacity%3D%270.52%27%20points%3D%27180%200%2090%20150%20270%20150%27/%3E%3Cpolygon%20fill%3D%27%23F8F6F1%27%20fill-opacity%3D%270.50%27%20points%3D%27360%200%20270%20150%20450%20150%27/%3E%3Cpolygon%20fill%3D%27%23FFFFFF%27%20fill-opacity%3D%270.62%27%20points%3D%27540%200%20450%20150%20630%20150%27/%3E%3Cpolygon%20fill%3D%27%23FFFFFF%27%20fill-opacity%3D%270.62%27%20points%3D%27900%200%20810%20150%20990%20150%27/%3E%3Cpolygon%20fill%3D%27%23F5F6F8%27%20fill-opacity%3D%270.38%27%20points%3D%270%20300%20-90%20450%2090%20450%27/%3E%3Cpolygon%20fill%3D%27%23FFFFFF%27%20fill-opacity%3D%270.62%27%20points%3D%270%20300%2090%20150%20-90%20150%27/%3E%3Cpolygon%20fill%3D%27%23FFFFFF%27%20fill-opacity%3D%270.62%27%20points%3D%27180%20300%2090%20450%20270%20450%27/%3E%3Cpolygon%20fill%3D%27%23B9AA98%27%20fill-opacity%3D%270.14%27%20points%3D%27180%20300%20270%20150%2090%20150%27/%3E%3Cpolygon%20fill%3D%27%23F5F6F8%27%20fill-opacity%3D%270.38%27%20points%3D%27360%20300%20270%20450%20450%20450%27/%3E%3Cpolygon%20fill%3D%27%23FFFFFF%27%20fill-opacity%3D%270.62%27%20points%3D%27360%20300%20450%20150%20270%20150%27/%3E%3Cpolygon%20fill%3D%27%23F5F6F8%27%20fill-opacity%3D%270.38%27%20points%3D%27540%20300%20450%20450%20630%20450%27/%3E%3Cpolygon%20fill%3D%27%23F5F6F8%27%20fill-opacity%3D%270.38%27%20points%3D%27540%20300%20630%20150%20450%20150%27/%3E%3Cpolygon%20fill%3D%27%23258FEA%27%20fill-opacity%3D%270.08%27%20points%3D%27720%20300%20630%20450%20810%20450%27/%3E%3Cpolygon%20fill%3D%27%23F5F6F8%27%20fill-opacity%3D%270.38%27%20points%3D%27720%20300%20810%20150%20630%20150%27/%3E%3Cpolygon%20fill%3D%27%23FFFFFF%27%20fill-opacity%3D%270.62%27%20points%3D%27900%20300%20810%20450%20990%20450%27/%3E%3Cpolygon%20fill%3D%27%23F8F6F1%27%20fill-opacity%3D%270.52%27%20points%3D%27900%20300%20990%20150%20810%20150%27/%3E%3Cpolygon%20fill%3D%27%23FFFFFF%27%20fill-opacity%3D%270.62%27%20points%3D%270%20600%20-90%20750%2090%20750%27/%3E%3Cpolygon%20fill%3D%27%23F5F6F8%27%20fill-opacity%3D%270.38%27%20points%3D%270%20600%2090%20450%20-90%20450%27/%3E%3Cpolygon%20fill%3D%27%23F8F6F1%27%20fill-opacity%3D%270.52%27%20points%3D%27180%20600%2090%20750%20270%20750%27/%3E%3Cpolygon%20fill%3D%27%23B9AA98%27%20fill-opacity%3D%270.14%27%20points%3D%27180%20600%20270%20450%2090%20450%27/%3E%3Cpolygon%20fill%3D%27%23F5F6F8%27%20fill-opacity%3D%270.38%27%20points%3D%27360%20600%20270%20750%20450%20750%27/%3E%3Cpolygon%20fill%3D%27%23F5F6F8%27%20fill-opacity%3D%270.38%27%20points%3D%27360%20600%20450%20450%20270%20450%27/%3E%3Cpolygon%20fill%3D%27%23F5F6F8%27%20fill-opacity%3D%270.38%27%20points%3D%27540%20600%20630%20450%20450%20450%27/%3E%3Cpolygon%20fill%3D%27%23F5F6F8%27%20fill-opacity%3D%270.38%27%20points%3D%27720%20600%20630%20750%20810%20750%27/%3E%3Cpolygon%20fill%3D%27%23FFFFFF%27%20fill-opacity%3D%270.62%27%20points%3D%27900%20600%20810%20750%20990%20750%27/%3E%3Cpolygon%20fill%3D%27%23F5F6F8%27%20fill-opacity%3D%270.38%27%20points%3D%27900%20600%20990%20450%20810%20450%27/%3E%3Cpolygon%20fill%3D%27%23F8F6F1%27%20fill-opacity%3D%270.52%27%20points%3D%270%20900%2090%20750%20-90%20750%27/%3E%3Cpolygon%20fill%3D%27%23F5F6F8%27%20fill-opacity%3D%270.38%27%20points%3D%27180%20900%20270%20750%2090%20750%27/%3E%3Cpolygon%20fill%3D%27%23FFFFFF%27%20fill-opacity%3D%270.62%27%20points%3D%27360%20900%20450%20750%20270%20750%27/%3E%3Cpolygon%20fill%3D%27%23258FEA%27%20fill-opacity%3D%270.08%27%20points%3D%27540%20900%20630%20750%20450%20750%27/%3E%3Cpolygon%20fill%3D%27%23FFFFFF%27%20fill-opacity%3D%270.62%27%20points%3D%27720%20900%20810%20750%20630%20750%27/%3E%3Cpolygon%20fill%3D%27%23F5F6F8%27%20fill-opacity%3D%270.38%27%20points%3D%27900%20900%20990%20750%20810%20750%27/%3E%3Cpolygon%20fill%3D%27%23F5F6F8%27%20fill-opacity%3D%270.38%27%20points%3D%271080%20300%20990%20450%201170%20450%27/%3E%3Cpolygon%20fill%3D%27%23FFFFFF%27%20fill-opacity%3D%270.62%27%20points%3D%271080%20300%201170%20150%20990%20150%27/%3E%3Cpolygon%20fill%3D%27%23FFFFFF%27%20fill-opacity%3D%270.62%27%20points%3D%271080%20600%20990%20750%201170%20750%27/%3E%3Cpolygon%20fill%3D%27%23258FEA%27%20fill-opacity%3D%270.08%27%20points%3D%271080%20600%201170%20450%20990%20450%27/%3E%3Cpolygon%20fill%3D%27%23F8F6F1%27%20fill-opacity%3D%270.52%27%20points%3D%271080%20900%201170%20750%20990%20750%27/%3E%3Cpolygon%20fill%3D%27%23F8F6F1%27%20fill-opacity%3D%270.52%27%20points%3D%27450%20750%20540%20600%20630%20750%27/%3E%3Cpolygon%20fill%3D%27%23F8F6F1%27%20fill-opacity%3D%270.52%27%20points%3D%27360%20900%20450%20750%20540%20900%27/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20fill%3D%27url%28%23a%29%27%20width%3D%27100%25%27%20height%3D%27100%25%27/%3E%3Crect%20x%3D%270%27%20y%3D%270%27%20fill%3D%27url%28%23b%29%27%20width%3D%27100%25%27%20height%3D%27100%25%27/%3E%3C/svg%3E");
+    background-size: cover;
     background-position: center center;
+    background-repeat: no-repeat;
   }
 
-  /* Deep Navy Studio Footer with Subtle Low-Opacity Geometric Diamond Texture */
-  .footer-diamond-pattern {
+  @media (max-width: 1024px) {
+    .hero-diamond-pattern,
+    .hero-triangular-pattern {
+      background-position: center center;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero-diamond-pattern,
+    .hero-triangular-pattern {
+      background-position: center center;
+    }
+  }
+
+  /* Premium Deep Navy Studio Footer with Subtle Gradient and Micro-Geometric Texture */
+  .footer-diamond-pattern,
+  .footer-dark-pattern {
     position: relative;
     background-color: #142C45;
     background-image: 
+      linear-gradient(180deg, #10243A 0%, #142C45 100%),
       radial-gradient(ellipse at 50% 0%, rgba(37, 143, 234, 0.07) 0%, transparent 65%),
-      url("data:image/svg+xml,%3Csvg width='44' height='44' viewBox='0 0 44 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22 0 L44 22 L22 44 L0 22 Z' fill='none' stroke='%23FFFFFF' stroke-width='1' stroke-opacity='0.045'/%3E%3C/svg%3E");
-    background-size: auto, 44px 44px;
-    background-repeat: no-repeat, repeat;
-    background-position: center top, center center;
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='104' viewBox='0 0 120 104'%3E%3Cg fill='none' stroke='%23258FEA' stroke-width='0.6' stroke-opacity='0.04'%3E%3Cpolygon points='60,0 120,104 0,104'/%3E%3Cpolygon points='0,0 60,104 120,0'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 100% 100%, auto, 120px 104px;
+    background-repeat: no-repeat, no-repeat, repeat;
+    background-position: center center, center top, center center;
   }
 }

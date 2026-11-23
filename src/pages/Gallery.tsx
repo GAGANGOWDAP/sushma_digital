@@ -1,8 +1,10 @@
+import { SEO } from '@/components/common/SEO';
 import React, { useState } from 'react';
 import { PageTransition, FadeIn } from '../components/ui/motion';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ZoomIn } from 'lucide-react';
 import { assetUrl } from '@/lib/utils';
+import { FAQSection } from '@/components/common/FAQSection';
 
 export default function Gallery() {
   const [lightboxImg, setLightboxImg] = useState<string | null>(null);
@@ -24,13 +26,20 @@ export default function Gallery() {
 
   return (
     <PageTransition>
-      <section className="pt-36 sm:pt-40 pb-12 bg-[#F5F6F8] text-center border-b border-[#E2E6EC]">
-        <div className="container mx-auto px-6 max-w-3xl">
+      <SEO
+        title="Visual Gallery & Moments"
+        description="Browse the high-resolution photo gallery of Sushma Digital Studio showcasing 21+ years of authentic wedding celebrations, cultural rituals, bridal portraits, and prestige ceremonies in Bangalore by Prabhu."
+        canonical="https://sushmadigitalstudio.com/gallery"
+      />
+      <section className="pt-36 sm:pt-40 pb-12 hero-triangular-pattern text-center border-b border-[#E2E6EC] relative overflow-hidden">
+        <div className="container mx-auto px-6 max-w-3xl relative z-10">
           <FadeIn>
             <span className="text-[#D92F26] text-xs uppercase tracking-[0.22em] font-semibold mb-3 block">
               Curated Archive
             </span>
-            <h1 className="text-4xl sm:text-6xl font-serif text-[#142C45] mb-4">Gallery</h1>
+            <h1 className="text-4xl sm:text-6xl font-serif text-[#142C45] mb-4">
+              Visual Showcase &amp; Photography Gallery
+            </h1>
             <p className="text-[#64748B] text-sm sm:text-base leading-relaxed">
               An archive of captured emotion, sacred tradition, and cinematic light by Sushma Digital Studio.
             </p>
@@ -40,6 +49,7 @@ export default function Gallery() {
 
       <section className="py-16 pb-28 bg-[#FFFFFF]">
         <div className="container mx-auto px-4 md:px-8 max-w-7xl">
+          <h2 className="sr-only">High-Resolution Wedding &amp; Ritual Photographs</h2>
           <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-5 space-y-5">
             {galleryImages.map((img, i) => (
               <FadeIn key={img.id} delay={(i % 4) * 0.05}>
@@ -56,10 +66,10 @@ export default function Gallery() {
                     fetchPriority={i < 2 ? 'high' : 'auto'}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 pointer-events-none">
-                    <span className="text-xs font-serif text-white flex items-center justify-between w-full">
+                    <h3 className="text-xs font-serif text-white flex items-center justify-between w-full font-normal">
                       <span>{img.title}</span>
                       <ZoomIn size={14} className="text-[#258FEA]" />
-                    </span>
+                    </h3>
                   </div>
                 </div>
               </FadeIn>
@@ -67,6 +77,31 @@ export default function Gallery() {
           </div>
         </div>
       </section>
+
+      {/* Gallery FAQ */}
+      <FAQSection
+        subtitle="Visual Gallery & Prints"
+        title="Gallery & Print Preservation FAQ"
+        description="Insights regarding authentic ceremony moments, museum-grade prints, unwatermarked master files, and archival storage."
+        items={[
+          {
+            q: 'Are the captures shown in this gallery from authentic client events?',
+            a: 'Yes. Every photograph in our gallery represents real Bangalore weddings, cultural milestones, modelling sessions, and VIP ceremonies documented by Prabhu and our studio crew over 21+ years.',
+          },
+          {
+            q: 'Can we order museum-grade archival albums from our gallery photos?',
+            a: 'Yes. We specialize in handcrafted Italian and archival fine-art lay-flat albums printed with pigment-based archival inks designed to last over a century without fading.',
+          },
+          {
+            q: 'Are client downloads watermarked in any way?',
+            a: 'Never. All master client deliverable files are delivered completely unwatermarked with full personal print and reproduction rights.',
+          },
+          {
+            q: 'How long are our event photographs backed up by the studio?',
+            a: 'We maintain redundant multi-drive cloud and offline cold-storage backups of your master event captures for a minimum of 5 years following your event.',
+          },
+        ]}
+      />
 
       <AnimatePresence>
         {lightboxImg && (

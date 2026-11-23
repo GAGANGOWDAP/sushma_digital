@@ -1,7 +1,9 @@
+import { SEO } from '@/components/common/SEO';
 import React, { useState } from 'react';
 import { PageTransition, FadeIn } from '../components/ui/motion';
 import { Link } from 'wouter';
 import { Clock, ArrowRight } from 'lucide-react';
+import { FAQSection } from '@/components/common/FAQSection';
 
 const categories = ['All', 'Photography Tips', 'Wedding Planning', 'Behind the Scenes', 'Client Guides', 'Studio Updates'];
 
@@ -91,14 +93,21 @@ export default function Blog() {
 
   return (
     <PageTransition>
+      <SEO
+        title="Photography Journal & Insights"
+        description="Read wedding photography tips, Bangalore photoshoot location guides, ritual timeline advice, and lighting insights from 21+ years of professional photography on the Sushma Digital Studio Journal."
+        canonical="https://sushmadigitalstudio.com/blog"
+      />
       {/* Header */}
-      <section className="pt-36 sm:pt-40 pb-12 bg-[#F5F6F8] text-center border-b border-[#E2E6EC]">
-        <div className="container mx-auto px-6 max-w-3xl">
+      <section className="pt-36 sm:pt-40 pb-12 hero-triangular-pattern text-center border-b border-[#E2E6EC] relative overflow-hidden">
+        <div className="container mx-auto px-6 max-w-3xl relative z-10">
           <FadeIn>
             <span className="text-[#D92F26] text-xs uppercase tracking-[0.22em] font-semibold mb-3 block">
               Insights &amp; Stories
             </span>
-            <h1 className="text-4xl sm:text-6xl font-serif text-[#142C45] mb-4">Studio Journal</h1>
+            <h1 className="text-4xl sm:text-6xl font-serif text-[#142C45] mb-4">
+              Photography Journal &amp; Wedding Guides
+            </h1>
             <p className="text-[#475569] text-sm sm:text-base leading-relaxed">
               Perspectives on photographic lighting, wedding heritage, video engineering &amp; visual storytelling.
             </p>
@@ -179,6 +188,7 @@ export default function Blog() {
           )}
 
           {/* Remaining Posts Grid */}
+          <h2 className="sr-only">Recent Articles &amp; Photography Insights</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {filteredPosts.map((post) => (
               <FadeIn key={post.id} delay={0.05} className="group">
@@ -232,6 +242,31 @@ export default function Blog() {
           )}
         </div>
       </section>
+
+      {/* Journal & Editorial FAQ */}
+      <FAQSection
+        subtitle="Journal & Guidance"
+        title="Photography Tips & Planning FAQ"
+        description="Helpful guidance for wedding schedule planning, photoshoot preparation, lighting advice, and feature submissions."
+        items={[
+          {
+            q: 'What insights and advice are shared on the Sushma Studio Journal?',
+            a: 'Our journal provides practical guides for wedding planning in Bangalore, muhurtham timing advice, pre-wedding location scouting tips, and technical lighting insights from 21+ years behind the lens.',
+          },
+          {
+            q: 'Can couples submit their wedding stories to be featured on the blog?',
+            a: 'Yes! We love celebrating our couples. If Prabhu documented your wedding or celebration, contact our editorial team to have your love story featured in our visual journal.',
+          },
+          {
+            q: 'What are the best locations in Bangalore for a pre-wedding shoot?',
+            a: 'From heritage architecture like Bangalore Palace and Sheshadri Iyer Memorial to scenic spots in Nandi Hills, Kanakapura resorts, and studio sets, we guide you to optimal locations based on your concept.',
+          },
+          {
+            q: 'Do you offer consultation on wedding lighting and stage design for optimal photos?',
+            a: 'Yes. We frequently consult with couples and wedding decorators regarding stage lighting temperatures, LED positioning, and backdrop hues to ensure photos look cinematic and flattering.',
+          },
+        ]}
+      />
     </PageTransition>
   );
 }

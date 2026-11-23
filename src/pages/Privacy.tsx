@@ -1,16 +1,24 @@
+import { SEO } from '@/components/common/SEO';
 import React from 'react';
 import { PageTransition, FadeIn } from '../components/ui/motion';
 
 export default function Privacy() {
   return (
     <PageTransition>
+      <SEO
+        title="Privacy Policy"
+        description="Privacy policy and data protection protocols of Sushma Digital Studio Bangalore, outlining client confidential event handling, secure gallery hosting, and communication guidelines."
+        canonical="https://sushmadigitalstudio.com/privacy"
+      />
       <section className="pt-36 sm:pt-40 pb-24 bg-[#FFFFFF] text-[#142C45]">
         <div className="container mx-auto px-6 max-w-3xl">
           <FadeIn>
             <span className="text-[#D92F26] text-xs uppercase tracking-[0.22em] font-semibold mb-2 block">
               Legal &amp; Policy
             </span>
-            <h1 className="text-4xl sm:text-5xl font-serif text-[#142C45] mb-8">Privacy Policy</h1>
+            <h1 className="text-4xl sm:text-5xl font-serif text-[#142C45] mb-8">
+              Privacy Policy &mdash; Sushma Digital Studio
+            </h1>
             <div className="max-w-none text-[#475569] space-y-6 text-sm sm:text-base leading-relaxed">
               <p className="text-xs text-[#64748B]">Last Updated: November 2024</p>
               

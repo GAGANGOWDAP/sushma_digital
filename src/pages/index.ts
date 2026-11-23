@@ -1,0 +1,14 @@
+export { default as Home } from './Home';
+export { default as About } from './About';
+export { default as Services } from './Services';
+export { default as Portfolio } from './Portfolio';
+export { default as Gallery } from './Gallery';
+export { default as Pricing } from './Pricing';
+export { default as Testimonials } from './Testimonials';
+export { default as Blog } from './Blog';
+export { default as Contact } from './Contact';
+export { default as Book } from './Book';
+export { default as FAQ } from './FAQ';
+export { default as Privacy } from './Privacy';
+export { default as Terms } from './Terms';
+export { default as NotFound } from './NotFound';

@@ -1,3 +1,4 @@
+import { SEO } from '@/components/common/SEO';
 import React, { useState, useEffect } from 'react';
 import { PageTransition, FadeIn } from '../components/ui/motion';
 import { Link } from 'wouter';
@@ -37,6 +38,7 @@ import {
   ShieldCheck,
 } from 'lucide-react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
+import { FAQSection } from '@/components/common/FAQSection';
 
 export default function About() {
   const stats = [
@@ -60,15 +62,55 @@ export default function About() {
     { year: '2022', icon: Star, title: 'Karnataka Chayarathna', desc: 'Honoured with the prestigious Karnataka Chayarathna award by Photo Today magazine — highest recognition in Karnataka photography.' },
   ];
 
-  const workExperience = [
-    { role: 'Apprentice — Vishnu Studio', period: '1990s', icon: Camera, color: 'from-blue-600 to-blue-400', desc: 'Learned foundational photography during school holidays at Vishnu Studio, Bangalore.' },
-    { role: 'Assistant — Wasim Khan', period: '1990s', icon: Star, color: 'from-purple-600 to-purple-400', desc: 'Worked under renowned photographer Wasim Khan; gained advanced technical and creative mastery.' },
-    { role: 'Printing Industry', period: 'Early career', icon: Briefcase, color: 'from-gray-600 to-gray-400', desc: 'Began career in the printing industry before decisively transitioning to photography full-time.' },
-    { role: 'Studio Photographer (2 Studios)', period: '2000s', icon: Globe, color: 'from-teal-600 to-teal-400', desc: 'Worked at two photography studios while pursuing B.Com and freelancing simultaneously.' },
-    { role: 'Personal Photographer — S N Nithesh Vasthu', period: '2000s–Present', icon: Users, color: 'from-orange-600 to-orange-400', desc: 'Appointed dedicated personal photographer — a mark of exceptional trust and professionalism.' },
-    { role: 'Family Photographer — MLA MTB Nagaraj', period: '2000s–Present', icon: Heart, color: 'from-pink-600 to-pink-400', desc: 'Trusted family personal photographer for MLA MTB Nagaraj — Bangalore.' },
-    { role: 'Photographer — S M Krishna (Former CM)', period: 'Special Assignments', icon: Award, color: 'from-red-600 to-red-400', desc: 'Worked for the Former Chief Minister of Karnataka — a distinction reserved for only the finest.' },
-    { role: 'Founder, Sushma Digital Studio', period: '21+ Years – Present', icon: Trophy, color: 'from-yellow-600 to-yellow-400', desc: "Built Bangalore's trusted photography studio covering weddings, corporate, modelling, events and VIP clientele." },
+  const careerMilestones = [
+    {
+      id: '01',
+      period: '1990s',
+      role: 'Apprentice — Vishnu Studio',
+      desc: 'Learned foundational photography during school holidays at Vishnu Studio, Bangalore.',
+    },
+    {
+      id: '02',
+      period: '1990s',
+      role: 'Assistant — Wasim Khan',
+      desc: 'Worked under renowned photographer Wasim Khan; gained advanced technical and creative mastery.',
+    },
+    {
+      id: '03',
+      period: 'Early career',
+      role: 'Printing Industry',
+      desc: 'Began career in the printing industry before decisively transitioning to photography full-time.',
+    },
+    {
+      id: '04',
+      period: '2000s',
+      role: 'Studio Photographer (2 Studios)',
+      desc: 'Worked at two photography studios while pursuing B.Com and freelancing simultaneously.',
+    },
+    {
+      id: '05',
+      period: '2000s–Present',
+      role: 'Personal Photographer — S N Nithesh Vasthu',
+      desc: 'Appointed dedicated personal photographer — a mark of exceptional trust and professionalism.',
+    },
+    {
+      id: '06',
+      period: '2000s–Present',
+      role: 'Family Photographer — MLA MTB Nagaraj',
+      desc: 'Trusted family personal photographer for MLA MTB Nagaraj — Bangalore.',
+    },
+    {
+      id: '07',
+      period: 'Special Assignments',
+      role: 'Photographer — S M Krishna (Former CM)',
+      desc: 'Worked for the Former Chief Minister of Karnataka — a distinction reserved for only the finest.',
+    },
+    {
+      id: '08',
+      period: '21+ Years – Present',
+      role: 'Founder, Sushma Digital Studio',
+      desc: "Built Bangalore's trusted photography studio covering weddings, corporate, modelling, events and VIP clientele.",
+    },
   ];
 
   const [selectedAwardIndex, setSelectedAwardIndex] = useState<number | null>(null);
@@ -209,19 +251,14 @@ export default function About() {
 
   return (
     <PageTransition>
-      {/* Header */}
-      <section className="pt-28 sm:pt-32 lg:pt-28 pb-6 lg:pb-8 hero-diamond-pattern text-center border-b border-[#E2E6EC] relative overflow-hidden">
-        <div className="container mx-auto px-6 max-w-3xl relative z-10">
-          <FadeIn>
-            <span className="text-[#D92F26] text-xs uppercase tracking-[0.22em] font-semibold mb-2 block">The Visionary</span>
-            <h1 className="text-3xl sm:text-5xl lg:text-5xl font-serif text-[#142C45] mb-2">Meet Prabhu</h1>
-            <p className="text-[#64748B] text-xs sm:text-sm max-w-xl mx-auto">Founder &amp; Lead Photographer &mdash; Sushma Digital Studio, Bangalore</p>
-          </FadeIn>
-        </div>
-      </section>
+      <SEO
+        title="About Prabhu & Studio Heritage"
+        description="Discover the 21+ year journey of Prabhu and Sushma Digital Studio — State Honors Karnataka Chayarathna, Chhaya Ratna, assistant to Wasim Khan, trusted personal photographer to Karnataka leaders, and Dr. Rajkumar memorial documentarian in Bangalore."
+        canonical="https://sushmadigitalstudio.com/about"
+      />
 
-      {/* Profile Section */}
-      <section className="py-10 sm:py-12 lg:py-10 xl:py-12 bg-[#FFFFFF] border-b border-[#E2E6EC]">
+      {/* Profile Section — Starts Directly with Prabhu Portrait & Bio */}
+      <section className="pt-32 sm:pt-36 lg:pt-40 pb-12 sm:pb-16 bg-[#FFFFFF] border-b border-[#E2E6EC]">
         <div className="w-full max-w-screen-xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <FadeIn className="flex justify-center items-center w-full">
@@ -232,8 +269,12 @@ export default function About() {
               />
             </FadeIn>
             <FadeIn delay={0.2} className="lg:pt-0">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif text-[#142C45] mb-1">Prabhu</h2>
-              <p className="text-xs uppercase tracking-widest text-[#D92F26] font-semibold mb-4">Lead Photographer &amp; Studio Founder &mdash; 21+ Years</p>
+              <span className="text-xs uppercase tracking-[0.2em] text-[#D92F26] font-semibold mb-2 block">
+                Founder &amp; Lead Photographer &mdash; 21+ Years
+              </span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#142C45] mb-4 font-bold">
+                About Sushma Digital Studio &mdash; 21+ Years of Photography Excellence
+              </h1>
               <div className="space-y-3 text-[#475569] leading-relaxed text-xs sm:text-sm">
                 <p className="text-base sm:text-lg italic font-serif text-[#142C45] border-l-2 border-[#258FEA] pl-3">
                   "Photography isn't about cameras and lenses. It's about capturing the soul of a moment before it's gone forever."
@@ -270,177 +311,6 @@ export default function About() {
                 <span className="text-3xl md:text-4xl font-serif text-[#D92F26] font-bold block mb-1">{stat.val}</span>
                 <span className="text-[11px] uppercase tracking-wider text-[#64748B] font-semibold">{stat.label}</span>
               </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════
-          DISTINGUISHED CLIENTELE — Premium Light Theme
-      ══════════════════════════════════════════════ */}
-      <section className="py-10 sm:py-12 lg:py-10 bg-[#FFFFFF] border-b border-[#E2E6EC] relative">
-        <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-7xl">
-          {/* Section Heading — Compact & Editorial */}
-          <FadeIn className="text-center mb-8 sm:mb-10 max-w-2xl mx-auto">
-            <span className="text-xs uppercase tracking-[0.22em] font-semibold text-[#D92F26] mb-2 block">
-              DISTINGUISHED CLIENTELE
-            </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-[#142C45] tracking-tight leading-tight mb-2.5">
-              Trusted by Karnataka's{' '}
-              <span className="text-[#D92F26] italic">Finest Leaders</span>
-            </h2>
-            <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed max-w-xl mx-auto">
-              Honoured to have served distinguished personalities and institutions across Karnataka.
-            </p>
-          </FadeIn>
-
-          {/* All FIVE Client Cards in Consistent Grid */}
-          <div className="grid grid-cols-1 min-[380px]:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5 sm:gap-4 md:gap-4.5 items-stretch">
-            {distinguishedClients.map((client, i) => (
-              <FadeIn key={client.id} delay={i * 0.05} className="h-full">
-                <div className="group relative rounded-xl border border-[#E2E6EC] bg-[#FFFFFF] p-5 sm:p-5.5 h-full flex flex-col justify-between shadow-[0_2px_8px_rgba(20,44,69,0.04)] hover:shadow-[0_8px_20px_rgba(20,44,69,0.08)] hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-                  {/* Subtle top hairline accent detail */}
-                  <div
-                    className="absolute top-0 left-0 right-0 h-[2px] transition-colors duration-300"
-                    style={{ backgroundColor: client.accent }}
-                  />
-
-                  <div>
-                    {/* Small minimal line icon / subtle visual identifier */}
-                    <div className="flex items-center justify-between mb-4">
-                      <div
-                        className="w-8 h-8 rounded-lg bg-[#F5F6F8] border border-[#E2E6EC] flex items-center justify-center transition-colors"
-                        style={{ color: client.accent }}
-                      >
-                        <client.icon size={16} strokeWidth={1.75} />
-                      </div>
-                      <span className="font-mono text-[10px] text-[#64748B]/60 tracking-wider font-semibold">
-                        {client.id}
-                      </span>
-                    </div>
-
-                    {/* Client Name in Deep Navy */}
-                    <h3 className="font-serif font-bold text-[#142C45] text-base sm:text-lg tracking-tight mb-1.5 leading-snug">
-                      {client.name}
-                    </h3>
-
-                    {/* Professional Designation in Signature Red or Electric Blue */}
-                    <p
-                      className="text-xs font-semibold leading-relaxed"
-                      style={{ color: client.accent }}
-                    >
-                      {client.role}
-                    </p>
-                  </div>
-
-                  {/* Subtle bottom detail */}
-                  <div className="border-t border-[#E2E6EC]/60 pt-3 mt-4 flex items-center justify-between text-[11px] text-[#64748B]">
-                    <span className="tracking-wider uppercase text-[10px] font-medium text-[#64748B]/70">
-                      {client.category}
-                    </span>
-                    <span
-                      className="w-1.5 h-1.5 rounded-full transition-transform duration-300 group-hover:scale-125"
-                      style={{ backgroundColor: client.accent }}
-                    />
-                  </div>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Rajkumar Memorial Highlight */}
-      <section className="py-10 sm:py-12 lg:py-10 hero-diamond-pattern border-b border-[#E2E6EC] text-center relative overflow-hidden">
-        <div className="container mx-auto px-6 max-w-4xl relative z-10">
-          <FadeIn>
-            <div className="inline-flex items-center justify-center gap-2.5 px-4 py-1.5 rounded-full bg-white border border-[#E2E6EC] mb-4 shadow-sm">
-              <Trophy size={16} className="text-[#D92F26]" />
-              <span className="text-[#142C45] text-xs uppercase tracking-widest font-semibold">Legacy Photography</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-serif mb-4 text-[#142C45]">Dr. Rajkumar Memorial Events</h2>
-            <p className="text-[#475569] max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
-              Among Prabhu's most significant achievements is photographing the legendary Dr. Rajkumar memorial events &mdash; preserving Karnataka's greatest cultural icon through the art of photography.
-            </p>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════
-          JOURNEY — Compact two-column vertical stepper
-      ══════════════════════════════════════════════ */}
-      <section className="py-12 sm:py-16 lg:py-10 xl:py-12 bg-[#FFFFFF] border-b border-[#E2E6EC] overflow-hidden">
-        <div className="container mx-auto px-6 md:px-12 max-w-5xl">
-          <FadeIn className="text-center mb-8 sm:mb-10">
-            <span className="text-[#D92F26] text-xs uppercase tracking-[0.2em] mb-2 block font-semibold">The Story</span>
-            <h2 className="text-3xl sm:text-4xl font-serif text-[#142C45] mb-2">The Journey</h2>
-            <div className="w-12 h-0.5 bg-[#D92F26] mx-auto" />
-          </FadeIn>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4">
-            {journey.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: (i % 2) * 0.1 + Math.floor(i / 2) * 0.07, duration: 0.45 }}
-                className="flex gap-3.5 p-3.5 sm:p-4 rounded-xl bg-[#F5F6F8] border border-[#E2E6EC] hover:border-[#258FEA]/50 transition-colors group shadow-sm"
-              >
-                <div className="shrink-0 mt-1">
-                  <div className="w-9 h-9 rounded-lg bg-white border border-[#E2E6EC] flex items-center justify-center text-[#258FEA] group-hover:text-[#D92F26] group-hover:border-[#D92F26] transition-colors shadow-sm">
-                    <item.icon size={16} />
-                  </div>
-                </div>
-                <div>
-                  <span className="text-[#D92F26] text-[10px] font-bold uppercase tracking-widest">{item.year}</span>
-                  <h4 className="font-serif text-sm font-semibold text-[#142C45] mt-0.5 mb-1 leading-snug">{item.title}</h4>
-                  <p className="text-[#475569] text-xs leading-relaxed">{item.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════
-          WORK EXPERIENCE — Card Grid
-      ══════════════════════════════════════════════ */}
-      <section className="py-12 sm:py-16 lg:py-10 xl:py-12 hero-diamond-pattern border-b border-[#E2E6EC] relative overflow-hidden">
-        <div className="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
-          <FadeIn className="text-center mb-8 sm:mb-10">
-            <span className="text-[#D92F26] text-xs uppercase tracking-[0.2em] mb-2 block font-semibold">Career Path</span>
-            <h2 className="text-3xl sm:text-4xl font-serif text-[#142C45] mb-2">Work Experience</h2>
-            <div className="w-12 h-0.5 bg-[#D92F26] mx-auto" />
-          </FadeIn>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {workExperience.map((exp, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 28 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.07, duration: 0.45 }}
-                whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="relative group rounded-xl bg-white border border-[#E2E6EC] p-6 overflow-hidden hover:border-[#258FEA]/50 shadow-sm hover:shadow-md transition-all duration-300 cursor-default"
-              >
-                {/* Accent line */}
-                <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#D92F26] to-[#258FEA] opacity-70 group-hover:opacity-100 transition-opacity" />
-
-                {/* Icon */}
-                <div className="w-10 h-10 rounded-lg bg-[#F5F6F8] border border-[#E2E6EC] flex items-center justify-center mb-4 text-[#258FEA] shadow-sm">
-                  <exp.icon size={18} />
-                </div>
-
-                {/* Period badge */}
-                <div className="inline-flex items-center bg-[#F5F6F8] border border-[#E2E6EC] rounded-full px-2.5 py-0.5 mb-3">
-                  <span className="text-[#64748B] text-[9px] uppercase tracking-widest font-semibold">{exp.period}</span>
-                </div>
-
-                <h3 className="text-[#142C45] font-bold text-sm leading-snug mb-2 group-hover:text-[#D92F26] transition-colors">{exp.role}</h3>
-                <p className="text-[#475569] text-xs leading-relaxed">{exp.desc}</p>
-              </motion.div>
             ))}
           </div>
         </div>
@@ -602,6 +472,213 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      {/* ══════════════════════════════════════════════
+          DISTINGUISHED CLIENTELE — Premium Light Theme
+      ══════════════════════════════════════════════ */}
+      <section className="py-10 sm:py-12 lg:py-10 bg-[#FFFFFF] border-b border-[#E2E6EC] relative">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-7xl">
+          {/* Section Heading — Compact & Editorial */}
+          <FadeIn className="text-center mb-8 sm:mb-10 max-w-2xl mx-auto">
+            <span className="text-xs uppercase tracking-[0.22em] font-semibold text-[#D92F26] mb-2 block">
+              DISTINGUISHED CLIENTELE
+            </span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-[#142C45] tracking-tight leading-tight mb-2.5">
+              Trusted by Karnataka's{' '}
+              <span className="text-[#D92F26] italic">Finest Leaders</span>
+            </h2>
+            <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed max-w-xl mx-auto">
+              Honoured to have served distinguished personalities and institutions across Karnataka.
+            </p>
+          </FadeIn>
+
+          {/* All FIVE Client Cards in Consistent Grid */}
+          <div className="grid grid-cols-1 min-[380px]:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5 sm:gap-4 md:gap-4.5 items-stretch">
+            {distinguishedClients.map((client, i) => (
+              <FadeIn key={client.id} delay={i * 0.05} className="h-full">
+                <div className="group relative rounded-xl border border-[#E2E6EC] bg-[#FFFFFF] p-5 sm:p-5.5 h-full flex flex-col justify-between shadow-[0_2px_8px_rgba(20,44,69,0.04)] hover:shadow-[0_8px_20px_rgba(20,44,69,0.08)] hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                  <div>
+                    {/* Small minimal line icon / subtle visual identifier */}
+                    <div className="flex items-center justify-between mb-4">
+                      <div
+                        className="w-8 h-8 rounded-lg bg-[#F5F6F8] border border-[#E2E6EC] flex items-center justify-center transition-colors"
+                        style={{ color: client.accent }}
+                      >
+                        <client.icon size={16} strokeWidth={1.75} />
+                      </div>
+                      <span className="font-mono text-[10px] text-[#64748B]/60 tracking-wider font-semibold">
+                        {client.id}
+                      </span>
+                    </div>
+
+                    {/* Client Name in Deep Navy */}
+                    <h3 className="font-serif font-bold text-[#142C45] text-base sm:text-lg tracking-tight mb-1.5 leading-snug">
+                      {client.name}
+                    </h3>
+
+                    {/* Professional Designation in Signature Red or Electric Blue */}
+                    <p
+                      className="text-xs font-semibold leading-relaxed"
+                      style={{ color: client.accent }}
+                    >
+                      {client.role}
+                    </p>
+                  </div>
+
+                  {/* Subtle bottom detail */}
+                  <div className="border-t border-[#E2E6EC]/60 pt-3 mt-4 flex items-center justify-between text-[11px] text-[#64748B]">
+                    <span className="tracking-wider uppercase text-[10px] font-medium text-[#64748B]/70">
+                      {client.category}
+                    </span>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Rajkumar Memorial Highlight */}
+      <section className="py-10 sm:py-12 lg:py-10 hero-diamond-pattern border-b border-[#E2E6EC] text-center relative overflow-hidden">
+        <div className="container mx-auto px-6 max-w-4xl relative z-10">
+          <FadeIn>
+            <span className="text-[#D92F26] text-xs uppercase tracking-[0.22em] font-semibold mb-2 block">
+              Legacy Photography Archive
+            </span>
+            <h2 className="text-3xl md:text-4xl font-serif mb-4 text-[#142C45]">Dr. Rajkumar Memorial Events</h2>
+            <p className="text-[#475569] max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+              Among Prabhu's most significant achievements is photographing the legendary Dr. Rajkumar memorial events &mdash; preserving Karnataka's greatest cultural icon through the art of photography.
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════
+          JOURNEY — Compact two-column vertical stepper
+      ══════════════════════════════════════════════ */}
+      <section className="py-12 sm:py-16 lg:py-10 xl:py-12 bg-[#FFFFFF] border-b border-[#E2E6EC] overflow-hidden">
+        <div className="container mx-auto px-6 md:px-12 max-w-5xl">
+          <FadeIn className="text-center mb-8 sm:mb-10">
+            <span className="text-[#D92F26] text-xs uppercase tracking-[0.2em] mb-2 block font-semibold">The Story</span>
+            <h2 className="text-3xl sm:text-4xl font-serif text-[#142C45] mb-2">The Journey</h2>
+            <div className="w-12 h-0.5 bg-[#D92F26] mx-auto" />
+          </FadeIn>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4">
+            {journey.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: (i % 2) * 0.1 + Math.floor(i / 2) * 0.07, duration: 0.45 }}
+                className="flex gap-3.5 p-3.5 sm:p-4 rounded-xl bg-[#F5F6F8] border border-[#E2E6EC] hover:border-[#258FEA]/50 transition-colors group shadow-sm"
+              >
+                <div className="shrink-0 mt-1">
+                  <div className="w-9 h-9 rounded-lg bg-white border border-[#E2E6EC] flex items-center justify-center text-[#258FEA] group-hover:text-[#D92F26] group-hover:border-[#D92F26] transition-colors shadow-sm">
+                    <item.icon size={16} />
+                  </div>
+                </div>
+                <div>
+                  <span className="text-[#D92F26] text-[10px] font-bold uppercase tracking-widest">{item.year}</span>
+                  <h3 className="font-serif text-sm font-semibold text-[#142C45] mt-0.5 mb-1 leading-snug">{item.title}</h3>
+                  <p className="text-[#475569] text-xs leading-relaxed">{item.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════
+          CAREER TIMELINE — 21 Years Behind the Lens
+      ══════════════════════════════════════════════ */}
+      <section className="py-12 sm:py-16 lg:py-14 xl:py-16 hero-diamond-pattern border-b border-[#E2E6EC] relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 md:px-12 max-w-7xl relative z-10">
+          
+          {/* Section Heading & Subtitle */}
+          <FadeIn className="text-center mb-10 sm:mb-14 max-w-2xl mx-auto">
+            <span className="text-[#D92F26] text-xs uppercase tracking-[0.22em] mb-2.5 block font-semibold">
+              Career Journey &amp; Milestones
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#142C45] tracking-tight">
+              21 Years Behind the Lens
+            </h2>
+            <div className="w-12 h-0.5 bg-[#D92F26] mx-auto mt-3.5 mb-3" />
+            <p className="text-[#475569] text-xs sm:text-sm md:text-base leading-relaxed max-w-xl mx-auto">
+              From foundational darkroom apprenticeships under legendary masters to establishing Bangalore&apos;s leading photography and broadcast production studio.
+            </p>
+          </FadeIn>
+
+          {/* Editorial Timeline Grid (Desktop 4 cols x 2 rows, Tablet 2 cols, Mobile 1 col) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 items-stretch">
+            {careerMilestones.map((milestone, i) => (
+              <motion.div
+                key={milestone.id}
+                initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 18 }}
+                whileInView={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05, duration: 0.4 }}
+                whileHover={shouldReduceMotion ? {} : { y: -3, transition: { duration: 0.2 } }}
+                className="group relative rounded-xl sm:rounded-2xl bg-white border border-[#E2E6EC] p-6 sm:p-7 flex flex-col justify-between shadow-[0_2px_8px_rgba(20,44,69,0.03)] hover:shadow-[0_12px_28px_rgba(20,44,69,0.08)] hover:border-[#258FEA]/40 transition-all duration-300 cursor-default h-full"
+              >
+                <div>
+                  {/* Top Bar: Prominent Red Milestone Number + Year with generous spacing */}
+                  <div className="flex items-baseline justify-between mb-3.5 gap-6">
+                    <span className="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-[#D92F26] leading-none select-none shrink-0">
+                      {milestone.id}
+                    </span>
+                    <span className="text-[#D92F26] text-[10px] sm:text-[11px] uppercase tracking-widest font-bold leading-snug text-right pl-4">
+                      {milestone.period}
+                    </span>
+                  </div>
+
+                  {/* Thin clean divider */}
+                  <div className="w-full h-px bg-[#E2E6EC] mb-4" />
+
+                  {/* Milestone Title in Deep Navy */}
+                  <h3 className="font-serif font-bold text-[#142C45] text-base sm:text-lg leading-snug mb-2.5 group-hover:text-[#D92F26] transition-colors duration-300">
+                    {milestone.role}
+                  </h3>
+
+                  {/* Supporting Description in Slate */}
+                  <p className="text-[#475569] text-xs sm:text-[13px] leading-relaxed">
+                    {milestone.desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════
+          HERITAGE FAQ — Questions about Prabhu & Studio
+      ══════════════════════════════════════════════ */}
+      <FAQSection
+        subtitle="Studio Heritage & Career"
+        title="About Prabhu & Studio Heritage FAQ"
+        description="Insights into Prabhu's artistic lineage, legendary mentors, honors, and two decades of photographic leadership."
+        items={[
+          {
+            q: 'What is the heritage and artistic background of Prabhu?',
+            a: "Prabhu's creative foundation was shaped by his father, a renowned fine art artist. He honed his craft at Vishnu Studio in Bangalore, worked as assistant to legendary master Wasim Khan in the 1990s, and went on to establish Sushma Digital Studio with over 21 years of continuous excellence.",
+          },
+          {
+            q: 'What state honors and industry recognitions has Prabhu received?',
+            a: 'Prabhu was conferred with the prestigious Karnataka Chayarathna award (2022) by Photo Today magazine, the Chhaya Ratna, the Digi Image Chhaya Shree Prashasti, and Government of India NCVT certification in professional digital photography.',
+          },
+          {
+            q: 'Which distinguished leaders and dignitaries has Prabhu photographed?',
+            a: 'Prabhu served as personal photographer for Former Chief Minister of Karnataka S M Krishna, family photographer for MLA MTB Nagaraj, dedicated personal photographer for S N Nithesh Vasthu, and official photographer documenting Dr. Rajkumar memorial events.',
+          },
+          {
+            q: 'What is Prabhu’s creative philosophy behind the lens?',
+            a: 'Prabhu believes photography is about capturing the emotional soul of a fleeting moment before it disappears forever. His work balances traditional ritual reverence with cinematic composition and unobtrusive observation.',
+          },
+        ]}
+      />
 
       {/* Full-Size Viewing Lightbox for Leader Photographs */}
       <AnimatePresence>

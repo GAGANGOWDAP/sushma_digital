@@ -1,7 +1,9 @@
+import { SEO } from '@/components/common/SEO';
 import React from 'react';
 import { PageTransition, FadeIn } from '../components/ui/motion';
 import { Link } from 'wouter';
 import { Check, ArrowRight } from 'lucide-react';
+import { FAQSection } from '@/components/common/FAQSection';
 
 export default function Pricing() {
   const packages = [
@@ -53,15 +55,20 @@ export default function Pricing() {
 
   return (
     <PageTransition>
+      <SEO
+        title="Photography Packages & Investment"
+        description="View transparent photography and broadcast production packages from Sushma Digital Studio Bangalore. All-inclusive wedding, pre-wedding, and a la carte live streaming rates tailored to your rituals and venue."
+        canonical="https://sushmadigitalstudio.com/pricing"
+      />
       {/* Header */}
-      <section className="pt-36 sm:pt-40 pb-16 bg-[#F5F6F8] text-center border-b border-[#E2E6EC]">
-        <div className="container mx-auto px-6 max-w-3xl">
+      <section className="pt-36 sm:pt-40 pb-16 hero-triangular-pattern text-center border-b border-[#E2E6EC] relative overflow-hidden">
+        <div className="container mx-auto px-6 max-w-3xl relative z-10">
           <FadeIn>
             <span className="text-[#D92F26] text-xs uppercase tracking-[0.22em] font-semibold mb-3 block">
               Investment &amp; Packages
             </span>
             <h1 className="text-4xl sm:text-6xl font-serif text-[#142C45] mb-4">
-              Transparent &amp; Bespoke
+              Photography &amp; Event Production Packages in Bangalore
             </h1>
             <p className="text-[#475569] text-sm sm:text-base leading-relaxed">
               Every celebration is distinct. We provide customized quotes tailored to your rituals, guest capacity, and venue requirements.
@@ -73,6 +80,7 @@ export default function Pricing() {
       {/* Pricing Cards */}
       <section className="py-20 pb-32 bg-[#FFFFFF]">
         <div className="container mx-auto px-4 sm:px-6 md:px-12 max-w-6xl">
+          <h2 className="sr-only">Comprehensive Wedding &amp; Event Packages</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
             {packages.map((pkg, i) => (
               <FadeIn key={i} delay={i * 0.1}>
@@ -128,7 +136,7 @@ export default function Pricing() {
           
           {/* Custom Quote Box */}
           <FadeIn delay={0.3} className="mt-16 text-center max-w-3xl mx-auto p-8 rounded-xl border border-[#E2E6EC] bg-[#F5F6F8]">
-            <h3 className="font-serif text-2xl mb-2 text-[#142C45]">A La Carte &amp; Production Services</h3>
+            <h2 className="font-serif text-2xl mb-2 text-[#142C45]">A La Carte &amp; Production Services</h2>
             <p className="text-[#475569] text-xs sm:text-sm mb-6 max-w-xl mx-auto leading-relaxed">
               Need individual services like HD Webcasting, LED wall live display, 360° VR videos, or drone videography? We provide standalone equipment &amp; crew deployment.
             </p>
@@ -138,6 +146,31 @@ export default function Pricing() {
           </FadeIn>
         </div>
       </section>
+
+      {/* Pricing & Packages FAQ */}
+      <FAQSection
+        subtitle="Investment & Retainer"
+        title="Pricing & Packages FAQ"
+        description="Transparent details about our customized wedding proposals, advance retainers, destination logistics, and billing."
+        items={[
+          {
+            q: 'Are your packages customizable to our specific wedding itinerary?',
+            a: 'Yes. Every celebration is unique. We gladly customize any of our packages to match your specific multi-day rituals, guest count, venue requirements, and broadcast needs.',
+          },
+          {
+            q: 'What is the advance booking retainer and payment schedule?',
+            a: 'To lock in your date on Prabhu’s calendar, we require an advance booking retainer. The balance is distributed across pre-event milestones and final delivery of master albums and films.',
+          },
+          {
+            q: 'How are travel, boarding, and outstation logistics coordinated?',
+            a: 'For destinations outside Bangalore, travel and accommodation for our crew are transparently billed at actuals with zero hidden surcharges.',
+          },
+          {
+            q: 'Are there any hidden costs for equipment, lights, or extra backup gear?',
+            a: 'No. All our proposals are all-inclusive, covering senior photographers, cinematographers, lighting rigs, audio recording equipment, backup cameras, and post-production color grading.',
+          },
+        ]}
+      />
     </PageTransition>
   );
 }

@@ -1,3 +1,4 @@
+import { SEO } from '@/components/common/SEO';
 import React, { useState } from 'react';
 import { PageTransition, FadeIn } from '../components/ui/motion';
 import { MapPin, Mail, Instagram, Facebook, ArrowRight, Camera } from 'lucide-react';
@@ -6,6 +7,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { useToast } from '@/hooks/use-toast';
+import { FAQSection } from '@/components/common/FAQSection';
 
 const bookingSchema = z.object({
   bName: z.string().min(2, 'Name is required'),
@@ -74,15 +76,23 @@ export default function Contact() {
 
   return (
     <PageTransition>
+      <SEO
+        title="Contact & Studio Location Bangalore"
+        description="Contact Prabhu and the Sushma Digital Studio team in RPC Layout, Vijaynagar, Bangalore. Schedule an in-person heirloom album consultation, verify event date availability, or request custom event production quotes."
+        canonical="https://sushmadigitalstudio.com/contact"
+      />
       {/* ===== BOOK A SHOOT SECTION ===== */}
-      <section className="pt-36 sm:pt-40 pb-20 hero-diamond-pattern text-[#142C45] border-b border-[#E2E6EC] relative overflow-hidden">
+      <section className="pt-36 sm:pt-40 pb-20 hero-triangular-pattern text-[#142C45] border-b border-[#E2E6EC] relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 md:px-12 max-w-4xl relative z-10">
           <FadeIn>
             <div className="text-center mb-12">
               <span className="text-[#D92F26] text-xs uppercase tracking-[0.22em] font-semibold mb-3 block">
                 Reserve Your Date
               </span>
-              <h1 className="text-4xl sm:text-6xl font-serif text-[#142C45] mb-4">Book a Session</h1>
+              <h1 className="text-4xl sm:text-6xl font-serif text-[#142C45] mb-4">
+                Contact Sushma Digital Studio in Bangalore
+              </h1>
+              <h2 className="sr-only">Date Availability &amp; Booking Inquiry</h2>
               <p className="text-[#64748B] max-w-xl mx-auto text-sm sm:text-base leading-relaxed">
                 Our calendar fills several months in advance for weddings and major productions. Secure your date with Sushma Digital Studio.
               </p>
@@ -457,6 +467,31 @@ export default function Contact() {
           </div>
         </div>
       </section>
+
+      {/* Contact & Studio Visit FAQ */}
+      <FAQSection
+        subtitle="Inquiries & Studio Visits"
+        title="Contact & Location FAQ"
+        description="Helpful details regarding visiting our Bangalore studio, response timelines, meeting appointments, and virtual consultations."
+        items={[
+          {
+            q: 'Where is the Sushma Digital Studio physical studio located in Bangalore?',
+            a: 'Our studio is located at No 540, 8th Main, 4th Cross, R.P.C Layout, 2nd Stage, Vijaynagar, Bangalore - 560040. You are welcome to visit by prior appointment to review our archival print samples.',
+          },
+          {
+            q: 'How quickly will the studio respond to an online booking or contact inquiry?',
+            a: 'We review all inquiries promptly and typically respond within 12 to 24 hours with date availability, brochure options, and next steps.',
+          },
+          {
+            q: 'Can we schedule a virtual video consultation if we live outside Bangalore or abroad?',
+            a: 'Yes. We regularly host video calls via Google Meet or Zoom for NRI couples and outstation families to review portfolios and align on event itineraries.',
+          },
+          {
+            q: 'What information should we prepare before our introductory consultation?',
+            a: 'Sharing your event dates, venue locations, estimated guest count, and whether you require live streaming or LED walls helps us provide an accurate, tailored proposal immediately.',
+          },
+        ]}
+      />
     </PageTransition>
   );
 }

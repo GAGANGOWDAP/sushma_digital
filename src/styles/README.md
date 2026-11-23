@@ -1,4 +1,4 @@
-# Sushma Digital Studio — Styling & Design System
+# Sushma Digital Studio Styling & Design System
 
 This directory documents the styling architecture and design system for Sushma Digital Studio.
 
@@ -29,7 +29,7 @@ The master stylesheet is located at [`src/index.css`](../index.css) and is impor
 
 ## Custom Utility Classes
 
-- `.hero-triangular-pattern` — Subtle geometric lattice background for hero banners
-- `.footer-diamond-pattern` — Deep navy geometric diamond lattice for footers
-- `.btn-primary` — Signature Red branded button with subtle hover elevation
-- `.btn-secondary` — Outlined / Deep Navy complementary action button
+- `.hero-triangular-pattern` Subtle geometric lattice background for hero banners
+- `.footer-diamond-pattern` Deep navy geometric diamond lattice for footers
+- `.btn-primary` Signature Red branded button with subtle hover elevation
+- `.btn-secondary` Outlined / Deep Navy complementary action button

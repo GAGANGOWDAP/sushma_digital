@@ -1,4 +1,4 @@
-# Sushma Digital Studio — Project Structure Reference
+# Sushma Digital Studio Project Structure Reference
 
 This document provides a comprehensive breakdown of the project architecture, directory organization, and file responsibilities for the Sushma Digital Studio codebase.
 

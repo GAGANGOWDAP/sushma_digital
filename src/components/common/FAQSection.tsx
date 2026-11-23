@@ -49,6 +49,24 @@ export function FAQSection({
 }: FAQSectionProps) {
   return (
     <section className={`py-14 sm:py-20 border-b border-[#E2E6EC] relative overflow-hidden ${bgClassName} ${className}`}>
+      {/* FAQPage Structured Data for Google Rich Results */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: items.map((item) => ({
+              '@type': 'Question',
+              name: item.q,
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: item.a,
+              },
+            })),
+          }),
+        }}
+      />
       <div className="container mx-auto px-4 sm:px-6 max-w-4xl relative z-10">
         <FadeIn className="text-center mb-8 sm:mb-12">
           <span className="text-[#D92F26] text-xs uppercase tracking-[0.22em] font-semibold mb-2.5 block">

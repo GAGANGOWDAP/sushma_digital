@@ -3,7 +3,7 @@ import type { TestimonialItem } from '@/types/testimonial';
 export const TESTIMONIALS_DATA: TestimonialItem[] = [
   {
     name: 'Ramesh & Sneha K.',
-    role: 'Grand Wedding Ceremony — Palace Grounds',
+    role: 'Grand Wedding Ceremony Palace Grounds',
     initials: 'RS',
     content:
       "Sushma Digital Studio exceeded every expectation we had for our wedding photography. Prabhu sir didn't just take pictures; he captured the raw soul, emotion, and heritage of our day. The final archival album is a masterwork that brought tears of joy to our families.",

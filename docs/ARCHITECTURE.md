@@ -1,4 +1,4 @@
-# Sushma Digital Studio — System Architecture Documentation
+# Sushma Digital Studio System Architecture Documentation
 
 This document explains the architectural principles, component communication patterns, and technical design decisions powering the Sushma Digital Studio web application.
 

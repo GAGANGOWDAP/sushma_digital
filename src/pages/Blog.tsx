@@ -1,93 +1,17 @@
 import { SEO } from '@/components/common/SEO';
+import { Breadcrumbs } from '@/components/common/Breadcrumbs';
 import React, { useState } from 'react';
 import { PageTransition, FadeIn } from '../components/ui/motion';
 import { Link } from 'wouter';
 import { Clock, ArrowRight } from 'lucide-react';
 import { FAQSection } from '@/components/common/FAQSection';
-
-const categories = ['All', 'Photography Tips', 'Wedding Planning', 'Behind the Scenes', 'Client Guides', 'Studio Updates'];
-
-const posts = [
-  {
-    id: 1,
-    title: 'The Art of Chiaroscuro in Modern Portraiture',
-    category: 'Photography Tips',
-    date: 'Oct 12, 2024',
-    readTime: '7 min read',
-    excerpt: 'Exploring how classical fine art painting principles elevate modern studio portraits through intentional shadow placement and dramatic lighting ratios.',
-    image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1200&auto=format&fit=crop',
-    featured: true,
-  },
-  {
-    id: 2,
-    title: 'Structuring Your Traditional Wedding Photography Timeline',
-    category: 'Wedding Planning',
-    date: 'Sep 28, 2024',
-    readTime: '9 min read',
-    excerpt: 'A comprehensive guide to planning muhurtham and reception schedules to capture sacred rituals with optimal cinematic lighting.',
-    image: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop',
-  },
-  {
-    id: 3,
-    title: 'Why 4K Multi-Camera Live Mixing Transforms Grand Celebrations',
-    category: 'Behind the Scenes',
-    date: 'Sep 15, 2024',
-    readTime: '6 min read',
-    excerpt: 'An inside look at how our broadcast-grade switcher systems, LED wall feeds, and live webcasting connect loved ones across the globe.',
-    image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=800&auto=format&fit=crop',
-  },
-  {
-    id: 4,
-    title: 'Candid Posing & Natural Expression for Couples',
-    category: 'Client Guides',
-    date: 'Aug 30, 2024',
-    readTime: '5 min read',
-    excerpt: 'How Prabhu directs couples to achieve authentic, graceful poses without feeling stiff or self-conscious in front of the camera.',
-    image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop',
-  },
-  {
-    id: 5,
-    title: 'The Magic of Pre-Wedding Outdoor Sessions',
-    category: 'Wedding Planning',
-    date: 'Aug 12, 2024',
-    readTime: '4 min read',
-    excerpt: 'Why an outdoor engagement session builds natural comfort between the couple and the photography crew ahead of the big day.',
-    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800&auto=format&fit=crop',
-  },
-  {
-    id: 6,
-    title: 'Archival Heirlooms: Selecting Your Fine-Art Album Materials',
-    category: 'Studio Updates',
-    date: 'Jul 22, 2024',
-    readTime: '3 min read',
-    excerpt: 'A showcase of metallic photographic papers, genuine leather bindings, and presentation boxes designed to endure generations.',
-    image: 'https://images.unsplash.com/photo-1544396821-4dd40b9388c4?q=80&w=800&auto=format&fit=crop',
-  },
-  {
-    id: 7,
-    title: 'Golden Hour: Mastering Dramatic Natural Light',
-    category: 'Photography Tips',
-    date: 'Jul 5, 2024',
-    readTime: '6 min read',
-    excerpt: 'The fleeting window of sunset magic &mdash; exactly how our team scouts locations to capitalize on warm atmospheric backlighting.',
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=800&auto=format&fit=crop',
-  },
-  {
-    id: 8,
-    title: 'Behind the Color Grading: Crafting the Sushma Aesthetic',
-    category: 'Behind the Scenes',
-    date: 'Jun 18, 2024',
-    readTime: '8 min read',
-    excerpt: 'A technical overview of our post-production pipeline &mdash; from raw sensor data to the rich, contrast-balanced cinematic finish.',
-    image: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=800&auto=format&fit=crop',
-  },
-];
+import { BLOG_CATEGORIES, BLOG_POSTS } from '@/data/blog';
 
 export default function Blog() {
   const [activeCategory, setActiveCategory] = useState('All');
 
-  const featured = posts.find(p => p.featured);
-  const filteredPosts = posts
+  const featured = BLOG_POSTS.find(p => p.featured);
+  const filteredPosts = BLOG_POSTS
     .filter(p => !p.featured)
     .filter(p => activeCategory === 'All' || p.category === activeCategory);
 
@@ -102,6 +26,9 @@ export default function Blog() {
       <section className="pt-36 sm:pt-40 pb-12 hero-triangular-pattern text-center border-b border-[#E2E6EC] relative overflow-hidden">
         <div className="container mx-auto px-6 max-w-3xl relative z-10">
           <FadeIn>
+            <div className="flex justify-center mb-4">
+              <Breadcrumbs />
+            </div>
             <span className="text-[#D92F26] text-xs uppercase tracking-[0.22em] font-semibold mb-3 block">
               Insights &amp; Stories
             </span>
@@ -119,7 +46,7 @@ export default function Blog() {
       <div className="bg-white/95 border-b border-[#E2E6EC] sticky top-[60px] sm:top-[68px] z-20 backdrop-blur-md">
         <div className="container mx-auto px-6 overflow-x-auto">
           <div className="flex gap-2 py-3 min-w-max">
-            {categories.map((cat) => (
+            {BLOG_CATEGORIES.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
@@ -131,7 +58,7 @@ export default function Blog() {
                 }`}
               >
                 {cat}
-                {cat === 'All' && <span className="ml-1.5 text-[10px] opacity-70">({posts.length})</span>}
+                {cat === 'All' && <span className="ml-1.5 text-[10px] opacity-70">({BLOG_POSTS.length})</span>}
               </button>
             ))}
           </div>

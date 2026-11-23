@@ -4,12 +4,13 @@ import { Star, Quote, ArrowRight } from 'lucide-react';
 import { Link } from 'wouter';
 import { SEO } from '@/components/common/SEO';
 import { FAQSection } from '@/components/common/FAQSection';
+import { Breadcrumbs } from '@/components/common/Breadcrumbs';
 
 export default function Testimonials() {
   const reviews = [
     {
       name: "Ramesh & Sneha K.",
-      role: "Grand Wedding Ceremony — Palace Grounds",
+      role: "Grand Wedding Ceremony Palace Grounds",
       initials: "RS",
       content: "Sushma Digital Studio exceeded every expectation we had for our wedding photography. Prabhu sir didn't just take pictures; he captured the raw soul, emotion, and heritage of our day. The final archival album is a masterwork that brought tears of joy to our families."
     },
@@ -44,11 +45,14 @@ export default function Testimonials() {
       <section className="pt-36 sm:pt-40 pb-16 hero-triangular-pattern text-center border-b border-[#E2E6EC] relative overflow-hidden">
         <div className="container mx-auto px-6 max-w-3xl relative z-10">
           <FadeIn>
+            <div className="flex justify-center mb-4">
+              <Breadcrumbs />
+            </div>
             <span className="text-[#D92F26] text-xs uppercase tracking-[0.22em] font-semibold mb-3 block">
               Client Echoes
             </span>
             <h1 className="text-4xl sm:text-6xl font-serif text-[#142C45] mb-4">
-              Client Reviews &amp; Testimonials &mdash; Sushma Digital Studio
+              Client Reviews &amp; Testimonials | Sushma Digital Studio
             </h1>
             <p className="text-[#475569] text-sm sm:text-base leading-relaxed">
               Stories and reflections from families, leaders, and couples who entrusted their milestone moments to Sushma Digital Studio.

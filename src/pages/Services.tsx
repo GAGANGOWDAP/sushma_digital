@@ -1,9 +1,13 @@
 import { SEO } from '@/components/common/SEO';
-import React from 'react';
+import { Breadcrumbs } from '@/components/common/Breadcrumbs';
+import React, { useState } from 'react';
 import { PageTransition, FadeIn } from '../components/ui/motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'wouter';
 import { ArrowRight, Camera, Video, Baby, Users, Tv, Radio, Box, Monitor, Send } from 'lucide-react';
 import { FAQSection } from '@/components/common/FAQSection';
+
+const categories = ['All', 'Weddings', 'Portraits', 'Live Broadcast', 'Event Tech', 'Aerial Drones'];
 
 const services = [
   {
@@ -90,6 +94,44 @@ const services = [
 ];
 
 export default function Services() {
+  const [filter, setFilter] = useState('All');
+
+  const filteredServices = services.filter((svc) => {
+    if (filter === 'All') return true;
+    if (filter === 'Weddings') return svc.category.includes('Wedding');
+    if (filter === 'Portraits') return svc.category.includes('Fashion') || svc.category.includes('Portraiture');
+    if (filter === 'Live Broadcast') return svc.category.includes('Broadcast');
+    if (filter === 'Event Tech') return svc.category.includes('Immersive') || svc.category.includes('Technology');
+    if (filter === 'Aerial Drones') return svc.category.includes('Aerial');
+    return true;
+  });
+
+  const servicesSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Professional Photography & Event Production Services in Bangalore",
+    "description": "Comprehensive photography, videography, live broadcasting, LED display, and drone services in Bangalore by Sushma Digital Studio.",
+    "itemListElement": services.map((svc, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Service",
+        "name": svc.title,
+        "description": svc.desc,
+        "provider": {
+          "@type": "PhotographyBusiness",
+          "name": "Sushma Digital Studio",
+          "url": "https://sushmadigitalstudio.com"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Bangalore"
+        },
+        "serviceType": svc.category
+      }
+    }))
+  };
+
   return (
     <PageTransition>
       <SEO
@@ -97,19 +139,41 @@ export default function Services() {
         description="Explore comprehensive photography and broadcast production services in Bangalore by Sushma Digital Studio: candid weddings, pre-wedding films, maternity shoots, global HD webcasting, multi-camera live video mixing, LED walls, and 4K aerial drones."
         canonical="https://sushmadigitalstudio.com/services"
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
+      />
       {/* Hero header */}
-      <section className="pt-36 sm:pt-40 pb-16 hero-triangular-pattern text-center relative overflow-hidden border-b border-[#E2E6EC]">
-        <div className="container mx-auto px-6 relative z-10 max-w-4xl">
+      <section className="pt-36 sm:pt-40 pb-12 hero-triangular-pattern text-center relative overflow-hidden border-b border-[#E2E6EC]">
+        <div className="container mx-auto px-6 relative z-10">
           <FadeIn>
-            <span className="text-xs uppercase tracking-[0.22em] font-semibold text-[#D92F26] mb-3 block">
-              Sushma Digital Studio
+            <div className="flex justify-center mb-4">
+              <Breadcrumbs />
+            </div>
+            <span className="text-[#D92F26] text-xs uppercase tracking-[0.25em] font-semibold mb-3 block">
+              Sushma Digital Studio &bull; Specialized Services
             </span>
             <h1 className="text-4xl sm:text-6xl font-serif text-[#142C45] mb-4">
               Professional Photography &amp; Live Production Services in Bangalore
             </h1>
-            <p className="text-[#64748B] max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
-              21+ years of photography &amp; live production excellence in Bangalore &mdash; covering weddings, live broadcasts, LED displays &amp; aerial drone visuals.
+            <p className="text-[#64748B] max-w-xl mx-auto text-sm sm:text-base leading-relaxed mb-8">
+              21+ years of photography &amp; live production excellence in Bangalore, covering weddings, live broadcasts, LED displays &amp; aerial drone visuals.
             </p>
+            {/* Category Filter Pills */}
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-2.5 mt-6">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setFilter(cat)}
+                  className={`px-5 py-2 text-xs uppercase tracking-widest transition-all duration-200 rounded-md font-semibold cursor-pointer ${filter === cat
+                    ? 'bg-[#D92F26] text-white shadow-sm'
+                    : 'bg-white border border-[#E2E6EC] text-[#64748B] hover:text-[#142C45] hover:border-[#258FEA]'
+                    }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
           </FadeIn>
         </div>
       </section>
@@ -119,63 +183,73 @@ export default function Services() {
         <div className="container mx-auto px-4 sm:px-6 md:px-12 max-w-7xl relative z-10">
           <h2 className="sr-only">Our 9 Specialized Photography &amp; Live Broadcast Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 lg:gap-8 items-stretch">
-            {services.map((svc, i) => (
-              <FadeIn key={svc.id} delay={(i % 3) * 0.08} className="h-full">
-                <Link
-                  href="/contact"
-                  className="group relative flex flex-col h-full rounded-[18px] bg-[#FFFFFF] border border-[#E2E6EC] hover:border-[#258FEA] shadow-[0_2px_8px_rgba(20,44,69,0.03)] hover:shadow-[0_12px_28px_rgba(20,44,69,0.08)] hover:-translate-y-1.5 transition-all duration-300 overflow-hidden cursor-pointer"
+            <AnimatePresence mode="popLayout">
+              {filteredServices.map((svc, i) => (
+                <motion.div
+                  key={svc.id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.97 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.97 }}
+                  transition={{ duration: 0.22, ease: 'easeOut' }}
+                  className="h-full"
                 >
-                  {/* Top 16:9 Image Section */}
-                  <div className="relative aspect-video w-full overflow-hidden bg-[#F5F6F8]">
-                    <img
-                      src={svc.img}
-                      alt={svc.title}
-                      className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-500 ease-out"
-                      loading="lazy"
-                      onError={(e) => {
-                        e.currentTarget.src = 'https://images.unsplash.com/photo-1542044896530-05d3c054e2d6?q=80&w=800&auto=format&fit=crop';
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                  <Link
+                    href="/contact"
+                    className="group relative flex flex-col h-full rounded-[18px] bg-[#FFFFFF] border border-[#E2E6EC] hover:border-[#258FEA] shadow-[0_2px_8px_rgba(20,44,69,0.03)] hover:shadow-[0_12px_28px_rgba(20,44,69,0.08)] hover:-translate-y-1.5 transition-all duration-300 overflow-hidden cursor-pointer"
+                  >
+                    {/* Top 16:9 Image Section */}
+                    <div className="relative aspect-video w-full overflow-hidden bg-[#F5F6F8]">
+                      <img
+                        src={svc.img}
+                        alt={svc.title}
+                        className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-500 ease-out"
+                        loading="lazy"
+                        onError={(e) => {
+                          e.currentTarget.src = 'https://images.unsplash.com/photo-1542044896530-05d3c054e2d6?q=80&w=800&auto=format&fit=crop';
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
 
-                    {/* Service Number Badge Top Left — Elegant Serif Typography */}
-                    <div className="absolute top-3.5 left-3.5 bg-[#FFFFFF] text-[#142C45] font-serif text-xs font-bold px-2.5 py-1 rounded-md border border-[#E2E6EC] shadow-sm select-none tracking-wider">
-                      {svc.number}
-                    </div>
-                  </div>
-
-                  {/* Body Content */}
-                  <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between">
-                    <div>
-                      {/* Uppercase Category Label in Muted Slate */}
-                      <span className="text-[#64748B] text-[11px] font-semibold uppercase tracking-[0.18em] block mb-2">
-                        {svc.category}
-                      </span>
-
-                      {/* Service Title in Deep Navy serif */}
-                      <h3 className="font-serif font-bold text-[#142C45] text-lg sm:text-xl leading-snug mb-3 group-hover:text-[#D92F26] transition-colors duration-300">
-                        {svc.title}
-                      </h3>
-
-                      {/* Description in Slate sans-serif */}
-                      <p className="text-[#475569] text-xs sm:text-[13px] leading-relaxed mb-6 font-normal">
-                        {svc.desc}
-                      </p>
-                    </div>
-
-                    {/* Book Service Action Area */}
-                    <div className="pt-4 border-t border-[#E2E6EC] flex items-center justify-between mt-auto">
-                      <span className="text-xs uppercase tracking-widest font-bold text-[#142C45] group-hover:text-[#D92F26] transition-colors duration-300">
-                        Book Service
-                      </span>
-                      <div className="w-8 h-8 rounded-full bg-[#F5F6F8] border border-[#E2E6EC] text-[#142C45] group-hover:bg-[#D92F26] group-hover:border-[#D92F26] group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm">
-                        <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform duration-300" />
+                      {/* Service Number Badge Top Left Elegant Serif Typography */}
+                      <div className="absolute top-3.5 left-3.5 bg-[#FFFFFF] text-[#142C45] font-serif text-xs font-bold px-2.5 py-1 rounded-md border border-[#E2E6EC] shadow-sm select-none tracking-wider">
+                        {svc.number}
                       </div>
                     </div>
-                  </div>
-                </Link>
-              </FadeIn>
-            ))}
+
+                    {/* Body Content */}
+                    <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between">
+                      <div>
+                        {/* Uppercase Category Label in Muted Slate */}
+                        <span className="text-[#64748B] text-[11px] font-semibold uppercase tracking-[0.18em] block mb-2">
+                          {svc.category}
+                        </span>
+
+                        {/* Service Title in Deep Navy serif */}
+                        <h3 className="font-serif font-bold text-[#142C45] text-lg sm:text-xl leading-snug mb-3 group-hover:text-[#D92F26] transition-colors duration-300">
+                          {svc.title}
+                        </h3>
+
+                        {/* Description in Slate sans-serif */}
+                        <p className="text-[#475569] text-xs sm:text-[13px] leading-relaxed mb-6 font-normal">
+                          {svc.desc}
+                        </p>
+                      </div>
+
+                      {/* Book Service Action Area */}
+                      <div className="pt-4 border-t border-[#E2E6EC] flex items-center justify-between mt-auto">
+                        <span className="text-xs uppercase tracking-widest font-bold text-[#142C45] group-hover:text-[#D92F26] transition-colors duration-300">
+                          Book Service
+                        </span>
+                        <div className="w-8 h-8 rounded-full bg-[#F5F6F8] border border-[#E2E6EC] text-[#142C45] group-hover:bg-[#D92F26] group-hover:border-[#D92F26] group-hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm">
+                          <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform duration-300" />
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </AnimatePresence>
           </div>
         </div>
       </section>
@@ -188,7 +262,7 @@ export default function Services() {
         items={[
           {
             q: 'Can we book standalone services like drone coverage, LED walls, or live streaming?',
-            a: 'Yes. While we provide comprehensive end-to-end wedding packages, our specialized production services—including 4K aerial drones, high-resolution indoor/outdoor LED walls, multi-camera live video mixing, and HD webcasting—can also be deployed as standalone units.',
+            a: 'Yes. While we provide comprehensive end-to-end wedding packages, our specialized production services including 4K aerial drones, high-resolution indoor/outdoor LED walls, multi-camera live video mixing, and HD webcasting can also be deployed as standalone units.',
           },
           {
             q: 'What broadcast equipment and camera systems do you deploy?',

@@ -1,11 +1,16 @@
 import { SEO } from '@/components/common/SEO';
-import React from 'react';
+import { Breadcrumbs } from '@/components/common/Breadcrumbs';
+import React, { useState } from 'react';
 import { PageTransition, FadeIn } from '../components/ui/motion';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Link } from 'wouter';
 import { HelpCircle, ArrowRight } from 'lucide-react';
 
+const categories = ['All', 'Booking & Reservations', 'Style & Equipment', 'Albums & Delivery'];
+
 export default function FAQ() {
+  const [filter, setFilter] = useState('All');
+
   const faqs = [
     {
       category: 'Booking & Reservations',
@@ -33,7 +38,7 @@ export default function FAQ() {
         },
         {
           q: 'Do you offer 4K Drone, Live Webcasting & LED wall setups?',
-          a: 'Yes. Sushma Digital Studio is one of Bangalore’s pioneering studios with in-house broadcast capabilities — offering multi-camera live video mixing, global HD webcast streaming, high-resolution indoor/outdoor LED walls, 360° VR videos, and licensed 4K aerial drone coverage.'
+          a: 'Yes. Sushma Digital Studio is one of Bangalore’s pioneering studios with in-house broadcast capabilities offering multi-camera live video mixing, global HD webcast streaming, high-resolution indoor/outdoor LED walls, 360° VR videos, and licensed 4K aerial drone coverage.'
         },
         {
           q: 'How many edited photographs will we receive?',
@@ -56,6 +61,14 @@ export default function FAQ() {
     }
   ];
 
+  const filteredFaqs = faqs.filter((group) => {
+    if (filter === 'All') return true;
+    if (filter === 'Booking & Reservations') return group.category === 'Booking & Reservations';
+    if (filter === 'Style & Equipment') return group.category === 'Photography Style & Equipment';
+    if (filter === 'Albums & Delivery') return group.category === 'Delivery, Albums & Post-Production';
+    return true;
+  });
+
   return (
     <PageTransition>
       <SEO
@@ -63,19 +76,57 @@ export default function FAQ() {
         description="Frequently asked questions about Sushma Digital Studio: booking lead times, destination wedding travel across India, multi-camera live webcasting, 4K drones, deliverables, and heirloom album design in Bangalore."
         canonical="https://sushmadigitalstudio.com/faq"
       />
+      {/* FAQPage Structured Data for Google Rich Results */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqs.flatMap((group) =>
+              group.items.map((item) => ({
+                '@type': 'Question',
+                name: item.q,
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: item.a,
+                },
+              }))
+            ),
+          }),
+        }}
+      />
       {/* Header */}
-      <section className="pt-36 sm:pt-40 pb-12 hero-triangular-pattern text-center border-b border-[#E2E6EC] relative overflow-hidden">
-        <div className="container mx-auto px-6 max-w-3xl relative z-10">
+      <section className="pt-36 sm:pt-40 pb-12 hero-triangular-pattern text-center relative overflow-hidden border-b border-[#E2E6EC]">
+        <div className="container mx-auto px-6 relative z-10">
           <FadeIn>
-            <span className="text-[#D92F26] text-xs uppercase tracking-[0.22em] font-semibold mb-3 block">
-              Frequently Asked Questions
+            <div className="flex justify-center mb-4">
+              <Breadcrumbs />
+            </div>
+            <span className="text-[#D92F26] text-xs uppercase tracking-[0.25em] font-semibold mb-3 block">
+              Sushma Digital Studio &bull; Frequently Asked Questions
             </span>
             <h1 className="text-4xl sm:text-6xl font-serif text-[#142C45] mb-4">
-              Frequently Asked Questions &mdash; Sushma Digital Studio
+              Frequently Asked Questions | Sushma Digital Studio
             </h1>
-            <p className="text-[#475569] text-sm sm:text-base leading-relaxed">
+            <p className="text-[#64748B] max-w-xl mx-auto text-sm sm:text-base leading-relaxed mb-8">
               Clear answers regarding our booking process, photography style, live streaming, and album delivery.
             </p>
+            {/* Category Filter Pills */}
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-2.5 mt-6">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setFilter(cat)}
+                  className={`px-5 py-2 text-xs uppercase tracking-widest transition-all duration-200 rounded-md font-semibold cursor-pointer ${filter === cat
+                      ? 'bg-[#D92F26] text-white shadow-sm'
+                      : 'bg-white border border-[#E2E6EC] text-[#64748B] hover:text-[#142C45] hover:border-[#258FEA]'
+                    }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
           </FadeIn>
         </div>
       </section>
@@ -83,7 +134,7 @@ export default function FAQ() {
       {/* Accordion FAQ Section */}
       <section className="py-16 pb-28 bg-[#FFFFFF]">
         <div className="container mx-auto px-4 sm:px-6 max-w-3xl">
-          {faqs.map((group, idx) => (
+          {filteredFaqs.map((group, idx) => (
             <FadeIn key={idx} delay={idx * 0.1} className="mb-12">
               <div className="flex items-center gap-2.5 mb-5 pb-2 border-b border-[#E2E6EC]">
                 <h2 className="text-lg sm:text-xl font-serif text-[#142C45] font-bold tracking-wide">

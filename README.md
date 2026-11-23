@@ -1,4 +1,4 @@
-# Sushma Digital Studio — Official Web Application
+# Sushma Digital Studio Official Web Application
 
 [![Deploy to GitHub Pages](https://github.com/GAGANGOWDAP/sushma_digital/actions/workflows/deploy.yml/badge.svg)](https://github.com/GAGANGOWDAP/sushma_digital/actions/workflows/deploy.yml)
 [![Built with React](https://img.shields.io/badge/React-19.1-blue.svg)](https://react.dev/)

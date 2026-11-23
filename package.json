@@ -1,11 +1,13 @@
 {
   "name": "lumiere-photography-studio",
   "version": "1.0.0",
-  "description": "Lumière — Premium Photography Studio Website",
+  "description": "Lumière Premium Photography Studio Website",
   "private": true,
   "type": "module",
   "pnpm": {
-    "onlyBuiltDependencies": ["esbuild"]
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   },
   "scripts": {
     "dev": "vite --config vite.config.ts --host 0.0.0.0",

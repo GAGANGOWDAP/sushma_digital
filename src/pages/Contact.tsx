@@ -1,4 +1,5 @@
 import { SEO } from '@/components/common/SEO';
+import { Breadcrumbs } from '@/components/common/Breadcrumbs';
 import React, { useState } from 'react';
 import { PageTransition, FadeIn } from '../components/ui/motion';
 import { MapPin, Mail, Instagram, Facebook, ArrowRight, Camera } from 'lucide-react';
@@ -86,6 +87,9 @@ export default function Contact() {
         <div className="container mx-auto px-4 sm:px-6 md:px-12 max-w-4xl relative z-10">
           <FadeIn>
             <div className="text-center mb-12">
+              <div className="flex justify-center mb-4">
+                <Breadcrumbs />
+              </div>
               <span className="text-[#D92F26] text-xs uppercase tracking-[0.22em] font-semibold mb-3 block">
                 Reserve Your Date
               </span>
@@ -333,7 +337,7 @@ export default function Contact() {
                         <p className="text-[#475569] text-xs sm:text-sm leading-relaxed">
                           No 540. 8th main, 4th cross,<br />
                           R.P.C layout, Vijaynagar 2nd stage,<br />
-                          Bangalore &mdash; 560040
+                          Bangalore 560040
                         </p>
                       </div>
                     </div>

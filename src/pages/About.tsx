@@ -39,6 +39,7 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { FAQSection } from '@/components/common/FAQSection';
+import { Breadcrumbs } from '@/components/common/Breadcrumbs';
 
 export default function About() {
   const stats = [
@@ -51,28 +52,28 @@ export default function About() {
   ];
 
   const journey = [
-    { year: 'Childhood', icon: Heart, title: "Father's Fine Art Influence", desc: "Father was a renowned fine art artist — art and aesthetics were part of everyday life, sparking a lifelong passion." },
-    { year: '1990s', icon: Camera, title: 'Vishnu Studio — First Steps', desc: 'Spent school holidays at Vishnu Studio, Bangalore, learning the craft of photography from the ground up.' },
-    { year: '1990s', icon: Star, title: "Assistant to Wasim Khan", desc: "Worked as assistant to the legendary photographer Wasim Khan — one of India's finest — gaining world-class training." },
+    { year: 'Childhood', icon: Heart, title: "Father's Fine Art Influence", desc: "Father was a renowned fine art artist art and aesthetics were part of everyday life, sparking a lifelong passion." },
+    { year: '1990s', icon: Camera, title: 'Vishnu Studio First Steps', desc: 'Spent school holidays at Vishnu Studio, Bangalore, learning the craft of photography from the ground up.' },
+    { year: '1990s', icon: Star, title: "Assistant to Wasim Khan", desc: "Worked as assistant to the legendary photographer Wasim Khan one of India's finest gaining world-class training." },
     { year: 'Early 2000s', icon: Briefcase, title: 'Printing → Photography', desc: 'Started career in the printing industry, then made a bold shift to professional photography full-time.' },
-    { year: '2000s', icon: Globe, title: 'Studio + B.Com Degree', desc: 'Worked at 2 professional studios while completing a B.Com degree — freelancing simultaneously to build a client base.' },
-    { year: '2006', icon: Award, title: 'VP — Bangalore Photography Assoc.', desc: 'Elected Vice President of Bangalore Photography Association — recognized as a leader in the Bangalore photo community.' },
+    { year: '2000s', icon: Globe, title: 'Studio + B.Com Degree', desc: 'Worked at 2 professional studios while completing a B.Com degree freelancing simultaneously to build a client base.' },
+    { year: '2006', icon: Award, title: 'VP Bangalore Photography Assoc.', desc: 'Elected Vice President of Bangalore Photography Association recognized as a leader in the Bangalore photo community.' },
     { year: '2006–2015', icon: Users, title: 'VIP & Political Clients', desc: 'Personal photographer for Former CM S M Krishna, MLA MTB Nagaraj family, MLA Krishnappa, MLA Somanna & more.' },
-    { year: 'Ongoing', icon: Trophy, title: 'Rajkumar Memorial Events', desc: "Documented the legendary Dr. Rajkumar memorial events — a priceless record of Karnataka's cultural legacy." },
-    { year: '2022', icon: Star, title: 'Karnataka Chayarathna', desc: 'Honoured with the prestigious Karnataka Chayarathna award by Photo Today magazine — highest recognition in Karnataka photography.' },
+    { year: 'Ongoing', icon: Trophy, title: 'Rajkumar Memorial Events', desc: "Documented the legendary Dr. Rajkumar memorial events a priceless record of Karnataka's cultural legacy." },
+    { year: '2022', icon: Star, title: 'Karnataka Chayarathna', desc: 'Honoured with the prestigious Karnataka Chayarathna award by Photo Today magazine highest recognition in Karnataka photography.' },
   ];
 
   const careerMilestones = [
     {
       id: '01',
       period: '1990s',
-      role: 'Apprentice — Vishnu Studio',
+      role: 'Apprentice Vishnu Studio',
       desc: 'Learned foundational photography during school holidays at Vishnu Studio, Bangalore.',
     },
     {
       id: '02',
       period: '1990s',
-      role: 'Assistant — Wasim Khan',
+      role: 'Assistant Wasim Khan',
       desc: 'Worked under renowned photographer Wasim Khan; gained advanced technical and creative mastery.',
     },
     {
@@ -90,20 +91,20 @@ export default function About() {
     {
       id: '05',
       period: '2000s–Present',
-      role: 'Personal Photographer — S N Nithesh Vasthu',
-      desc: 'Appointed dedicated personal photographer — a mark of exceptional trust and professionalism.',
+      role: 'Personal Photographer S N Nithesh Vasthu',
+      desc: 'Appointed dedicated personal photographer a mark of exceptional trust and professionalism.',
     },
     {
       id: '06',
       period: '2000s–Present',
-      role: 'Family Photographer — MLA MTB Nagaraj',
-      desc: 'Trusted family personal photographer for MLA MTB Nagaraj — Bangalore.',
+      role: 'Family Photographer MLA MTB Nagaraj',
+      desc: 'Trusted family personal photographer for MLA MTB Nagaraj Bangalore.',
     },
     {
       id: '07',
       period: 'Special Assignments',
-      role: 'Photographer — S M Krishna (Former CM)',
-      desc: 'Worked for the Former Chief Minister of Karnataka — a distinction reserved for only the finest.',
+      role: 'Photographer S M Krishna (Former CM)',
+      desc: 'Worked for the Former Chief Minister of Karnataka a distinction reserved for only the finest.',
     },
     {
       id: '08',
@@ -121,7 +122,7 @@ export default function About() {
     { id: 'chhaya-ratna', image: awardChhayaRatna, alt: 'Award Photograph 1' },
     { id: 'karnataka-chayarathna-2022', image: awardKarnatakaChayarathna, alt: 'Award Photograph 2' },
     { id: 'chhaya-shree-cert', image: awardChhayaShreeCert, alt: 'Award Photograph 3' },
-    { id: 'national-certificate-ncvt', image: awardNationalCertificate, alt: 'National Certificate in Digital Camera Photography — Government of India NCVT' },
+    { id: 'national-certificate-ncvt', image: awardNationalCertificate, alt: 'National Certificate in Digital Camera Photography Government of India NCVT' },
   ];
 
   const leaderPhotos = [
@@ -177,7 +178,7 @@ export default function About() {
       id: '04',
       name: 'MLA MTB Nagaraj',
       role: 'Member of Legislative Assembly, Bangalore',
-      desc: 'Trusted family personal photographer — capturing private moments and official events.',
+      desc: 'Trusted family personal photographer capturing private moments and official events.',
       serviceTags: ['Family Personal Photography', 'Official Events'],
       icon: ShieldCheck,
       accent: '#D92F26', // Signature Red
@@ -253,43 +254,44 @@ export default function About() {
     <PageTransition>
       <SEO
         title="About Prabhu & Studio Heritage"
-        description="Discover the 21+ year journey of Prabhu and Sushma Digital Studio — State Honors Karnataka Chayarathna, Chhaya Ratna, assistant to Wasim Khan, trusted personal photographer to Karnataka leaders, and Dr. Rajkumar memorial documentarian in Bangalore."
+        description="Discover the 21+ year journey of Prabhu and Sushma Digital Studio State Honors Karnataka Chayarathna, Chhaya Ratna, assistant to Wasim Khan, trusted personal photographer to Karnataka leaders, and Dr. Rajkumar memorial documentarian in Bangalore."
         canonical="https://sushmadigitalstudio.com/about"
       />
 
-      {/* Profile Section — Starts Directly with Prabhu Portrait & Bio */}
-      <section className="pt-32 sm:pt-36 lg:pt-40 pb-12 sm:pb-16 bg-[#FFFFFF] border-b border-[#E2E6EC]">
+      {/* Profile Section Starts Directly with Prabhu Portrait & Bio */}
+      <section className="min-h-screen lg:h-[100dvh] flex items-center pt-20 sm:pt-24 lg:pt-20 pb-8 sm:pb-10 lg:pb-6 bg-[#FFFFFF] border-b border-[#E2E6EC] overflow-hidden">
         <div className="w-full max-w-screen-xl mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 xl:gap-12 items-center">
             <FadeIn className="flex justify-center items-center w-full">
               <img
                 src={founderImg}
-                alt="Prabhu — Founder, Sushma Digital Studio"
-                className="w-full max-w-[440px] xl:max-w-[480px] h-auto object-contain rounded-2xl sm:rounded-3xl shadow-xl border border-[#E2E6EC] block"
+                alt="Prabhu Founder, Sushma Digital Studio"
+                className="w-auto max-w-[320px] sm:max-w-[360px] lg:max-w-[400px] xl:max-w-[430px] max-h-[min(56vh,460px)] object-cover object-top rounded-2xl sm:rounded-3xl shadow-xl border border-[#E2E6EC] block mx-auto"
               />
             </FadeIn>
             <FadeIn delay={0.2} className="lg:pt-0">
-              <span className="text-xs uppercase tracking-[0.2em] text-[#D92F26] font-semibold mb-2 block">
-                Founder &amp; Lead Photographer &mdash; 21+ Years
+              <Breadcrumbs className="mb-3" />
+              <span className="text-[11px] sm:text-xs uppercase tracking-[0.18em] text-[#D92F26] font-semibold mb-1.5 block">
+                Founder &amp; Lead Photographer | 21+ Years
               </span>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#142C45] mb-4 font-bold">
-                About Sushma Digital Studio &mdash; 21+ Years of Photography Excellence
+              <h1 className="text-2xl sm:text-3xl lg:text-3xl xl:text-4xl font-serif text-[#142C45] mb-2.5 sm:mb-3 font-bold leading-tight">
+                About Sushma Digital Studio | 21+ Years of Photography Excellence
               </h1>
-              <div className="space-y-3 text-[#475569] leading-relaxed text-xs sm:text-sm">
-                <p className="text-base sm:text-lg italic font-serif text-[#142C45] border-l-2 border-[#258FEA] pl-3">
+              <div className="space-y-2 text-[#475569] leading-relaxed text-xs sm:text-[13px] xl:text-sm">
+                <p className="text-xs sm:text-sm lg:text-[13px] xl:text-sm italic font-serif text-[#142C45] border-l-2 border-[#258FEA] pl-3 py-0.5 mb-2 sm:mb-2.5">
                   "Photography isn't about cameras and lenses. It's about capturing the soul of a moment before it's gone forever."
                 </p>
                 <p>
-                  Prabhu's love for photography was kindled by his father, a respected fine art artist. Growing up surrounded by art, he spent his school holidays at <strong className="text-[#142C45]">Vishnu Studio, Bangalore</strong> &mdash; absorbing every technical detail, every ray of light, every composition principle he could find.
+                  Prabhu's love for photography was kindled by his father, a respected fine art artist. Growing up surrounded by art, he spent his school holidays at <strong className="text-[#142C45]">Vishnu Studio, Bangalore</strong>, absorbing every technical detail, every ray of light, every composition principle he could find.
                 </p>
                 <p>
-                  He began his professional career in the printing industry, before making a decisive shift to photography full-time. He worked at two reputed studios and pursued his <strong className="text-[#142C45]">B.Com degree simultaneously</strong> &mdash; freelancing throughout college to sharpen his commercial edge.
+                  He began his professional career in the printing industry, before making a decisive shift to photography full-time. He worked at two reputed studios and pursued his <strong className="text-[#142C45]">B.Com degree simultaneously</strong>, freelancing throughout college to sharpen his commercial edge.
                 </p>
                 <p>
-                  One of his most formative experiences was working as an assistant to the celebrated <strong className="text-[#142C45]">Wasim Khan</strong> &mdash; a legendary name in Indian photography &mdash; in the 1990s. That mentorship shaped the precision and artistry that defines Prabhu's work today.
+                  One of his most formative experiences was working as an assistant to the celebrated <strong className="text-[#142C45]">Wasim Khan</strong>, a legendary name in Indian photography, in the 1990s. That mentorship shaped the precision and artistry that defines Prabhu's work today.
                 </p>
               </div>
-              <div className="mt-6 flex flex-wrap gap-4">
+              <div className="mt-4 sm:mt-5 flex flex-wrap gap-3.5">
                 <Link href="/portfolio" className="btn-primary">
                   View Work
                 </Link>
@@ -302,7 +304,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Stats — Editorial Soft Grey Band */}
+      {/* Stats Editorial Soft Grey Band */}
       <section className="py-10 sm:py-12 lg:py-8 hero-diamond-pattern border-b border-[#E2E6EC] text-[#142C45] relative overflow-hidden">
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
@@ -317,7 +319,7 @@ export default function About() {
       </section>
 
       {/* ══════════════════════════════════════════════
-          HONORS & PRESTIGIOUS AWARDS — Minimalist Gallery
+          HONORS & PRESTIGIOUS AWARDS Minimalist Gallery
       ══════════════════════════════════════════════ */}
       <section className="py-10 sm:py-12 lg:py-8 xl:py-10 bg-[#FFFFFF] border-b border-[#E2E6EC]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
@@ -354,16 +356,16 @@ export default function About() {
       </section>
 
       {/* ══════════════════════════════════════════════
-          TRUSTED BY LEADERS — Floating Photo Collage
+          TRUSTED BY LEADERS Floating Photo Collage
       ══════════════════════════════════════════════ */}
       <section className="py-12 sm:py-16 lg:py-8 xl:py-10 bg-[#FFFFFF] border-b border-[#E2E6EC]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1440px]">
           {/* Rounded outer section canvas with hero diamond pattern background */}
           <div className="rounded-3xl sm:rounded-[2.5rem] lg:rounded-[36px] hero-diamond-pattern border border-[#E2E6EC] p-5 sm:p-8 lg:p-6 xl:p-8 relative overflow-hidden shadow-[0_8px_30px_rgba(20,44,69,0.04)] min-h-[560px] lg:min-h-[520px] xl:min-h-[550px] flex items-center">
-            
+
             {/* Desktop Staggered Floating Collage (lg and xl) */}
             <div className="hidden lg:grid lg:grid-cols-12 gap-5 xl:gap-6 items-center w-full">
-              {/* Left Wing — 7 Balanced Photographs in 2 Asymmetric Staggered Columns */}
+              {/* Left Wing 7 Balanced Photographs in 2 Asymmetric Staggered Columns */}
               <div className="lg:col-span-4 grid grid-cols-2 gap-3 xl:gap-4 items-center">
                 {/* Outer Left Column (4 images: 0, 10, 2, 11) */}
                 <div className="flex flex-col gap-2.5 xl:gap-3.5 -translate-y-2 lg:-translate-y-3">
@@ -398,7 +400,7 @@ export default function About() {
                 </h2>
               </motion.div>
 
-              {/* Right Wing — 8 Balanced Photographs in 2 Asymmetric Staggered Columns */}
+              {/* Right Wing 8 Balanced Photographs in 2 Asymmetric Staggered Columns */}
               <div className="lg:col-span-4 grid grid-cols-2 gap-3 xl:gap-4 items-center">
                 {/* Inner Right Column (4 images: 3, 6, 8, 13, framing the central heading) */}
                 <div className="flex flex-col gap-2.5 xl:gap-3.5 -translate-y-2 lg:-translate-y-3">
@@ -474,11 +476,11 @@ export default function About() {
       </section>
 
       {/* ══════════════════════════════════════════════
-          DISTINGUISHED CLIENTELE — Premium Light Theme
+          DISTINGUISHED CLIENTELE Premium Light Theme
       ══════════════════════════════════════════════ */}
       <section className="py-10 sm:py-12 lg:py-10 bg-[#FFFFFF] border-b border-[#E2E6EC] relative">
         <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-7xl">
-          {/* Section Heading — Compact & Editorial */}
+          {/* Section Heading Compact & Editorial */}
           <FadeIn className="text-center mb-8 sm:mb-10 max-w-2xl mx-auto">
             <span className="text-xs uppercase tracking-[0.22em] font-semibold text-[#D92F26] mb-2 block">
               DISTINGUISHED CLIENTELE
@@ -547,14 +549,14 @@ export default function About() {
             </span>
             <h2 className="text-3xl md:text-4xl font-serif mb-4 text-[#142C45]">Dr. Rajkumar Memorial Events</h2>
             <p className="text-[#475569] max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
-              Among Prabhu's most significant achievements is photographing the legendary Dr. Rajkumar memorial events &mdash; preserving Karnataka's greatest cultural icon through the art of photography.
+              Among Prabhu's most significant achievements is photographing the legendary Dr. Rajkumar memorial events, preserving Karnataka's greatest cultural icon through the art of photography.
             </p>
           </FadeIn>
         </div>
       </section>
 
       {/* ══════════════════════════════════════════════
-          JOURNEY — Compact two-column vertical stepper
+          JOURNEY Compact two-column vertical stepper
       ══════════════════════════════════════════════ */}
       <section className="py-12 sm:py-16 lg:py-10 xl:py-12 bg-[#FFFFFF] border-b border-[#E2E6EC] overflow-hidden">
         <div className="container mx-auto px-6 md:px-12 max-w-5xl">
@@ -591,11 +593,11 @@ export default function About() {
       </section>
 
       {/* ══════════════════════════════════════════════
-          CAREER TIMELINE — 21 Years Behind the Lens
+          CAREER TIMELINE 21 Years Behind the Lens
       ══════════════════════════════════════════════ */}
       <section className="py-12 sm:py-16 lg:py-14 xl:py-16 hero-diamond-pattern border-b border-[#E2E6EC] relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 md:px-12 max-w-7xl relative z-10">
-          
+
           {/* Section Heading & Subtitle */}
           <FadeIn className="text-center mb-10 sm:mb-14 max-w-2xl mx-auto">
             <span className="text-[#D92F26] text-xs uppercase tracking-[0.22em] mb-2.5 block font-semibold">
@@ -654,7 +656,7 @@ export default function About() {
       </section>
 
       {/* ══════════════════════════════════════════════
-          HERITAGE FAQ — Questions about Prabhu & Studio
+          HERITAGE FAQ Questions about Prabhu & Studio
       ══════════════════════════════════════════════ */}
       <FAQSection
         subtitle="Studio Heritage & Career"

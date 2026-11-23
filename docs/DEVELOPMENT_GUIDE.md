@@ -1,4 +1,4 @@
-# Sushma Digital Studio — Developer Onboarding & Contribution Guide
+# Sushma Digital Studio Developer Onboarding & Contribution Guide
 
 Welcome to the **Sushma Digital Studio** project. This guide outlines standard workflows and best practices for creating new pages, adding reusable components, managing static assets, and maintaining code quality.
 

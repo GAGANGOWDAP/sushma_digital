@@ -51,7 +51,7 @@ p {{
   <div class="content">
     <span class="badge">Sushma Digital Studio</span>
     <h1>Our Services</h1>
-    <p>21+ years of photography & live production excellence in Bangalore — covering weddings, live broadcasts, LED displays & aerial drone visuals.</p>
+    <p>21+ years of photography & live production excellence in Bangalore covering weddings, live broadcasts, LED displays & aerial drone visuals.</p>
   </div>
 </div>
 </body>

@@ -30,6 +30,17 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, 'dist/public'),
     emptyOutDir: true,
+    chunkSizeWarningLimit: 600,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor-framework': ['react', 'react-dom', 'wouter'],
+          'vendor-motion': ['framer-motion'],
+          'vendor-ui': ['lucide-react', '@radix-ui/react-accordion', '@radix-ui/react-slot', '@radix-ui/react-toast'],
+          'vendor-query': ['@tanstack/react-query'],
+        },
+      },
+    },
   },
 
   server: {

@@ -6,6 +6,11 @@ export type BlogCategory =
   | 'Client Guides'
   | 'Studio Updates';
 
+export interface BlogSection {
+  heading: string;
+  paragraphs: string[];
+}
+
 export interface BlogPost {
   id: number;
   title: string;
@@ -15,4 +20,13 @@ export interface BlogPost {
   excerpt: string;
   image: string;
   featured?: boolean;
+  content?: string[];
+  sections?: BlogSection[];
+  takeaways?: string[];
+  author?: {
+    name: string;
+    role: string;
+    avatar?: string;
+  };
+  tags?: string[];
 }

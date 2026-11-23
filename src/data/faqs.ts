@@ -46,7 +46,7 @@ export const CATEGORIZED_FAQS: FAQCategory[] = [
       },
       {
         q: 'Do you offer 4K Drone, Live Webcasting & LED wall setups?',
-        a: 'Yes. Sushma Digital Studio is one of Bangalore’s pioneering studios with in-house broadcast capabilities — offering multi-camera live video mixing, global HD webcast streaming, high-resolution indoor/outdoor LED walls, 360° VR videos, and licensed 4K aerial drone coverage.',
+        a: 'Yes. Sushma Digital Studio is one of Bangalore’s pioneering studios with in-house broadcast capabilities offering multi-camera live video mixing, global HD webcast streaming, high-resolution indoor/outdoor LED walls, 360° VR videos, and licensed 4K aerial drone coverage.',
       },
       {
         q: 'How many edited photographs will we receive?',

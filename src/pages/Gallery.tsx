@@ -1,4 +1,5 @@
 import { SEO } from '@/components/common/SEO';
+import { Breadcrumbs } from '@/components/common/Breadcrumbs';
 import React, { useState } from 'react';
 import { PageTransition, FadeIn } from '../components/ui/motion';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -34,6 +35,9 @@ export default function Gallery() {
       <section className="pt-36 sm:pt-40 pb-12 hero-triangular-pattern text-center border-b border-[#E2E6EC] relative overflow-hidden">
         <div className="container mx-auto px-6 max-w-3xl relative z-10">
           <FadeIn>
+            <div className="flex justify-center mb-4">
+              <Breadcrumbs />
+            </div>
             <span className="text-[#D92F26] text-xs uppercase tracking-[0.22em] font-semibold mb-3 block">
               Curated Archive
             </span>

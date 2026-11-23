@@ -326,7 +326,7 @@ function CurvedLeadersRibbonSection() {
           </p>
         </FadeIn>
 
-        {/* 3D Curved Perspective Stage — Single View */}
+        {/* 3D Curved Perspective Stage Single View */}
         <div
           className="relative w-full flex items-center justify-center overflow-hidden"
           style={{
@@ -519,21 +519,21 @@ export default function Home() {
     <PageTransition>
       <SEO
         title="Premier Photography & Cinematography Studio Bangalore"
-        description="Sushma Digital Studio — 21+ years of premier wedding photography, candid storytelling, 4K aerial drones, multi-camera live broadcast streaming, and LED wall productions in Bangalore led by State Honor Karnataka Chayarathna awardee Prabhu."
+        description="Sushma Digital Studio 21+ years of premier wedding photography, candid storytelling, 4K aerial drones, multi-camera live broadcast streaming, and LED wall productions in Bangalore led by State Honor Karnataka Chayarathna awardee Prabhu."
         canonical="https://sushmadigitalstudio.com/"
       />
       {/* ── Hero ── */}
-      <section className="relative min-h-[92vh] sm:min-h-screen w-full overflow-hidden flex items-center justify-center pt-24 pb-16">
+      <section className="relative h-[100dvh] min-h-[560px] w-full overflow-hidden flex items-center justify-center pt-20 sm:pt-24 lg:pt-20 pb-8 sm:pb-10 lg:pb-8">
         <CinematicHero />
-        <div className="relative z-20 text-center text-white px-4 sm:px-6 max-w-4xl mx-auto w-full">
+        <div className="relative z-20 text-center text-white px-4 sm:px-6 max-w-5xl mx-auto w-full">
           <FadeIn delay={0.2}>
-            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif mb-6 leading-[1.08] tracking-tight text-white drop-shadow-md">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif mb-4 sm:mb-6 leading-[1.14] tracking-tight text-white drop-shadow-md">
               Professional Wedding Photography &amp; <span className="italic text-[#D92F26]">Event Production in Bangalore</span>
             </h1>
           </FadeIn>
           <FadeIn delay={0.45}>
-            <p className="text-[#E2E6EC] text-sm sm:text-base md:text-lg mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow">
-              21+ years of visionary photography &mdash; fine art weddings, candid celebrations, fashion portfolios, and broadcast event productions.
+            <p className="text-[#E2E6EC] text-xs sm:text-sm md:text-base mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed drop-shadow">
+              21+ years of visionary photography: fine art weddings, candid celebrations, fashion portfolios, and broadcast event productions.
             </p>
           </FadeIn>
           <FadeIn delay={0.6}>
@@ -577,7 +577,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Distinguished Clientele Band — Premium Light Theme ── */}
+      {/* ── Distinguished Clientele Band Premium Light Theme ── */}
       <section className="py-10 sm:py-12 lg:py-8 bg-[#FFFFFF] border-b border-[#E2E6EC]">
         <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-7xl">
           <FadeIn className="text-center mb-8 max-w-2xl mx-auto">
@@ -634,7 +634,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Trusted by Leaders & Famous Personalities — 3D Curved Perspective Ribbon (Single View) ── */}
+      {/* ── Trusted by Leaders & Famous Personalities 3D Curved Perspective Ribbon (Single View) ── */}
       <CurvedLeadersRibbonSection />
 
       {/* ── Services Section ── */}
@@ -677,7 +677,7 @@ export default function Home() {
               Dr. Rajkumar Memorial Documentation
             </h2>
             <p className="text-[#475569] max-w-2xl mx-auto text-sm sm:text-base leading-relaxed mb-6">
-              Privileged to have served as official photographer documenting the legendary Dr. Rajkumar memorial events &mdash; safeguarding a priceless chronicle of Karnataka's cinematic and cultural history.
+              Privileged to have served as official photographer documenting the legendary Dr. Rajkumar memorial events, safeguarding a priceless chronicle of Karnataka's cinematic and cultural history.
             </p>
             <Link
               href="/about"
@@ -698,10 +698,10 @@ export default function Home() {
                 Visual Portfolio
               </span>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#142C45] mb-3">
-                Selected Works &mdash; Wedding &amp; Portrait Showcase
+                Selected Works: Wedding &amp; Portrait Showcase
               </h2>
               <p className="text-[#64748B] text-sm sm:text-base max-w-2xl mx-auto">
-                A curated survey of our visual language &mdash; 21 years of capturing candid grace, emotion, and architectural drama.
+                A curated survey of our visual language, capturing 21 years of candid grace, emotion, and architectural drama.
               </p>
             </div>
           </FadeIn>

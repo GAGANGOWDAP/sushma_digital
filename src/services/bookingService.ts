@@ -7,7 +7,7 @@ export const bookingService = {
    */
   createWhatsAppBookingLink(data: Partial<BookingInquiryData>): string {
     const lines = [
-      `*New Booking Inquiry — Sushma Digital Studio*`,
+      `*New Booking Inquiry Sushma Digital Studio*`,
       data.name ? `• Name: ${data.name}` : null,
       data.phone ? `• Phone: ${data.phone}` : null,
       data.eventType ? `• Service/Event: ${data.eventType}` : null,

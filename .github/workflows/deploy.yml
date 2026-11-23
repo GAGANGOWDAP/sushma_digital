@@ -6,20 +6,21 @@ on:
       - main
   workflow_dispatch:
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# Do not cancel in-progress runs as we want to allow ongoing production deployments to complete cleanly.
 concurrency:
   group: 'pages'
   cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  # 1. Single build job: builds the application and uploads exactly ONE artifact named github-pages
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -28,7 +29,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 9
+          version: 10
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -42,14 +43,26 @@ jobs:
       - name: Build website
         run: pnpm run build
 
-      - name: Ensure SPA 404 fallback for GitHub Pages
+      - name: Ensure SPA 404 fallback for GitHub Pages routing
         run: cp dist/public/index.html dist/public/404.html
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          # In vite.config.ts, build.outDir is configured as 'dist/public'
           path: dist/public
 
+  # 2. Single deployment job: downloads and publishes the artifact to GitHub Pages
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

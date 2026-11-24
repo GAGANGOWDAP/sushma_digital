@@ -360,8 +360,8 @@ export default function Portfolio() {
       </section>
 
       {/* Editorial Booking CTA */}
-      <section className="py-16 bg-[#F8FAFC] border-t border-[#E2E6EC]">
-        <div className="container mx-auto px-6 max-w-4xl text-center">
+      <section className="py-16 hero-triangular-pattern border-t border-b border-[#E2E6EC] relative overflow-hidden">
+        <div className="container mx-auto px-6 max-w-4xl text-center relative z-10">
           <FadeIn>
             <span className="text-[#D92F26] text-xs uppercase tracking-[0.25em] font-semibold mb-3 inline-flex items-center gap-1.5">
               <Sparkles size={14} /> Sushma Digital Studio Reservations

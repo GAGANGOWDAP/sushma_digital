@@ -97,6 +97,16 @@ export default function Services() {
     return true;
   });
 
+  const getCategoryCount = (cat: string) => {
+    if (cat === 'All') return services.length;
+    if (cat === 'Weddings') return services.filter((svc) => svc.category.includes('Wedding')).length;
+    if (cat === 'Portraits') return services.filter((svc) => svc.category.includes('Fashion') || svc.category.includes('Portraiture')).length;
+    if (cat === 'Live Broadcast') return services.filter((svc) => svc.category.includes('Broadcast')).length;
+    if (cat === 'Event Tech') return services.filter((svc) => svc.category.includes('Immersive') || svc.category.includes('Technology')).length;
+    if (cat === 'Aerial Drones') return services.filter((svc) => svc.category.includes('Aerial')).length;
+    return services.length;
+  };
+
   const servicesSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -144,7 +154,7 @@ export default function Services() {
             <span className="text-[#D92F26] text-xs uppercase tracking-[0.25em] font-semibold mb-3 block">
               Sushma Digital Studio &bull; Specialized Services
             </span>
-            <h1 className="text-4xl sm:text-6xl font-serif text-[#142C45] mb-4">
+            <h1 className="text-4xl sm:text-6xl font-serif text-[#142C45] mb-4 max-w-4xl mx-auto tracking-tight leading-[1.12]">
               Professional Photography &amp; Live Production Services in Bangalore
             </h1>
             <p className="text-[#64748B] max-w-xl mx-auto text-sm sm:text-base leading-relaxed mb-8">
@@ -152,18 +162,31 @@ export default function Services() {
             </p>
             {/* Category Filter Pills */}
             <div className="flex flex-wrap justify-center gap-2 sm:gap-2.5 mt-6">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setFilter(cat)}
-                  className={`px-5 py-2 text-xs uppercase tracking-widest transition-all duration-200 rounded-md font-semibold cursor-pointer ${filter === cat
-                    ? 'bg-[#D92F26] text-white shadow-sm'
-                    : 'bg-white border border-[#E2E6EC] text-[#64748B] hover:text-[#142C45] hover:border-[#258FEA]'
+              {categories.map((cat) => {
+                const count = getCategoryCount(cat);
+                const isActive = filter === cat;
+                return (
+                  <button
+                    key={cat}
+                    onClick={() => setFilter(cat)}
+                    className={`px-4 sm:px-5 py-2 text-xs uppercase tracking-wider transition-all duration-200 rounded-md font-semibold cursor-pointer flex items-center gap-1.5 ${
+                      isActive
+                        ? 'bg-[#D92F26] text-white shadow-sm'
+                        : 'bg-white border border-[#E2E6EC] text-[#64748B] hover:text-[#142C45] hover:border-[#258FEA]'
                     }`}
-                >
-                  {cat}
-                </button>
-              ))}
+                    aria-pressed={isActive}
+                  >
+                    <span>{cat}</span>
+                    <span
+                      className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono ${
+                        isActive ? 'bg-white/20 text-white' : 'bg-[#F1F5F9] text-[#64748B]'
+                      }`}
+                    >
+                      {count}
+                    </span>
+                  </button>
+                );
+              })}
             </div>
           </FadeIn>
         </div>

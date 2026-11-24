@@ -82,30 +82,45 @@ export default function Contact() {
         description="Contact Prabhu and the Sushma Digital Studio team in RPC Layout, Vijaynagar, Bangalore. Schedule an in-person heirloom album consultation, verify event date availability, or request custom event production quotes."
         canonical="https://sushmadigitalstudio.com/contact"
       />
-      {/* ===== BOOK A SHOOT SECTION ===== */}
-      <section className="pt-36 sm:pt-40 pb-20 hero-triangular-pattern text-[#142C45] border-b border-[#E2E6EC] relative overflow-hidden">
+      {/* ===== 1. CONTACT HERO SECTION ===== */}
+      <section className="pt-36 sm:pt-40 pb-16 sm:pb-20 hero-triangular-pattern text-[#142C45] border-b border-[#E2E6EC] relative overflow-hidden text-center">
         <div className="container mx-auto px-4 sm:px-6 md:px-12 max-w-4xl relative z-10">
           <FadeIn>
-            <div className="text-center mb-12">
-              <div className="flex justify-center mb-4">
-                <Breadcrumbs />
-              </div>
-              <span className="text-[#D92F26] text-xs uppercase tracking-[0.22em] font-semibold mb-3 block">
-                Reserve Your Date
-              </span>
-              <h1 className="text-4xl sm:text-6xl font-serif text-[#142C45] mb-4">
-                Contact Sushma Digital Studio in Bangalore
-              </h1>
-              <h2 className="sr-only">Date Availability &amp; Booking Inquiry</h2>
-              <p className="text-[#64748B] max-w-xl mx-auto text-sm sm:text-base leading-relaxed">
-                Our calendar fills several months in advance for weddings and major productions. Secure your date with Sushma Digital Studio.
-              </p>
+            <div className="flex justify-center mb-4">
+              <Breadcrumbs />
             </div>
+            <span className="text-[#D92F26] text-xs uppercase tracking-[0.22em] font-semibold mb-3 block">
+              Reserve Your Date
+            </span>
+            <h1 className="text-4xl sm:text-6xl font-serif text-[#142C45] mb-4 tracking-tight">
+              Contact Sushma Digital Studio in Bangalore
+            </h1>
+            <h2 className="sr-only">Date Availability &amp; Booking Inquiry</h2>
+            <p className="text-[#64748B] max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+              Our calendar fills several months in advance for weddings and major productions. Secure your date with Prabhu and our master photography team in Bangalore.
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ===== 2. BOOKING FORM SECTION ===== */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-[#F8FAFC] border-b border-[#E2E6EC] relative">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-4xl relative z-10">
+          <FadeIn className="text-center mb-10 sm:mb-12 max-w-2xl mx-auto">
+            <span className="text-[#D92F26] text-xs uppercase tracking-[0.22em] font-semibold mb-2 block">
+              Reservation Questionnaire
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-[#142C45] mb-3">
+              Plan Your Photography Booking
+            </h2>
+            <p className="text-[#64748B] text-sm sm:text-base leading-relaxed">
+              Tell us about your celebration, wedding dates, and vision. We will review availability and craft a tailored proposal for your consideration.
+            </p>
           </FadeIn>
 
           {bookingSubmitted ? (
             <FadeIn>
-              <div className="bg-white border border-[#E2E6EC] rounded-xl p-10 sm:p-14 text-center max-w-lg mx-auto shadow-sm">
+              <div className="bg-white border border-[#E2E6EC] rounded-2xl p-8 sm:p-14 text-center max-w-lg mx-auto shadow-sm">
                 <div className="w-16 h-16 rounded-full bg-[#F5F6F8] border border-[#258FEA] text-[#258FEA] flex items-center justify-center mx-auto mb-5 shadow-sm">
                   <Camera size={30} />
                 </div>
@@ -123,7 +138,7 @@ export default function Contact() {
             </FadeIn>
           ) : (
             <FadeIn delay={0.15}>
-              <div className="bg-white border border-[#E2E6EC] rounded-xl p-6 sm:p-10 md:p-12 shadow-[0_2px_12px_rgba(20,44,69,0.04)]">
+              <div className="bg-white border border-[#E2E6EC] rounded-2xl p-6 sm:p-10 md:p-12 shadow-[0_4px_20px_rgba(20,44,69,0.04)]">
                 <Form {...bookingForm}>
                   <form onSubmit={bookingForm.handleSubmit(onBookingSubmit)} className="space-y-6">
                     {/* Row 1: Name + Email */}
@@ -310,7 +325,7 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* ===== SEND A MESSAGE SECTION ===== */}
+      {/* ===== 3. STUDIO HEADQUARTERS & DIRECT MESSAGE SECTION ===== */}
       <section className="py-20 bg-[#FFFFFF] text-[#142C45]">
         <div className="container mx-auto px-6 md:px-12 max-w-6xl">
           <FadeIn className="mb-12 text-center md:text-left">

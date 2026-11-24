@@ -532,21 +532,27 @@ export default function Home() {
       <section className="py-10 sm:py-12 lg:py-8 hero-diamond-pattern border-b border-[#E2E6EC] relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 md:px-12 text-center max-w-6xl relative z-10">
           <FadeIn>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
               {[
                 { label: 'Years Experience', val: '21+', sub: 'Established Craft' },
                 { label: 'Weddings Captured', val: '2,000+', sub: 'Grand & Candid' },
                 { label: 'Corporate Shoots', val: '500+', sub: 'VIP & Commercial' },
                 { label: 'State Honors', val: 'Chayarathna', sub: 'Award of Excellence' },
               ].map((stat, i) => (
-                <div key={i} className="flex flex-col gap-1 p-5 rounded-xl bg-[#FFFFFF] border border-[#E2E6EC] shadow-sm">
-                  <span className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-[#142C45]">
+                <div key={i} className="flex flex-col items-center justify-center gap-1 px-3 py-4 sm:p-5 rounded-xl bg-[#FFFFFF] border border-[#E2E6EC] shadow-sm h-full">
+                  <span
+                    className={`font-serif font-bold text-[#142C45] tracking-tight leading-none ${
+                      stat.val.length > 7
+                        ? 'text-lg min-[380px]:text-xl sm:text-2xl md:text-3xl lg:text-4xl'
+                        : 'text-2xl sm:text-3xl md:text-4xl'
+                    }`}
+                  >
                     {stat.val}
                   </span>
-                  <span className="text-xs font-semibold text-[#D92F26] uppercase tracking-wider">
+                  <span className="text-[11px] sm:text-xs font-semibold text-[#D92F26] uppercase tracking-wider">
                     {stat.label}
                   </span>
-                  <span className="text-[10px] text-[#64748B] uppercase tracking-widest mt-0.5">
+                  <span className="text-[9px] sm:text-[10px] text-[#64748B] uppercase tracking-widest mt-0.5">
                     {stat.sub}
                   </span>
                 </div>

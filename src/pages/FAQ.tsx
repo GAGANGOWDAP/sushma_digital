@@ -97,8 +97,8 @@ export default function FAQ() {
         }}
       />
       {/* Header */}
-      <section className="pt-36 sm:pt-40 pb-12 hero-triangular-pattern text-center relative overflow-hidden border-b border-[#E2E6EC]">
-        <div className="container mx-auto px-6 relative z-10">
+      <section className="min-h-screen min-h-[100dvh] pt-24 sm:pt-28 pb-10 sm:pb-12 hero-triangular-pattern text-center relative overflow-hidden border-b border-[#E2E6EC] flex flex-col justify-center items-center">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10 w-full">
           <FadeIn>
             <div className="flex justify-center mb-4">
               <Breadcrumbs />
@@ -106,7 +106,7 @@ export default function FAQ() {
             <span className="text-[#D92F26] text-xs uppercase tracking-[0.25em] font-semibold mb-3 block">
               Sushma Digital Studio &bull; Frequently Asked Questions
             </span>
-            <h1 className="text-4xl sm:text-6xl font-serif text-[#142C45] mb-4">
+            <h1 className="text-4xl sm:text-6xl font-serif text-[#142C45] mb-4 max-w-4xl mx-auto tracking-tight leading-[1.12]">
               Frequently Asked Questions | Sushma Digital Studio
             </h1>
             <p className="text-[#64748B] max-w-xl mx-auto text-sm sm:text-base leading-relaxed mb-8">
@@ -118,7 +118,7 @@ export default function FAQ() {
                 <button
                   key={cat}
                   onClick={() => setFilter(cat)}
-                  className={`px-5 py-2 text-xs uppercase tracking-widest transition-all duration-200 rounded-md font-semibold cursor-pointer ${filter === cat
+                  className={`px-4 sm:px-5 py-2 text-xs uppercase tracking-wider transition-all duration-200 rounded-md font-semibold cursor-pointer ${filter === cat
                       ? 'bg-[#D92F26] text-white shadow-sm'
                       : 'bg-white border border-[#E2E6EC] text-[#64748B] hover:text-[#142C45] hover:border-[#258FEA]'
                     }`}

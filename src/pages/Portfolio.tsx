@@ -219,8 +219,8 @@ export default function Portfolio() {
       />
 
       {/* Hero Header with Brand Triangular Pattern */}
-      <section className="pt-36 sm:pt-40 pb-12 hero-triangular-pattern text-center relative overflow-hidden border-b border-[#E2E6EC]">
-        <div className="container mx-auto px-6 relative z-10">
+      <section className="min-h-screen min-h-[100dvh] pt-24 sm:pt-28 pb-10 sm:pb-12 hero-triangular-pattern text-center relative overflow-hidden border-b border-[#E2E6EC] flex flex-col justify-center items-center">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10 w-full">
           <FadeIn>
             <div className="flex justify-center mb-4">
               <Breadcrumbs />
@@ -228,7 +228,7 @@ export default function Portfolio() {
             <span className="text-[#D92F26] text-xs uppercase tracking-[0.25em] font-semibold mb-3 block">
               Sushma Digital Studio &bull; Visual Gallery
             </span>
-            <h1 className="text-4xl sm:text-6xl font-serif text-[#142C45] mb-4">
+            <h1 className="text-4xl sm:text-6xl font-serif text-[#142C45] mb-4 max-w-4xl mx-auto tracking-tight leading-[1.12]">
               Our Photography &amp; Event Production Portfolio
             </h1>
             <p className="text-[#64748B] max-w-xl mx-auto text-sm sm:text-base leading-relaxed mb-8">

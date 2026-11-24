@@ -145,8 +145,8 @@ export default function Services() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
       />
       {/* Hero header */}
-      <section className="pt-36 sm:pt-40 pb-12 hero-triangular-pattern text-center relative overflow-hidden border-b border-[#E2E6EC]">
-        <div className="container mx-auto px-6 relative z-10">
+      <section className="min-h-screen min-h-[100dvh] pt-24 sm:pt-28 pb-10 sm:pb-12 hero-triangular-pattern text-center relative overflow-hidden border-b border-[#E2E6EC] flex flex-col justify-center items-center">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10 w-full">
           <FadeIn>
             <div className="flex justify-center mb-4">
               <Breadcrumbs />

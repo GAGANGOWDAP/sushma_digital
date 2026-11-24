@@ -24,7 +24,6 @@ const ROUTE_LABELS: Record<string, string> = {
   book: 'Book a Session',
   faq: 'FAQ',
   blog: 'Journal',
-  sitemap: 'Website Sitemap',
   privacy: 'Privacy Policy',
   terms: 'Terms of Service',
 };

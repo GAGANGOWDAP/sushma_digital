@@ -10,7 +10,6 @@ export { default as BlogPostDetail } from './BlogPostDetail';
 export { default as Contact } from './Contact';
 export { default as Book } from './Book';
 export { default as FAQ } from './FAQ';
-export { default as Sitemap } from './Sitemap';
 export { default as Privacy } from './Privacy';
 export { default as Terms } from './Terms';
 export { default as NotFound } from './NotFound';

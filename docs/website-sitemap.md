@@ -48,7 +48,6 @@ https://sushmadigitalstudio.com/ (Root / Homepage)
 │
 └── Support, Legal & Directives
     ├── /faq (Frequently Asked Questions with Category Filtering)
-    ├── /sitemap (Visual Interactive Website Sitemap)
     ├── /privacy (Privacy & Data Protection Policy)
     ├── /terms (Client Terms & Service Agreement)
     ├── /sitemap.xml (Technical Search Engine XML Sitemap)
@@ -75,7 +74,6 @@ The client-side routing is powered by `wouter` in `src/App.tsx`:
 | `/contact` | `Contact` | Studio address, inquiry form, map | `https://sushmadigitalstudio.com/contact` |
 | `/book` | `Book` | Multi-step booking questionnaire | `https://sushmadigitalstudio.com/book` |
 | `/faq` | `FAQ` | Categorized accordion questions | `https://sushmadigitalstudio.com/faq` |
-| `/sitemap` | `Sitemap` | Visual interactive website sitemap | `https://sushmadigitalstudio.com/sitemap` |
 | `/privacy` | `Privacy` | Client privacy & copyright policy | `https://sushmadigitalstudio.com/privacy` |
 | `/terms` | `Terms` | Terms of service & booking rules | `https://sushmadigitalstudio.com/terms` |
 | `*` | `NotFound` | Graceful 404 error page | N/A (excluded from sitemap) |
@@ -141,10 +139,8 @@ Every indexable page incorporates the `<SEO />` component (`src/components/commo
 ### How to Add a New Website Page:
 1. Create the page component in `src/pages/YourNewPage.tsx`.
 2. Wrap the page with `<PageTransition>` and include `<SEO title="..." description="..." />`.
-3. Export the component in `src/pages/index.ts`.
-4. Register the route in `src/App.tsx` inside `<Switch>`.
-5. Add the page entry to `public/sitemap.xml`.
-6. Add the page entry to `src/pages/Sitemap.tsx` within the relevant category section.
+3. Register the route in `src/App.tsx` inside `<Switch>`.
+4. Add the canonical URL entry to `public/sitemap.xml`.
 
 ### How to Publish a New Blog Article:
 1. Open `src/data/blog.ts`.
@@ -166,16 +162,15 @@ Every indexable page incorporates the `<SEO />` component (`src/components/commo
    }
    ```
 3. Add the URL `<url><loc>https://sushmadigitalstudio.com/blog/9</loc>...</url>` to `public/sitemap.xml`.
-4. The visual sitemap dynamically reads `BLOG_POSTS` and will immediately display the new article under the **Journal & Articles** section.
 
 ---
 
 ## 7. Quality Assurance Checklist
 
-- [x] All 22 URLs in `public/sitemap.xml` resolve to working pages.
+- [x] All 21 canonical URLs in `public/sitemap.xml` resolve to working pages.
 - [x] `public/robots.txt` points to `https://sushmadigitalstudio.com/sitemap.xml`.
-- [x] Visual sitemap is live and interactive at `/sitemap`.
+- [x] Visual sitemap `/sitemap` decommissioned and safely returns 404.
 - [x] Dynamic blog routing works for `/blog/:id` (ids 1 to 8).
 - [x] Non-existent blog IDs (e.g. `/blog/999`) return `<NotFound />`.
-- [x] Open Graph and Twitter card images are properly wired up.
-- [x] Footer includes direct link to `/sitemap`.
+- [x] Open Graph and Twitter card metadata are properly wired up.
+- [x] Footer clean and links only to Privacy Policy & Terms of Service.

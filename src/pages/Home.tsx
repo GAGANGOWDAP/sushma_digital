@@ -572,7 +572,7 @@ export default function Home() {
             </p>
           </FadeIn>
           <FadeIn delay={0.15}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-4.5 lg:gap-5 items-stretch">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4.5 lg:gap-5 items-stretch">
               {[
                 { id: '01', name: 'S M Krishna', role: 'Former Chief Minister of Karnataka' },
                 { id: '02', name: 'MLA Krishnappa', role: 'Member of Legislative Assembly, Bangalore' },
@@ -582,24 +582,24 @@ export default function Home() {
               ].map((client) => (
                 <div
                   key={client.id}
-                  className="group relative rounded-[12px] border border-[#E2E6EC] bg-[#FFFFFF] p-5 sm:p-6 h-full flex flex-col justify-between shadow-[0_2px_8px_rgba(20,44,69,0.04)] hover:shadow-[0_8px_20px_rgba(20,44,69,0.08)] hover:-translate-y-1 hover:border-[#D92F26]/50 transition-all duration-300 text-left"
+                  className="group relative rounded-[12px] border border-[#E2E6EC] bg-[#FFFFFF] p-3.5 sm:p-5 lg:p-6 h-full flex flex-col justify-between shadow-[0_2px_8px_rgba(20,44,69,0.04)] hover:shadow-[0_8px_20px_rgba(20,44,69,0.08)] hover:-translate-y-1 hover:border-[#D92F26]/50 transition-all duration-300 text-left last:col-span-2 sm:last:col-span-1"
                 >
                   <div>
                     {/* Number at the top in large Signature Red typography */}
-                    <span className="font-serif text-2xl sm:text-3xl font-bold text-[#D92F26] tracking-tight block">
+                    <span className="font-serif text-xl sm:text-2xl lg:text-3xl font-bold text-[#D92F26] tracking-tight block">
                       {client.id}
                     </span>
 
                     {/* Thin horizontal divider below the number */}
-                    <div className="w-full border-t border-[#E2E6EC] my-3.5 group-hover:border-[#D92F26]/20 transition-colors" />
+                    <div className="w-full border-t border-[#E2E6EC] my-2.5 sm:my-3.5 group-hover:border-[#D92F26]/20 transition-colors" />
 
                     {/* Person's name in an elegant serif font */}
-                    <h3 className="font-serif font-bold text-[#142C45] text-base sm:text-lg tracking-tight mb-2 leading-snug">
+                    <h3 className="font-serif font-bold text-[#142C45] text-sm sm:text-base lg:text-lg tracking-tight mb-1.5 sm:mb-2 leading-snug">
                       {client.name}
                     </h3>
 
                     {/* Designation underneath in a clean sans-serif font */}
-                    <p className="text-xs sm:text-[13px] text-[#475569] leading-relaxed font-sans">
+                    <p className="text-[11px] sm:text-xs lg:text-[13px] text-[#475569] leading-relaxed font-sans">
                       {client.role}
                     </p>
                   </div>

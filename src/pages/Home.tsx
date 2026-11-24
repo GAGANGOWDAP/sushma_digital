@@ -751,7 +751,6 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl font-serif text-[#142C45] mb-2">
               Words From Our Clients
             </h2>
-            <div className="w-12 h-0.5 bg-[#D92F26] mx-auto" />
           </FadeIn>
         </div>
         <div className="container mx-auto px-4 sm:px-6 max-w-4xl">

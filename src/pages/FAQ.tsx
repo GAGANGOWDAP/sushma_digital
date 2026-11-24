@@ -107,7 +107,7 @@ export default function FAQ() {
               Sushma Digital Studio &bull; Frequently Asked Questions
             </span>
             <h1 className="text-4xl sm:text-6xl font-serif text-[#142C45] mb-4 max-w-4xl mx-auto tracking-tight leading-[1.12]">
-              Frequently Asked Questions | Sushma Digital Studio
+              Frequently Asked Questions
             </h1>
             <p className="text-[#64748B] max-w-xl mx-auto text-sm sm:text-base leading-relaxed mb-8">
               Clear answers regarding our booking process, photography style, live streaming, and album delivery.
@@ -119,8 +119,8 @@ export default function FAQ() {
                   key={cat}
                   onClick={() => setFilter(cat)}
                   className={`px-4 sm:px-5 py-2 text-xs uppercase tracking-wider transition-all duration-200 rounded-md font-semibold cursor-pointer ${filter === cat
-                      ? 'bg-[#D92F26] text-white shadow-sm'
-                      : 'bg-white border border-[#E2E6EC] text-[#64748B] hover:text-[#142C45] hover:border-[#258FEA]'
+                    ? 'bg-[#D92F26] text-white shadow-sm'
+                    : 'bg-white border border-[#E2E6EC] text-[#64748B] hover:text-[#142C45] hover:border-[#258FEA]'
                     }`}
                 >
                   {cat}

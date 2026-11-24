@@ -288,8 +288,8 @@ export default function About() {
                 About Sushma Digital Studio | 21+ Years of Photography Excellence
               </h1>
               <div className="space-y-2 text-[#475569] leading-relaxed text-xs sm:text-[13px] xl:text-sm">
-                <p className="text-xs sm:text-sm lg:text-[13px] xl:text-sm italic font-serif text-[#142C45] border-l-2 border-[#258FEA] pl-3 py-0.5 mb-2 sm:mb-2.5">
-                  "Photography isn't about cameras and lenses. It's about capturing the soul of a moment before it's gone forever."
+                <p className="text-xs sm:text-sm lg:text-[13px] xl:text-sm italic font-serif text-[#142C45] py-0.5 mb-2 sm:mb-2.5">
+                  &ldquo;Photography isn't about cameras and lenses. It's about capturing the soul of a moment before it's gone forever.&rdquo;
                 </p>
                 <p>
                   Prabhu's love for photography was kindled by his father, a respected fine art artist. Growing up surrounded by art, he spent his school holidays at <strong className="text-[#142C45]">Vishnu Studio, Bangalore</strong>, absorbing every technical detail, every ray of light, every composition principle he could find.
@@ -562,7 +562,6 @@ export default function About() {
             <h2 className="text-2xl sm:text-3xl font-serif text-[#142C45] mb-1.5 leading-tight">
               The Journey
             </h2>
-            <div className="w-10 h-0.5 bg-[#D92F26] mx-auto" />
           </FadeIn>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4 lg:gap-4.5 items-stretch">
@@ -616,10 +615,9 @@ export default function About() {
             <span className="text-[#D92F26] text-xs uppercase tracking-[0.22em] mb-2.5 block font-semibold">
               Career Journey &amp; Milestones
             </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#142C45] tracking-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#142C45] tracking-tight mb-3">
               21 Years Behind the Lens
             </h2>
-            <div className="w-12 h-0.5 bg-[#D92F26] mx-auto mt-3.5 mb-3" />
             <p className="text-[#475569] text-xs sm:text-sm md:text-base leading-relaxed max-w-xl mx-auto">
               From foundational darkroom apprenticeships under legendary masters to establishing Bangalore&apos;s leading photography and broadcast production studio.
             </p>

@@ -22,17 +22,6 @@ import leader15 from '@assets/leader-15.jpg';
 import useEmblaCarousel from 'embla-carousel-react';
 import {
   ArrowRight,
-  Camera,
-  Video,
-  Baby,
-  Users,
-  Radio,
-  Send,
-  Trophy,
-  Star,
-  ShieldCheck,
-  Landmark,
-  Briefcase,
   ChevronLeft,
   ChevronRight,
   X,
@@ -52,48 +41,42 @@ const SERVICE_CARDS = [
     title: 'Pre-Wedding Photography & Videography',
     category: 'Wedding & Couples',
     desc: 'Cinematic pre-wedding shoot with creative concept direction & HD video highlights.',
-    img: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800&auto=format&fit=crop',
-    icon: Camera
+    img: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 2,
     title: 'Photography, Videography & Candid',
     category: 'Wedding & Events',
     desc: 'Complete event coverage with traditional photography, 4K videography & candid captures.',
-    img: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop',
-    icon: Video
+    img: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 3,
     title: 'Baby Photo Shoot & Portfolios',
     category: 'Newborn & Fashion',
     desc: 'Creative baby photography, milestone portraiture & modelling portfolio creation.',
-    img: 'https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=800&auto=format&fit=crop',
-    icon: Baby
+    img: 'https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 4,
     title: 'Matrimony Photography',
     category: 'Portraiture',
     desc: 'High-end matrimony portraits and profile photography tailored to highlight elegance.',
-    img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop',
-    icon: Users
+    img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 5,
     title: 'Webcast Live Streaming & HD Mixing',
     category: 'Live Broadcast',
     desc: 'HD online live streaming & multi-camera video mixing for weddings and grand events.',
-    img: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=800&auto=format&fit=crop',
-    icon: Radio
+    img: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 6,
     title: '360° VR, LED Wall & Drone',
     category: 'Aerial & VR Tech',
     desc: '360-degree VR video, indoor/outdoor LED wall live display & 4K aerial drone camera.',
-    img: 'https://images.unsplash.com/photo-1508444845599-5c89863b1c44?q=80&w=800&auto=format&fit=crop',
-    icon: Send
+    img: 'https://images.unsplash.com/photo-1508444845599-5c89863b1c44?q=80&w=800&auto=format&fit=crop'
   },
 ];
 
@@ -145,7 +128,6 @@ function CinematicHero() {
 
 /* ── Modern Service Card ── */
 function ServiceCard({ svc, delay }: { svc: typeof SERVICE_CARDS[0]; delay: number }) {
-  const IconComp = svc.icon;
   return (
     <FadeIn delay={delay}>
       <Link
@@ -162,9 +144,6 @@ function ServiceCard({ svc, delay }: { svc: typeof SERVICE_CARDS[0]; delay: numb
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-          <div className="absolute top-3 right-3 w-9 h-9 rounded-md bg-white/95 text-[#142C45] border border-[#E2E6EC] flex items-center justify-center shadow-md group-hover:bg-[#D92F26] group-hover:border-[#D92F26] group-hover:text-white transition-colors">
-            <IconComp size={16} />
-          </div>
         </div>
         <div className="p-6 flex-1 flex flex-col justify-between">
           <div>
@@ -593,37 +572,34 @@ export default function Home() {
             </p>
           </FadeIn>
           <FadeIn delay={0.15}>
-            <div className="grid grid-cols-1 min-[380px]:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5 sm:gap-4 md:gap-4.5 items-stretch">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-4.5 lg:gap-5 items-stretch">
               {[
-                { id: '01', name: 'S M Krishna', role: 'Former Chief Minister of Karnataka', icon: Landmark, accent: '#258FEA' },
-                { id: '02', name: 'MLA Krishnappa', role: 'Member of Legislative Assembly, Bangalore', icon: Landmark, accent: '#D92F26' },
-                { id: '03', name: 'MLA Somanna', role: 'Member of Legislative Assembly, Bangalore', icon: Landmark, accent: '#D92F26' },
-                { id: '04', name: 'MLA MTB Nagaraj', role: 'Member of Legislative Assembly, Bangalore', icon: ShieldCheck, accent: '#D92F26' },
-                { id: '05', name: 'S N Nithesh Vasthu', role: 'Business & Vasthu Consultant', icon: Briefcase, accent: '#258FEA' },
+                { id: '01', name: 'S M Krishna', role: 'Former Chief Minister of Karnataka' },
+                { id: '02', name: 'MLA Krishnappa', role: 'Member of Legislative Assembly, Bangalore' },
+                { id: '03', name: 'MLA Somanna', role: 'Member of Legislative Assembly, Bangalore' },
+                { id: '04', name: 'MLA MTB Nagaraj', role: 'Member of Legislative Assembly, Bangalore' },
+                { id: '05', name: 'S N Nithesh Vasthu', role: 'Business & Vasthu Consultant' },
               ].map((client) => (
                 <div
                   key={client.id}
-                  className="group relative rounded-xl border border-[#E2E6EC] bg-[#FFFFFF] p-5 sm:p-5.5 h-full flex flex-col justify-between shadow-[0_2px_8px_rgba(20,44,69,0.04)] hover:shadow-[0_8px_20px_rgba(20,44,69,0.08)] hover:-translate-y-1 transition-all duration-300 overflow-hidden text-left"
+                  className="group relative rounded-[12px] border border-[#E2E6EC] bg-[#FFFFFF] p-5 sm:p-6 h-full flex flex-col justify-between shadow-[0_2px_8px_rgba(20,44,69,0.04)] hover:shadow-[0_8px_20px_rgba(20,44,69,0.08)] hover:-translate-y-1 hover:border-[#D92F26]/50 transition-all duration-300 text-left"
                 >
                   <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <div
-                        className="w-8 h-8 rounded-lg bg-[#F5F6F8] border border-[#E2E6EC] flex items-center justify-center transition-colors"
-                        style={{ color: client.accent }}
-                      >
-                        <client.icon size={16} strokeWidth={1.75} />
-                      </div>
-                      <span className="font-mono text-[10px] text-[#64748B]/60 tracking-wider font-semibold">
-                        {client.id}
-                      </span>
-                    </div>
-                    <h3 className="font-serif font-bold text-[#142C45] text-base sm:text-lg tracking-tight mb-1.5 leading-snug">
+                    {/* Number at the top in large Signature Red typography */}
+                    <span className="font-serif text-2xl sm:text-3xl font-bold text-[#D92F26] tracking-tight block">
+                      {client.id}
+                    </span>
+
+                    {/* Thin horizontal divider below the number */}
+                    <div className="w-full border-t border-[#E2E6EC] my-3.5 group-hover:border-[#D92F26]/20 transition-colors" />
+
+                    {/* Person's name in an elegant serif font */}
+                    <h3 className="font-serif font-bold text-[#142C45] text-base sm:text-lg tracking-tight mb-2 leading-snug">
                       {client.name}
                     </h3>
-                    <p
-                      className="text-xs font-semibold leading-relaxed"
-                      style={{ color: client.accent }}
-                    >
+
+                    {/* Designation underneath in a clean sans-serif font */}
+                    <p className="text-xs sm:text-[13px] text-[#475569] leading-relaxed font-sans">
                       {client.role}
                     </p>
                   </div>

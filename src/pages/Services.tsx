@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { PageTransition, FadeIn } from '../components/ui/motion';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'wouter';
-import { ArrowRight, Camera, Video, Baby, Users, Tv, Radio, Box, Monitor, Send } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { FAQSection } from '@/components/common/FAQSection';
 
 const categories = ['All', 'Weddings', 'Portraits', 'Live Broadcast', 'Event Tech', 'Aerial Drones'];
@@ -16,8 +16,7 @@ const services = [
     title: 'Pre-Wedding Photography & Videography',
     category: 'Wedding & Couples',
     desc: 'Cinematic pre-wedding shoot with creative concept direction, romantic location coverage, and HD video highlights.',
-    img: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800&auto=format&fit=crop',
-    icon: Camera
+    img: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 2,
@@ -25,8 +24,7 @@ const services = [
     title: 'Photography, Videography & Candid Photography',
     category: 'Wedding & Events',
     desc: 'Complete event coverage combining traditional photography, 4K cinematic videography, and soulful candid moment captures.',
-    img: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop',
-    icon: Video
+    img: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 3,
@@ -34,8 +32,7 @@ const services = [
     title: 'Baby Photo Shoot & Portfolios',
     category: 'Newborn & Fashion',
     desc: 'Creative baby photography, milestone portraiture, modelling portfolio creation, and custom studio lookbooks.',
-    img: 'https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=800&auto=format&fit=crop',
-    icon: Baby
+    img: 'https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 4,
@@ -43,8 +40,7 @@ const services = [
     title: 'Matrimony Photography',
     category: 'Portraiture',
     desc: 'High-end matrimony portraits and profile photography tailored to highlight personality and elegance.',
-    img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop',
-    icon: Users
+    img: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 5,
@@ -52,8 +48,7 @@ const services = [
     title: 'Webcast Live Streaming',
     category: 'Live Broadcast',
     desc: 'High-definition online live streaming for weddings, corporate events, and grand functions accessible worldwide.',
-    img: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=800&auto=format&fit=crop',
-    icon: Radio
+    img: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 6,
@@ -61,8 +56,7 @@ const services = [
     title: 'HD Live Video Mixing',
     category: 'Broadcast & Production',
     desc: 'Multi-camera live video mixing setup with real-time switching, titling, and broadcast-grade production control.',
-    img: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=800&auto=format&fit=crop',
-    icon: Tv
+    img: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 7,
@@ -70,8 +64,7 @@ const services = [
     title: '360 Degree VR Videos',
     category: 'Immersive Media',
     desc: 'Cutting-edge 360-degree virtual reality video recording providing an immersive 3D event experience.',
-    img: 'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=800&auto=format&fit=crop',
-    icon: Box
+    img: 'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 8,
@@ -79,8 +72,7 @@ const services = [
     title: 'LED Wall Live Display',
     category: 'Event Technology',
     desc: 'High-resolution indoor and outdoor LED screen setup for live event projection and dynamic video displays.',
-    img: 'https://images.unsplash.com/photo-1511556532299-8f662fc26c06?q=80&w=800&auto=format&fit=crop',
-    icon: Monitor
+    img: 'https://images.unsplash.com/photo-1511556532299-8f662fc26c06?q=80&w=800&auto=format&fit=crop'
   },
   {
     id: 9,
@@ -88,8 +80,7 @@ const services = [
     title: 'Drone Camera Aerial Videography',
     category: 'Aerial Footage',
     desc: 'Licensed 4K drone aerial photography and cinematic video sweeps for outdoor venues, grand weddings & events.',
-    img: 'https://images.unsplash.com/photo-1508444845599-5c89863b1c44?q=80&w=800&auto=format&fit=crop',
-    icon: Send
+    img: 'https://images.unsplash.com/photo-1508444845599-5c89863b1c44?q=80&w=800&auto=format&fit=crop'
   },
 ];
 

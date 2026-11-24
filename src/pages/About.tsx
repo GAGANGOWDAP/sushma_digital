@@ -23,19 +23,9 @@ import leader13 from '@assets/leader-13.jpg';
 import leader14 from '@assets/leader-14.jpg';
 import leader15 from '@assets/leader-15.jpg';
 import {
-  Star,
-  Award,
-  Camera,
-  Globe,
-  Briefcase,
-  Trophy,
-  Users,
-  Heart,
   X,
   ChevronLeft,
   ChevronRight,
-  Landmark,
-  ShieldCheck,
 } from 'lucide-react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { FAQSection } from '@/components/common/FAQSection';
@@ -52,15 +42,60 @@ export default function About() {
   ];
 
   const journey = [
-    { year: 'Childhood', icon: Heart, title: "Father's Fine Art Influence", desc: "Father was a renowned fine art artist art and aesthetics were part of everyday life, sparking a lifelong passion." },
-    { year: '1990s', icon: Camera, title: 'Vishnu Studio First Steps', desc: 'Spent school holidays at Vishnu Studio, Bangalore, learning the craft of photography from the ground up.' },
-    { year: '1990s', icon: Star, title: "Assistant to Wasim Khan", desc: "Worked as assistant to the legendary photographer Wasim Khan one of India's finest gaining world-class training." },
-    { year: 'Early 2000s', icon: Briefcase, title: 'Printing → Photography', desc: 'Started career in the printing industry, then made a bold shift to professional photography full-time.' },
-    { year: '2000s', icon: Globe, title: 'Studio + B.Com Degree', desc: 'Worked at 2 professional studios while completing a B.Com degree freelancing simultaneously to build a client base.' },
-    { year: '2006', icon: Award, title: 'VP Bangalore Photography Assoc.', desc: 'Elected Vice President of Bangalore Photography Association recognized as a leader in the Bangalore photo community.' },
-    { year: '2006–2015', icon: Users, title: 'VIP & Political Clients', desc: 'Personal photographer for Former CM S M Krishna, MLA MTB Nagaraj family, MLA Krishnappa, MLA Somanna & more.' },
-    { year: 'Ongoing', icon: Trophy, title: 'Rajkumar Memorial Events', desc: "Documented the legendary Dr. Rajkumar memorial events a priceless record of Karnataka's cultural legacy." },
-    { year: '2022', icon: Star, title: 'Karnataka Chayarathna', desc: 'Honoured with the prestigious Karnataka Chayarathna award by Photo Today magazine highest recognition in Karnataka photography.' },
+    {
+      id: '01',
+      year: 'Childhood',
+      title: "Father's Fine Art Influence",
+      desc: 'Father was a renowned fine art artist. Art and aesthetics were part of everyday life, sparking a lifelong passion for visual composition.',
+    },
+    {
+      id: '02',
+      year: '1990s',
+      title: 'Vishnu Studio First Steps',
+      desc: 'Spent school holidays at Vishnu Studio, Bangalore, learning the craft of photography, darkroom developing, and lighting from the ground up.',
+    },
+    {
+      id: '03',
+      year: '1990s',
+      title: 'Assistant to Wasim Khan',
+      desc: "Worked as assistant to the legendary photographer Wasim Khan, one of India's finest, gaining world-class technical precision and creative discipline.",
+    },
+    {
+      id: '04',
+      year: 'Early 2000s',
+      title: 'Printing to Photography',
+      desc: 'Started professional career in the printing industry before making a decisive transition to full-time commercial and portrait photography.',
+    },
+    {
+      id: '05',
+      year: '2000s',
+      title: 'Studio & B.Com Degree',
+      desc: 'Worked at two reputed studios while completing a B.Com degree simultaneously, freelancing across Bangalore to build an enduring client base.',
+    },
+    {
+      id: '06',
+      year: '2006',
+      title: 'VP Bangalore Photography Assoc.',
+      desc: 'Elected Vice President of the Bangalore Photography Association, recognized as an influential leader across the state photographic fraternity.',
+    },
+    {
+      id: '07',
+      year: '2006-2015',
+      title: 'VIP & Political Clients',
+      desc: 'Served as trusted personal photographer for Former CM S M Krishna, MLA MTB Nagaraj family, MLA Krishnappa, MLA Somanna, and distinguished leaders.',
+    },
+    {
+      id: '08',
+      year: 'Ongoing',
+      title: 'Rajkumar Memorial Events',
+      desc: "Documented the landmark Dr. Rajkumar memorial events, creating an invaluable photographic archive of Karnataka's greatest cultural legacy.",
+    },
+    {
+      id: '09',
+      year: '2022',
+      title: 'Karnataka Chayarathna',
+      desc: 'Conferred with the prestigious State Honor Karnataka Chayarathna award by Photo Today magazine, celebrating decades of photographic mastery.',
+    },
   ];
 
   const careerMilestones = [
@@ -148,51 +183,26 @@ export default function About() {
       id: '01',
       name: 'S M Krishna',
       role: 'Former Chief Minister of Karnataka',
-      desc: "Honoured to have served as personal photographer to one of Karnataka's most distinguished and respected leaders. A partnership built on trust, discretion, and the highest standard of professional excellence.",
-      serviceTags: ['Personal Photography', 'Official Events', 'VIP Assignments', 'Confidential Portfolio'],
-      icon: Landmark,
-      accent: '#258FEA', // Electric Blue
-      category: 'VIP Dignitary',
     },
     {
       id: '02',
       name: 'MLA Krishnappa',
       role: 'Member of Legislative Assembly, Bangalore',
-      desc: 'Official event and political photography.',
-      serviceTags: ['Official Events', 'Political Photography'],
-      icon: Landmark,
-      accent: '#D92F26', // Signature Red
-      category: 'State Assembly',
     },
     {
       id: '03',
       name: 'MLA Somanna',
       role: 'Member of Legislative Assembly, Bangalore',
-      desc: 'Official event and political photography.',
-      serviceTags: ['Official Events', 'Political Photography'],
-      icon: Landmark,
-      accent: '#D92F26', // Signature Red
-      category: 'State Assembly',
     },
     {
       id: '04',
       name: 'MLA MTB Nagaraj',
       role: 'Member of Legislative Assembly, Bangalore',
-      desc: 'Trusted family personal photographer capturing private moments and official events.',
-      serviceTags: ['Family Personal Photography', 'Official Events'],
-      icon: ShieldCheck,
-      accent: '#D92F26', // Signature Red
-      category: 'Personal Retainer',
     },
     {
       id: '05',
       name: 'S N Nithesh Vasthu',
       role: 'Business & Vasthu Consultant',
-      desc: 'Appointed as dedicated personal photographer for professional and personal assignments.',
-      serviceTags: ['Personal Photography', 'Professional Assignments'],
-      icon: Briefcase,
-      accent: '#258FEA', // Electric Blue
-      category: 'Consultant',
     },
   ];
 
@@ -495,43 +505,28 @@ export default function About() {
           </FadeIn>
 
           {/* All FIVE Client Cards in Consistent Grid */}
-          <div className="grid grid-cols-1 min-[380px]:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5 sm:gap-4 md:gap-4.5 items-stretch">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-4.5 lg:gap-5 items-stretch">
             {distinguishedClients.map((client, i) => (
               <FadeIn key={client.id} delay={i * 0.05} className="h-full">
-                <div className="group relative rounded-xl border border-[#E2E6EC] bg-[#FFFFFF] p-5 sm:p-5.5 h-full flex flex-col justify-between shadow-[0_2px_8px_rgba(20,44,69,0.04)] hover:shadow-[0_8px_20px_rgba(20,44,69,0.08)] hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                <div className="group relative rounded-[12px] border border-[#E2E6EC] bg-[#FFFFFF] p-5 sm:p-6 h-full flex flex-col justify-between shadow-[0_2px_8px_rgba(20,44,69,0.04)] hover:shadow-[0_8px_20px_rgba(20,44,69,0.08)] hover:-translate-y-1 hover:border-[#D92F26]/50 transition-all duration-300 text-left">
                   <div>
-                    {/* Small minimal line icon / subtle visual identifier */}
-                    <div className="flex items-center justify-between mb-4">
-                      <div
-                        className="w-8 h-8 rounded-lg bg-[#F5F6F8] border border-[#E2E6EC] flex items-center justify-center transition-colors"
-                        style={{ color: client.accent }}
-                      >
-                        <client.icon size={16} strokeWidth={1.75} />
-                      </div>
-                      <span className="font-mono text-[10px] text-[#64748B]/60 tracking-wider font-semibold">
-                        {client.id}
-                      </span>
-                    </div>
+                    {/* Number at the top in large Signature Red typography */}
+                    <span className="font-serif text-2xl sm:text-3xl font-bold text-[#D92F26] tracking-tight block">
+                      {client.id}
+                    </span>
 
-                    {/* Client Name in Deep Navy */}
-                    <h3 className="font-serif font-bold text-[#142C45] text-base sm:text-lg tracking-tight mb-1.5 leading-snug">
+                    {/* Thin horizontal divider below the number */}
+                    <div className="w-full border-t border-[#E2E6EC] my-3.5 group-hover:border-[#D92F26]/20 transition-colors" />
+
+                    {/* Person's name in an elegant serif font */}
+                    <h3 className="font-serif font-bold text-[#142C45] text-base sm:text-lg tracking-tight mb-2 leading-snug">
                       {client.name}
                     </h3>
 
-                    {/* Professional Designation in Signature Red or Electric Blue */}
-                    <p
-                      className="text-xs font-semibold leading-relaxed"
-                      style={{ color: client.accent }}
-                    >
+                    {/* Designation underneath in a clean sans-serif font */}
+                    <p className="text-xs sm:text-[13px] text-[#475569] leading-relaxed font-sans">
                       {client.role}
                     </p>
-                  </div>
-
-                  {/* Subtle bottom detail */}
-                  <div className="border-t border-[#E2E6EC]/60 pt-3 mt-4 flex items-center justify-between text-[11px] text-[#64748B]">
-                    <span className="tracking-wider uppercase text-[10px] font-medium text-[#64748B]/70">
-                      {client.category}
-                    </span>
                   </div>
                 </div>
               </FadeIn>
@@ -556,35 +551,53 @@ export default function About() {
       </section>
 
       {/* ══════════════════════════════════════════════
-          JOURNEY Compact two-column vertical stepper
+          JOURNEY Compact 3x3 Editorial Milestone Cards
       ══════════════════════════════════════════════ */}
-      <section className="py-12 sm:py-16 lg:py-10 xl:py-12 bg-[#FFFFFF] border-b border-[#E2E6EC] overflow-hidden">
-        <div className="container mx-auto px-6 md:px-12 max-w-5xl">
-          <FadeIn className="text-center mb-8 sm:mb-10">
-            <span className="text-[#D92F26] text-xs uppercase tracking-[0.2em] mb-2 block font-semibold">The Story</span>
-            <h2 className="text-3xl sm:text-4xl font-serif text-[#142C45] mb-2">The Journey</h2>
-            <div className="w-12 h-0.5 bg-[#D92F26] mx-auto" />
+      <section className="py-8 sm:py-10 lg:py-7 xl:py-8 bg-[#FFFFFF] border-b border-[#E2E6EC] overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-[1100px]">
+          <FadeIn className="text-center mb-5 sm:mb-6 max-w-2xl mx-auto">
+            <span className="text-[#D92F26] text-[11px] sm:text-xs uppercase tracking-[0.2em] mb-1.5 block font-semibold">
+              The Story
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-serif text-[#142C45] mb-1.5 leading-tight">
+              The Journey
+            </h2>
+            <div className="w-10 h-0.5 bg-[#D92F26] mx-auto" />
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 sm:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4 lg:gap-4.5 items-stretch">
             {journey.map((item, i) => (
               <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
+                key={item.id}
+                initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: (i % 2) * 0.1 + Math.floor(i / 2) * 0.07, duration: 0.45 }}
-                className="flex gap-3.5 p-3.5 sm:p-4 rounded-xl bg-[#F5F6F8] border border-[#E2E6EC] hover:border-[#258FEA]/50 transition-colors group shadow-sm"
+                transition={{ delay: (i % 3) * 0.05 + Math.floor(i / 3) * 0.04, duration: 0.35 }}
+                className="group relative rounded-[10px] border border-[#E2E6EC] bg-[#FFFFFF] p-3.5 sm:p-4 lg:p-4.5 min-h-[135px] flex flex-col justify-between shadow-[0_2px_8px_rgba(20,44,69,0.03)] hover:shadow-[0_6px_16px_rgba(20,44,69,0.06)] hover:-translate-y-0.5 hover:border-[#D92F26]/35 transition-all duration-200 text-left"
               >
-                <div className="shrink-0 mt-1">
-                  <div className="w-9 h-9 rounded-lg bg-white border border-[#E2E6EC] flex items-center justify-center text-[#258FEA] group-hover:text-[#D92F26] group-hover:border-[#D92F26] transition-colors shadow-sm">
-                    <item.icon size={16} />
-                  </div>
-                </div>
                 <div>
-                  <span className="text-[#D92F26] text-[10px] font-bold uppercase tracking-widest">{item.year}</span>
-                  <h3 className="font-serif text-sm font-semibold text-[#142C45] mt-0.5 mb-1 leading-snug">{item.title}</h3>
-                  <p className="text-[#475569] text-xs leading-relaxed">{item.desc}</p>
+                  {/* Top Row: Sequential Number (left) & Year / Period (right) */}
+                  <div className="flex items-center justify-between gap-2.5">
+                    <span className="font-serif text-2xl lg:text-[26px] font-bold text-[#D92F26] tracking-tight leading-none block">
+                      {item.id}
+                    </span>
+                    <span className="text-[10px] lg:text-[11px] uppercase tracking-wider font-semibold text-[#64748B] px-2 py-0.5 rounded bg-[#F8F9FB] border border-[#E2E6EC]/70">
+                      {item.year}
+                    </span>
+                  </div>
+
+                  {/* Thin horizontal divider */}
+                  <div className="w-full border-t border-[#E2E6EC] my-2.5 group-hover:border-[#D92F26]/20 transition-colors" />
+
+                  {/* Milestone title in elegant serif typography */}
+                  <h3 className="font-serif font-bold text-[#142C45] text-[15px] sm:text-base leading-snug tracking-tight mb-1.5 group-hover:text-[#D92F26] transition-colors">
+                    {item.title}
+                  </h3>
+
+                  {/* Short description underneath */}
+                  <p className="text-xs sm:text-[13px] text-[#475569] leading-relaxed font-sans">
+                    {item.desc}
+                  </p>
                 </div>
               </motion.div>
             ))}

@@ -3,7 +3,7 @@ import { Breadcrumbs } from '@/components/common/Breadcrumbs';
 import React, { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import { PageTransition, FadeIn } from '../components/ui/motion';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ZoomIn, ChevronLeft, ChevronRight, ArrowRight, Eye, Sparkles } from 'lucide-react';
+import { X, ZoomIn, ChevronLeft, ChevronRight, ArrowRight, Eye } from 'lucide-react';
 import { Link } from 'wouter';
 import { assetUrl } from '@/lib/utils';
 import { FAQSection } from '@/components/common/FAQSection';
@@ -363,8 +363,8 @@ export default function Portfolio() {
       <section className="py-16 hero-triangular-pattern border-t border-b border-[#E2E6EC] relative overflow-hidden">
         <div className="container mx-auto px-6 max-w-4xl text-center relative z-10">
           <FadeIn>
-            <span className="text-[#D92F26] text-xs uppercase tracking-[0.25em] font-semibold mb-3 inline-flex items-center gap-1.5">
-              <Sparkles size={14} /> Sushma Digital Studio Reservations
+            <span className="text-[#D92F26] text-xs uppercase tracking-[0.25em] font-semibold mb-3 block">
+              Sushma Digital Studio Reservations
             </span>
             <h2 className="text-3xl sm:text-4xl font-serif text-[#142C45] mb-4">
               Love What You See? Let&apos;s Capture Your Story.

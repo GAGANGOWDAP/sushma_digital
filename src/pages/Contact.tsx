@@ -83,8 +83,8 @@ export default function Contact() {
         canonical="https://sushmadigitalstudio.com/contact"
       />
       {/* ===== 1. CONTACT HERO SECTION ===== */}
-      <section className="pt-36 sm:pt-40 pb-16 sm:pb-20 hero-triangular-pattern text-[#142C45] border-b border-[#E2E6EC] relative overflow-hidden text-center">
-        <div className="container mx-auto px-4 sm:px-6 md:px-12 max-w-4xl relative z-10">
+      <section className="min-h-screen min-h-[100dvh] pt-24 sm:pt-28 pb-10 sm:pb-12 hero-triangular-pattern text-[#142C45] border-b border-[#E2E6EC] relative overflow-hidden text-center flex flex-col justify-center items-center">
+        <div className="container mx-auto px-4 sm:px-6 md:px-12 max-w-4xl relative z-10 w-full">
           <FadeIn>
             <div className="flex justify-center mb-4">
               <Breadcrumbs />
@@ -92,7 +92,7 @@ export default function Contact() {
             <span className="text-[#D92F26] text-xs uppercase tracking-[0.22em] font-semibold mb-3 block">
               Reserve Your Date
             </span>
-            <h1 className="text-4xl sm:text-6xl font-serif text-[#142C45] mb-4 tracking-tight">
+            <h1 className="text-4xl sm:text-6xl font-serif text-[#142C45] mb-4 max-w-4xl mx-auto tracking-tight leading-[1.12]">
               Contact Sushma Digital Studio in Bangalore
             </h1>
             <h2 className="sr-only">Date Availability &amp; Booking Inquiry</h2>
